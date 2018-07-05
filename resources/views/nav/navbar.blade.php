@@ -1,6 +1,7 @@
+
         <nav class="navbar navbar-expand-md navbar-light navbar-laravel">
             <div class="container">
-                <div >
+                <div class="container-display">
                     <!-- Left Side Of Navbar -->
                     <ul class="nav-left">
                         <a class="navbar-brand" href="{{ url('/game') }}">
@@ -10,34 +11,35 @@
                     </ul>
 
                     <!-- Right Side Of Navbar -->
-                    <ul >
+                    <ul class="nav-right">
                         <!-- Authentication Links -->
                         @guest
-                            <li >
-                                <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                            <li class="item-nav">
+                            Login with
+                            <a href="{{ url('auth/google') }}" class="nav-link">
+                            <img class="icon" src="{{ asset('img/gg-icon.png') }}" alt="">
+                            </a>
                             </li>
-                            <li >
-                                <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
-                            </li>
+
                         @else
-                            <li class="nav-loguot" >
+                            <li >
                                 <a  href="#" >
-                                    {{ Auth::user()->name }} <span class="caret"></span>
+                                    {{ Auth::user()->name }} 
                                 </a>
 
-                                
-                                <div >
+                            </li> 
+                            <li class="nav-loguot" >
+
                                     <a href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
                                         {{ __('Logout') }}
                                     </a>
 
-                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" >
                                         @csrf
                                     </form>
 
-                                </div>
                             </li>
                         @endguest
                     </ul>

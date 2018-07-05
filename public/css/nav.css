@@ -10,6 +10,7 @@
     justify-content: flex-start;
 }
 .navbar {
+    max-height: 10em;
     position: relative;
     display: -ms-flexbox;
     display: flex;
@@ -115,10 +116,35 @@ ul
 .nav-container
 {
     justify-content: space-between;
+
+}
+.container{
+            width: 100%;
 }
 li
 {
     display: flex;
 
     justify-content: space-between;
+}
+.container-display{
+        display: flex;
+
+    justify-content: space-between;
+}
+logout-form{
+    display: none;
+}
+.nav-loguot
+{
+    margin-left: 1em;
+}
+.icon
+{
+    width:2em;
+    height: 2em;
+}
+.item-nav
+{
+
 }

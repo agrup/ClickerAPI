@@ -57,7 +57,7 @@ class LoginController extends Controller
             $user = User::create([
                 'name'=>$providerUser->getName(),
                 'email'=>$providerUser->getEmail(),
-                'password'=>bcrypt('passwordSinNingunSentido'),
+                'password'=>bcrypt('acavaunpasswordparaharcodearelgooglelogin'),
                 //'provider'=>strtoupper($provider),
                 'provider_id'=>$providerUser->id,
              ]);

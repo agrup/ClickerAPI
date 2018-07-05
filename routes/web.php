@@ -16,6 +16,8 @@ Route::get('/game', function () {
     return view('principal.index');
 });
 
+
+
 Auth::routes();
 //Route::get('glogin',array('as'=>'glogin','uses'=>'UserController@googleLogin')) ;
 //Route::get('google-user',array('as'=>'user.glist','uses'=>'UserController@listGoogleUser')) ;
