@@ -1,0 +1,25 @@
+  .nav-bar{
+  	
+  position: fixed;  }
+
+.bar-containers
+{
+display: flex;
+width: 100%;
+}
+body
+{
+	height: 100%;
+}
+.left {
+	flex-basis: 10%;
+}
+
+.right {
+	flex-basis: 10%;
+}
+.principal
+{
+	flex-basis: 80%;
+	height: 10em;
+}

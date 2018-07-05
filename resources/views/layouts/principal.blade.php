@@ -12,23 +12,41 @@
 
 
 <link rel="stylesheet" type="text/css" href="{{ asset('css/nav.css') }}">
+<link rel="stylesheet" type="text/css" href="{{ asset('css/players.css') }}">
+<link rel="stylesheet" type="text/css" href="{{ asset('css/sidebar.css') }}">
 
-  <div class="fixed-top">
-
-
-  </div>
 
    </head>
 
-<main role="main">
-  <body class="container jumbotron">
 
+  <body >
 
+  <div class="fixed-top">
+
+	@include('nav.navbar')
+
+  </div>
+	<div class="bar-containers">
+		<section class="left">
+			
+			
+			@include('layouts.rooms.rooms')
+		</section>
+		
+		<section class="principal">
+			
+    		@yield('hi')
+		</section>
+		
+		<section class="right">
+			
+			@include('players.playersOnline')
+		</section>
 
   	
-    @yield('section')
+	</div>
 
 
 </body>
-</main>
+
 </html>

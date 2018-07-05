@@ -16,9 +16,14 @@
                         @guest
                             <li class="item-nav">
                             Login with
-                            <a href="{{ url('auth/google') }}" class="nav-link">
-                            <img class="icon" src="{{ asset('img/gg-icon.png') }}" alt="">
-                            </a>
+                            <ul>
+                                <li>
+                                    <a href="{{ url('auth/google') }}" class="nav-link">
+                                    <img class="icon" src="{{ asset('img/gg-icon.png') }}" alt="">
+                                    </a>
+                                </li>
+                            </ul>
+
                             </li>
 
                         @else
