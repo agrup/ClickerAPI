@@ -13,6 +13,7 @@
 
 
 <link rel="stylesheet" type="text/css" href="{{ asset('css/nav.css') }}">
+<link rel="stylesheet" type="text/css" href="{{ asset('css/selectPersonaje.css') }}">
 <link rel="stylesheet" type="text/css" href="{{ asset('css/players.css') }}">
 <link rel="stylesheet" type="text/css" href="{{ asset('css/sidebar.css') }}">
 
@@ -43,9 +44,10 @@
 			
 			@include('players.playersOnline')
 		</section>
-
-  	
+		
+  			
 	</div>
+		@include('players.selectPlayer')
 
 
 </body>

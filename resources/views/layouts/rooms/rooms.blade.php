@@ -1,8 +1,8 @@
 <div class="sidenav">
 @guest
-<h1>Users Online</h1>
+<h1>Players</h1>
 @else
-<h1>Users Online</h1>
+<h1>Players</h1>
 	@isset ($playersOnline)
 	    
 		@foreach(json_decode($playersOnline) as $player)

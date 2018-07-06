@@ -15,7 +15,7 @@ class CreatePlayersTable extends Migration
     {
         Schema::create('players', function (Blueprint $table) {
             $table->increments('id');
-            $table->text('Personaje');
+
             $table->timestamps();
         });
     }
@@ -30,3 +30,4 @@ class CreatePlayersTable extends Migration
         Schema::dropIfExists('players');
     }
 }
+

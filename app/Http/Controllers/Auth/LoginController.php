@@ -7,7 +7,8 @@ use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Socialite;
 Use Auth;
 Use App\User;
-Use App\PlayerOnline;
+Use App\Player;
+Use App\Personajes;
 
 
 class LoginController extends Controller
@@ -65,16 +66,19 @@ class LoginController extends Controller
 
          }
          Auth::login($user);
+         /*
          PlayerOnline::create([
             'name'=>Auth::user()->name,
             'connect'=>1,
             ]);
-         /*
 
          */
-        $playersOnline =PlayerOnline::getOnline()->get()->tojson();
+        $playersOnline =Player::getPlayers()->tojson();
+        $personajes = Personajes::all()->tojson();
 
-        return view('principal.index',compact('playersOnline'));
+        return view('principal.index')->with(compact('playersOnline'))
+                                    ->with(compact('personajes'))
+            ;
 
         //return redirect()->to('/game');
         //return $user->token;

@@ -17,7 +17,12 @@ class Player extends Model
     	return $this->hasMany(Game::class, 'host_id');
     }
 
-    public function getAllPlayers()
+    public static function getPlayers()
+    {
+        return self::all();
+    }
+
+    public static function createPlayer()
     {
         
     }
