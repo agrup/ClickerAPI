@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+Use App\PlayerOnline;
 
 class HomeController extends Controller
 {
@@ -23,6 +24,10 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $playersOnline =PlayerOnline::all()->tojson();
+
+        return view('principal.index',compact('playersOnline'));
     }
 }
+
+

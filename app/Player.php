@@ -17,4 +17,9 @@ class Player extends Model
     	return $this->hasMany(Game::class, 'host_id');
     }
 
+    public function getAllPlayers()
+    {
+        
+    }
+
 }
