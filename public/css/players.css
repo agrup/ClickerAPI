@@ -21,9 +21,7 @@
 .sideplay a:hover {
     color: #f1f1f1;
 }
-a{
-	text-decoration-color: red;
-}
+
 .main {
     margin-left: 160px; /* Same as the width of the sidenav */
     font-size: 28px; /* Increased text to enable scrolling */

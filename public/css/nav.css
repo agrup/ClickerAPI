@@ -1,4 +1,4 @@
-.bg-dark {
+    .bg-dark {
     background-color: #343a40!important;
 }
 
@@ -92,12 +92,7 @@ body {
     display: block;
     padding: .5rem 1rem;
 }
-a {
-    color: white;
-    text-decoration: none;
-    background-color: transparent;
-    -webkit-text-decoration-skip: objects;
-}
+
 .nav-item
 {
     margin-bottom:-1px;
