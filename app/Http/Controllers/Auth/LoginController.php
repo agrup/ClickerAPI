@@ -72,7 +72,7 @@ class LoginController extends Controller
          /*
 
          */
-        $playersOnline =PlayerOnline::all()->tojson();
+        $playersOnline =PlayerOnline::getOnline()->get()->tojson();
 
         return view('principal.index',compact('playersOnline'));
 

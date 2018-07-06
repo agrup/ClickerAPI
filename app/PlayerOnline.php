@@ -15,9 +15,9 @@ class PlayerOnline extends Model
     }
 
 
-    public function setplayer($array)
+    public static function getOnline()
     {
-
+    	return self::where('connect',1);
     }
 
 

@@ -24,7 +24,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $playersOnline =PlayerOnline::all()->tojson();
+        $playersOnline =PlayerOnline::getOnline()->get()->tojson();
 
         return view('principal.index',compact('playersOnline'));
     }
