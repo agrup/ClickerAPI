@@ -18,7 +18,7 @@
 
    </head>
 
-   
+
   <body >
 
   <div class="fixed-top">
@@ -40,7 +40,7 @@
 		
 		<section class="right">
 			
-			@include('players.playersOnline')
+			@include('players.playerOnline')
 		</section>
 
   	
