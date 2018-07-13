@@ -25,11 +25,12 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $playersOnline =Player::getPlayers()->tojson();
-        $personajes = Personajes::all()->tojson();
+        //$playersOnline =Player::getPlayers()->tojson();
+        //$personajes = Personajes::all()->tojson();
 
-        return view('principal.index')->with(compact('playersOnline'))
-                                    ->with(compact('personajes'))
+        return view('principal.index')
+                                    //->with(compact('playersOnline'))
+                                    //->with(compact('personajes'))
             ;
     }
 }

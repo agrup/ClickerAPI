@@ -2,15 +2,13 @@
 @guest
 <h1>Players</h1>
 @else
-<h1>Players</h1>
-	@isset ($playersOnline)
-	    
-		@foreach(json_decode($playersOnline) as $player)
-			<a class="room" href="">{{$player->name}}</a>
-
-		@endforeach
-
-	@endisset
+<h1>Menu</h1>
+	<ul>
+		<li>
+			<a href="/game/Crear+Personaje">Ver Personaje</a>
+			
+		</li>
+	</ul>
 	
 	
 @endguest

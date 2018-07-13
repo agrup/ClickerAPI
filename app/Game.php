@@ -26,45 +26,45 @@ class Game extends Model
         public static function createGame($user1,$user2)
         {
             
-    $game={
-        "player1":
-            {   "Vida":100,
-                "max-vida":80,
-                "Vida":80,
+        $game={
+            "player1":
+                {   "Vida":100,
+                    "max-vida":80,
+                    "Vida":80,
+                    "Ataque":1,
+                    "Defensa":0.5,
+                    "especial":{
+                        "Ataque +":0,
+                        "Ataque x":1,
+                        "Vida":0
+                    },
+                    "User":{
+                    "Player":1,
+                    "name":"Bruno",
+                    "Player":"Goku-00",
+                    "img":"freezer-4.png"
+                }
+            },
+            "player2":
+            {
+                "max-vida":50,
+                "Vida":50,
                 "Ataque":1,
+
                 "Defensa":0.5,
                 "especial":{
-                    "Ataque +":0,
+                    "Ataque +":1,
                     "Ataque x":1,
                     "Vida":0
                 },
                 "User":{
-                "Player":1,
-                "name":"Bruno",
-                "Player":"Goku-00",
-                "img":"freezer-4.png"
+                    "Player":2,
+                    "name":"Agustin",
+                    "Player":"Freezer",
+                    "img":"Goku-0.png"
+                }
             }
-        },
-        "player2":
-        {
-            "max-vida":50,
-            "Vida":50,
-            "Ataque":1,
-
-            "Defensa":0.5,
-            "especial":{
-                "Ataque +":1,
-                "Ataque x":1,
-                "Vida":0
-            },
-            "User":{
-                "Player":2,
-                "name":"Agustin",
-                "Player":"Freezer",
-                "img":"Goku-0.png"
-            }
-        }
-    };
+        };
     return $game;
     }
 }

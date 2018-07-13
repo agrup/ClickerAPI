@@ -15,15 +15,18 @@ class CreatePersonajesTable extends Migration
     {
         Schema::create('personajes', function (Blueprint $table) {
             $table->increments('id');
-            $table->text('Personaje');
+            $table->text('name');
+            $table->integer('Especie');
+            $table->text('User')->default("");
             $table->integer('vida')->default(50);
             $table->integer('ataque')->default(1);
             $table->integer('Defensa')->default(0);
-            $table->text('img')->default("");
-            $table->integer('ataqueM')->default(0);
-            $table->integer('ataqueX')->default(0);
-            $table->integer('VidaEx')->default(0);
+            $table->text('img')->default("/");
+            $table->integer('Velocidad')->default(0);
+            $table->integer('Fuerza')->default(0);
+            $table->integer('Inteligencia')->default(0);
             $table->timestamps();
+            //va
         });
     }
 

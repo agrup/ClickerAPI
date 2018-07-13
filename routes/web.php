@@ -29,3 +29,14 @@ Route::get('auth/{provider}/callback', 'Auth\LoginController@handleProviderCallb
 
 Route::get('/game', 'HomeController@index')->name('game');
 
+
+
+Route::get('/gamefinish/:winer/:lose', 'NodeController@setGame');
+
+Route::get('/game/Crear+Jugador', 'PlayerController@show');
+
+
+Route::get('/game/Crear+Personaje', 'PersonajeController@show');
+//Route::post('/game/Crear+Personaje', 'PersonajesController@store');
+Route::post('/game/GuardarPersonaje', 'PersonajeController@store');
+

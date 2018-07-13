@@ -1,4 +1,4 @@
-
+<link rel="stylesheet" type="text/css" href="{{ asset('css/nav.css') }}">
         <nav class="navbar navbar-expand-md navbar-light navbar-laravel">
             <div class="container">
                 <div class="container-display">

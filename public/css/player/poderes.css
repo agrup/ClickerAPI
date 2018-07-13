@@ -1,0 +1,15 @@
+.special-container
+
+{
+	padding: 5%;
+
+	display: flex;                
+  	flex-direction: row; 
+}
+.principal-container
+
+{
+	padding: 5%;
+	display: flex;                
+  	flex-direction: row; 
+}

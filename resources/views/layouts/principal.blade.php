@@ -22,32 +22,43 @@
 
   <body >
 
-  <div class="fixed-top">
 
-	@include('nav.navbar')
+	<div class="container-vertical">
+		<div>
+			
+			@include('nav.navbar')
+		</div>
 
-  </div>
-	<div class="bar-containers">
-		<section class="left">
+		<div class="bar-vertical">
 			
-			
-			@include('layouts.rooms.rooms')
-		</section>
 		
-		<section class="principal">
+			<div class="bar-containers ">
+				<section class="left">
+					
+					@include('layouts.rooms.rooms')
 			
-    		@yield('hi')
-		</section>
+				</section>
+				
+				<section class="principal">
+					
+		    		@yield('jugador2')
+		    	
+
+				</section>
+				
+				<section class="right">
+					
+					@include('players.playerOnline')
+				
+				</section>
+				
+		  			
+			</div>
+		</div>	
+
+			<!--@include('players.selectPlayer')-->
 		
-		<section class="right">
-			
-			@include('players.playerOnline')
-		</section>
-		
-  			
 	</div>
-		@include('players.selectPlayer')
-
 
 </body>
 

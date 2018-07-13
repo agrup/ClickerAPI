@@ -1,0 +1,76 @@
+.player-container
+
+{
+	display: flex;
+	width: 100%;
+}
+
+.img-container
+{
+	flex-basis: 30%;
+}
+
+img
+{
+	width: 70%;
+	height: 70%;
+}
+.clearfix {
+    overflow: auto;
+}
+div.clearfix {
+    border: 3px solid #4CAF50;
+    padding: 5px;
+}
+.card {
+  width: 150px;                 /* Set width of cards */
+  border: 1px solid #EF9A9A;    /* Set up Border */
+  border-radius: 4px;           /* Slightly Curve edges */
+  overflow: hidden;             /* Fixes the corners */
+  display: flex;                /* Children use Flexbox */
+  flex-direction: column;       /* Rotate Axis */
+}
+.card-header {
+  color: #D32F2F;
+  text-align: center;
+  font-size: 22px;
+  font-weight: 600;
+  border-bottom: 1px solid #EF9A9A;
+  background-color: #FFEBEE;
+  padding: 5px 10px;
+}
+.card-main {
+  display: flex;              /* Children use Flexbox */
+  flex-direction: column;     /* Rotate Axis to Vertical */
+  justify-content: center;    /* Group Children in Center */
+  align-items: center;        /* Group Children in Center (+axis) */
+  padding: 15px 0;            /* Add padding to the top/bottom */
+}
+.material-icons {
+  font-size: 36px;
+  color: #D32F2F;
+  margin-bottom: 5px;
+}
+.main-description {
+  color: #D32F2F;
+  font-size: 12px;
+  text-align: center;
+}
+
+.icons-container
+{
+
+	display: block;                
+  	flex-direction: row;  
+  	     
+}
+main
+{
+  padding: 10%;
+}
+
+.power-container
+{
+  text-align: center;
+  color:red;
+}
