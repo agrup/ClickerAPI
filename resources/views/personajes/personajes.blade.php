@@ -1,8 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
+	
 	<link rel="stylesheet" type="text/css" href="{{ asset('css/player/createPersonaje.css') }}">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script type="text/javascript" src="{{asset("js/personaje/personaje.js")}}"></script>
 	<meta charset="UTF-8">
 	<title>Player</title>
 </head>
@@ -15,25 +17,44 @@
 <div class="player-container clearfix" >
 	
 	<div id="img-container">
-			<form id="name-input" action="/game/GuardarPersonaje" mclass="" method="POST" id="myForm" >
-			@csrf
-		<section class="select-image" >
-			<img src="{{ asset('img/gg-icon.png') }}" alt="Avatar">
+			
 			<!--
 
 			
 
 
-			<h3>{{}}</h3>
+			
 			-->
+		<div class="click-content click-display-container">
+			@foreach($personajeModel as $personaje)
+				<div class="click-display-container mySlides">
+				  <img src={{ asset('img'.$personaje->img).'.png' }} >
+				  <div class="click-display-bottomleft click-large click-container click-padding-16 click-black">
+					{{$personaje->name}}
+				  </div>
+
+				</div>
+				
+
+
+			@endforeach
+
+
+			<button class="click-button click-display-left click-black" id="plusDivs-1" >&#10094;</button>
+			<button class="click-button click-display-right click-black" id="plusDivs1" >&#10095;</button>
+
+		</div>
+
+<form id="name-input" action="/game/GuardarPersonaje" mclass="" method="POST" id="myForm" >
+			@csrf
+		<section class="select-image" >
+		
+
 		</section>
+				
 				<label for="name">Nombre</label>
 				<input name="name" id="name" type="text">
-				<select name="Especie" id="">
-					<option value="1">America</option>
-					<option value="2">Africa-Oceania</option>
-					<option value="3">Europa-Asia</option>
-				</select>
+				<input name="Especie" type="text" id="personaje-Especie">	
 				<input type="submit" value="Guardar">
 			</form>
 	</div>

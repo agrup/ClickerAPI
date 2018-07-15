@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreatePersonajesTable extends Migration
+class CreatePersonajeModelsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,20 +13,21 @@ class CreatePersonajesTable extends Migration
      */
     public function up()
     {
-        Schema::create('personajes', function (Blueprint $table) {
+        Schema::create('personaje_models', function (Blueprint $table) {
+            
             $table->increments('id');
-            $table->text('name');
-            $table->integer('Especie');
-            $table->integer('User');
             $table->double('vida')->default(50);
             $table->double('ataque')->default(1);
-            $table->double('Defensa')->default(0);
+            $table->double('defensa')->default(0);
             $table->text('img')->default("/");
+            $table->text('name')->default("");
+
+            $table->text('Personaje')->default("Agu");
             $table->double('Velocidad')->default(0);
             $table->double('Fuerza')->default(0);
             $table->double('Inteligencia')->default(0);
-            $table->timestamps();
-            //va
+
+
         });
     }
 
@@ -37,6 +38,6 @@ class CreatePersonajesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('personajes');
+        Schema::dropIfExists('personaje_models');
     }
 }

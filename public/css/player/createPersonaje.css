@@ -60,9 +60,10 @@ div.clearfix {
 .icons-container
 {
 
-	display: block;                
-  	flex-direction: row;  
-  	     
+	/*display: block;*/                
+  flex-direction: row;  
+  width: auto;
+  height: auto;
 }
 main
 {
@@ -73,4 +74,67 @@ main
 {
   text-align: center;
   color:red;
+}
+.click-button
+{
+  border:none;
+  display:inline-block;
+  padding:8px 16px;
+  vertical-align:middle;
+  overflow:hidden;
+  text-decoration:none;
+  color:inherit;
+  background-color:inherit;
+  text-align:center;
+  cursor:pointer;
+  white-space:nowrap
+}
+
+.click-display-bottomleft
+  {
+  position:absolute;
+  left:0;
+  bottom:0
+  }
+.click-large
+{
+  font-size:18px !important
+}
+
+.click-display-container
+{
+  position:relative
+}
+.click-padding-16
+{
+  padding-top:16px!important;
+  padding-bottom:16px!important
+}
+
+.click-black,.click-hover-black:hover
+{
+  color:#fff!important;
+  background-color:#000!important
+}
+
+.click-display-left
+{
+  position:absolute;
+  top:50%;
+  left:0%;
+  transform:translate(0%,-50%);
+  -ms-transform:translate(-0%,-50%)
+}
+.click-display-right
+{
+  position:absolute;
+  top:50%;
+  right:0%;
+  transform:translate(0%,-50%);
+  -ms-transform:translate(0%,-50%)
+}
+#personaje-Especie
+{
+  display: none;
+  visibility:hidden;
 }
