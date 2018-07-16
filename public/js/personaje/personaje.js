@@ -1,7 +1,8 @@
 
 $( document ).ready(function() {
-    $('img').width(400);
-  	$('img').height(400);
+
+
+
 var slideIndex = 1;
 showDivs(slideIndex);
 $('#Especie').val(slideIndex);

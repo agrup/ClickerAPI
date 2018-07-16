@@ -1,3 +1,4 @@
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" type="text/css" href="{{ asset('css/nav.css') }}">
         <nav class="navbar navbar-expand-md navbar-light navbar-laravel">
             <div class="container">
@@ -14,16 +15,20 @@
                     <ul class="nav-right">
                         <!-- Authentication Links -->
                         @guest
-                            <li class="item-nav">
-                            Login with
-                            <ul>
+                            <li class="item-nav list-icons">
+                            <div class="titlebox">Login with</div>
+                            
+                            <ul >
                                 <li>
                                     <a href="{{ url('auth/google') }}" class="nav-link">
                                     <img class="icon" src="{{ asset('img/gg-icon.png') }}" alt="">
                                     </a>
 
-                                    <a class="btn btn-primary" href="{{ url('auth/facebook') }}">
-                                        Facebook
+
+                                </li>
+                                <li>
+                                    <a  href="{{ url('auth/facebook') }}" class="nav-link">
+                                    <img class="icon" src="{{ asset('img/fb-icon.png') }}" alt="">
                                     </a>
                                 </li>
                             </ul>

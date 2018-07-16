@@ -1,7 +1,7 @@
 INSTALACION
 ============
 
-Composer Install
+	Composer Install
 
 
 
@@ -11,7 +11,9 @@ php artisan serve
 
 
 .env 
+
 	Configurar CUenta google
+
 	COnfigurar Cuenta Faccebook
 
 	Configurar base de datos

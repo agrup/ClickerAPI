@@ -12,8 +12,8 @@
 
 img
 {
-	width: 70%;
-	height: 70%;
+	width: 350px;
+	height: 350px;
 }
 .clearfix {
     overflow: auto;
@@ -138,4 +138,40 @@ main
 {
   display: none;
   visibility:hidden;
+}
+
+@media only screen and (max-width: 600px){
+
+  .power-container
+  {
+      padding-left: 0%;
+  }
+  .player-container
+  {
+
+     width: 100%;
+    display: block;                
+  
+
+  }
+  img
+  {
+    width: 150px;
+    height: 150PX;
+  }
+  div.clearfix 
+  {
+    margin-top: 15%;
+  }
+  .icons-container {
+    padding-left: 0%;
+  }
+  h3
+  {
+    font-size: 0.8em;
+  }
+  .card-header {
+
+    font-size: 14px;
+  }
 }
