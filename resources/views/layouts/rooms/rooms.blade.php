@@ -5,7 +5,7 @@
 <h1>Menu</h1>
 	<ul>
 		<li>
-			<a href="/game/Crear+Personaje">Ver Personaje</a>
+			<a href="/game/Crear+Personaje">Crear Nuevo Personaje</a>
 			
 		</li>
 	</ul>

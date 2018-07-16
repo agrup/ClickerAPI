@@ -59,8 +59,8 @@ div.clearfix {
 
 .icons-container
 {
-
-	/*display: block;*/                
+  padding-left: 10%;
+	display: block;                
   flex-direction: row;  
   width: auto;
   height: auto;
@@ -72,6 +72,7 @@ main
 
 .power-container
 {
+  padding-left: 9em;
   text-align: center;
   color:red;
 }

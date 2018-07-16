@@ -21,6 +21,10 @@
                                     <a href="{{ url('auth/google') }}" class="nav-link">
                                     <img class="icon" src="{{ asset('img/gg-icon.png') }}" alt="">
                                     </a>
+
+                                    <a class="btn btn-primary" href="{{ url('auth/facebook') }}">
+                                        Facebook
+                                    </a>
                                 </li>
                             </ul>
 

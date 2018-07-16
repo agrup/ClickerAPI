@@ -53,6 +53,12 @@ class LoginController extends Controller
     {
         $providerUser = Socialite::driver($provider)->stateless()->user();
         //dd($user);
+
+        /* Verifica que la cuenta tenga un mail*/
+        if($providerUser->email ==null){
+                $providerUser->email = $providerUser->getName();
+
+     }
          $user = User::where('email',$providerUser->email)->first();
 
          if(!$user){

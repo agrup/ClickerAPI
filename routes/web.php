@@ -36,7 +36,7 @@ Route::get('/gamefinish/:winer/:lose', 'NodeController@setGame');
 Route::get('/game/Crear+Jugador', 'PlayerController@show');
 
 
-Route::get('/game/Crear+Personaje', 'PersonajeController@show');
+Route::get('/game/Crear+Personaje', 'PersonajeController@show')->middleware('auth');
 //Route::post('/game/Crear+Personaje', 'PersonajesController@store');
-Route::post('/game/GuardarPersonaje', 'PersonajeController@store');
+Route::post('/game/GuardarPersonaje', 'PersonajeController@store')->middleware('auth');
 
