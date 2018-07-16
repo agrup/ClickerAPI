@@ -1,4 +1,5 @@
 <?php
+use App\Events\eventTrigger;
 
 /*
 |--------------------------------------------------------------------------
@@ -40,3 +41,13 @@ Route::get('/game/Crear+Personaje', 'PersonajeController@show')->middleware('aut
 //Route::post('/game/Crear+Personaje', 'PersonajesController@store');
 Route::post('/game/GuardarPersonaje', 'PersonajeController@store')->middleware('auth');
 
+
+Route::get('/event', function (){
+	return view('eventListener.eventListener');
+});
+
+Route::get('/fireEvent', function (){
+	var_dump(
+	event(new eventTrigger())
+		);
+});
