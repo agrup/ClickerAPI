@@ -17,7 +17,7 @@ class PersonajeController extends Controller
 
     public  function store(Request $request)
     {
-
+ 
         $PersonajeBase = PersonajeModel::find($request->Especie);
 
     	$personaje = new Personaje;
@@ -42,8 +42,11 @@ class PersonajeController extends Controller
                 'Especie'=>'required|integer'
             ]);
         */
-   
-    	return view('principal.index');
+                $personajeModel = PersonajeModel::all();
+
+        $succes='Exito al cargar Personaje Nuevo';
+    	return view('personajes.personajes')->with(compact('succes'))
+                                            ->with(compact('personajeModel'));
     }
 
     public static function create()

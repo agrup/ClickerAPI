@@ -1,10 +1,10 @@
 
 $( document ).ready(function() {
-
     $('img').width(400);
   	$('img').height(400);
 var slideIndex = 1;
 showDivs(slideIndex);
+$('#Especie').val(slideIndex);
 
 
 
@@ -31,7 +31,7 @@ function showDivs(n) {
   }
 
 
-  $('#personaje-Especie').val(slideIndex-1);
+  $('#Especie').val(slideIndex);
   x[slideIndex-1].style.display = "block";
   y[slideIndex-1].style.display = "block";
 

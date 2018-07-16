@@ -133,7 +133,7 @@ main
   transform:translate(0%,-50%);
   -ms-transform:translate(0%,-50%)
 }
-#personaje-Especie
+#Especie
 {
   display: none;
   visibility:hidden;

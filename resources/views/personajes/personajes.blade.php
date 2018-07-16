@@ -54,7 +54,7 @@
 				
 				<label for="name">Nombre</label>
 				<input name="name" id="name" type="text">
-				<input name="Especie" type="text" id="personaje-Especie">	
+				<input name="Especie" type="text" id="Especie">	
 				<input type="submit" value="Guardar">
 			</form>
 	</div>
@@ -69,7 +69,9 @@
 
 
 </div>
-
+@if(isset($succes))
+	<h1>{{$succes}}</h1>
+@endif
 </main>	
 
 </body>
