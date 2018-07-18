@@ -4,7 +4,7 @@
   @isset ($personajes)
       
     @foreach(json_decode($personajes) as $personaje)
-      <a class="room" href="">{{$personaje->Personaje}}</a>
+      <a class="room" href="">{{$personaje->name}}</a>
   	
     @endforeach
 

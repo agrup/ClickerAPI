@@ -8,7 +8,7 @@ use Socialite;
 Use Auth;
 Use App\User;
 Use App\Player;
-Use App\Personajes;
+Use App\Personaje;
 
 
 class LoginController extends Controller
@@ -81,11 +81,13 @@ class LoginController extends Controller
          */
         //$playersOnline =Player::getPlayers()->tojson();
         //$personajes = Personajes::all()->tojson();
+        $personajes = Personaje::where('User',\Auth::user()->id)->get();
 
-        return view('principal.index')
+        return view('principal.index')->with(compact('personajes'));
+       //return view('principal.index')
                                     //->with(compact('playersOnline'))
-                                    //->with(compact('personajes'))
-            ;
+                                    //->with(compact('personajes'));
+            
 
         //return redirect()->to('/game');
         //return $user->token;

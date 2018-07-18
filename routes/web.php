@@ -47,7 +47,8 @@ Route::get('/event', function (){
 });
 
 Route::get('/fireEvent', function (){
-	var_dump(
-	event(new eventTrigger())
-		);
+
+	event(new eventTrigger());
+
 });
+Route::post('/game', 'PartidaController@Crear');

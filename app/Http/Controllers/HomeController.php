@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 Use App\Player;
-Use App\Personajes;
+Use App\Personaje;
 
 class HomeController extends Controller
 {
@@ -27,8 +27,9 @@ class HomeController extends Controller
     {
         //$playersOnline =Player::getPlayers()->tojson();
         //$personajes = Personajes::all()->tojson();
+        $personajes = Personaje::where('User',\Auth::user()->id)->get();
 
-        return view('principal.index')
+        return view('principal.index')->with(compact('personajes'));
                                     //->with(compact('playersOnline'))
                                     //->with(compact('personajes'))
             ;
