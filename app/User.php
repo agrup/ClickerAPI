@@ -26,4 +26,8 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+     public function getDataPlayer(){
+        return $this->belongsto(Player::class,'id')->get();
+    }
+
 }

@@ -11,11 +11,16 @@ class Player extends Model
      *
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
+    protected $guarded = [];
     public function hostGame()
     {
     	// hasMany(RelatedModel, foreignKeyOnRelatedModel = player_id, localKey = id)
     	return $this->hasMany(Game::class, 'host_id');
     }
+    public function getDataPlayer(){
+        return $this->belongsto(User::class,'id');
+    }
+
 
     public static function getPlayers()
     {

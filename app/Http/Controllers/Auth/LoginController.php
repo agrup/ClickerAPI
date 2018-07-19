@@ -52,9 +52,10 @@ class LoginController extends Controller
     public function handleProviderCallback($provider)
     {
         $providerUser = Socialite::driver($provider)->stateless()->user();
-        //dd($user);
-
+      
+//dd($providerUser->email);
         /* Verifica que la cuenta tenga un mail*/
+
         if($providerUser->email ==null){
                 $providerUser->email = $providerUser->getName();
 
@@ -69,21 +70,23 @@ class LoginController extends Controller
                 //'provider'=>strtoupper($provider),
                 'provider_id'=>$providerUser->id,
              ]);
-
-         }
-         Auth::login($user);
-         /*
-         PlayerOnline::create([
-            'name'=>Auth::user()->name,
-            'connect'=>1,
+            $player= Player::create([
+                'NickName'=>$providerUser->getName()
             ]);
 
-         */
+         }
+         //loguea al usuario
+         Auth::login($user);
+         
+
         //$playersOnline =Player::getPlayers()->tojson();
         //$personajes = Personajes::all()->tojson();
 
+        $player=User::find(Auth::user()->id)->getDataPlayer()->first();
+        dd($player->get());
+
         return view('principal.index')
-                                    //->with(compact('playersOnline'))
+                                    ->with(compact('player'))
                                     //->with(compact('personajes'))
             ;
 
