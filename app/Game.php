@@ -4,6 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
+use Illuminate\Support\Facades\URL;
 class Game extends Model
 {
 /**
@@ -11,21 +12,20 @@ class Game extends Model
     	 *
     	 * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
   */
-    	public function Host()
+
+        protected $guarded = [];
+    	
+        public function Host()
     	{
     		// belongsTo(RelatedModel, foreignKey = host_id, keyOnRelatedModel = id)
     		return $this->belongsTo(Player::class ,'host_id');
     	}
 
-        public static function createGame($user1,$user2)
-        {
-            
-        }
 
 
+         /*
         public static function createGame($user1,$user2)
         {
-            
         $game={
             "player1":
                 {   "Vida":100,
@@ -67,4 +67,5 @@ class Game extends Model
         };
     return $game;
     }
+         */   
 }

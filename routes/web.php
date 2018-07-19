@@ -17,38 +17,36 @@ Route::get('/game', function () {
 });
 */
 
-//Route::get('/game','HomeController@index');
+
+//autenticacion routes
 
 Auth::routes();
-//Route::get('glogin',array('as'=>'glogin','uses'=>'UserController@googleLogin')) ;
-//Route::get('google-user',array('as'=>'user.glist','uses'=>'UserController@listGoogleUser')) ;
 Route::get('auth/{provider}', 'Auth\LoginController@redirectToProvider');
 Route::get('auth/{provider}/callback', 'Auth\LoginController@handleProviderCallback');
 
 
-//Route::get('/home', 'HomeController@index')->name('home');
+
+// Ruta Principal
 
 Route::get('/game', 'HomeController@index')->name('game');
 
+	//ruta para crear partidas online
 
+Route::post('/game', 'PartidaController@Crear');
 
-Route::get('/gamefinish/:winer/:lose', 'NodeController@setGame');
+//Node Routes
+	//ruta para redireccionar al juego en node
+Route::get('/game/node', 'NodeController@show')->name('node');
+
 
 Route::get('/game/Crear+Jugador', 'PlayerController@show');
 
+
+//Creacion de personajes
 
 Route::get('/game/Crear+Personaje', 'PersonajeController@show')->middleware('auth');
 //Route::post('/game/Crear+Personaje', 'PersonajesController@store');
 Route::post('/game/GuardarPersonaje', 'PersonajeController@store')->middleware('auth');
 
 
-Route::get('/event', function (){
-	return view('eventListener.eventListener');
-});
 
-Route::get('/fireEvent', function (){
-
-	event(new eventTrigger());
-
-});
-Route::post('/game', 'PartidaController@Crear');

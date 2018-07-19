@@ -15,12 +15,23 @@ class CreateGamesTable extends Migration
     {
         Schema::create('games', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('room');
+
+            //player1
             $table->integer('host_id');
-            $table->integer('opnente_id');
+            $table->integer('personaje_p1');
+            //player2
+            $table->integer('opnente_id')->nullable()->defualt(null);
+            $table->integer('personaje_p2')->nullable()->default(null);
+            
+            $table->text('url');
+            $table->boolean('Estado')->default(false);
             $table->timestamps();
         });
     }
+
+
+
+
 
     /**
      * Reverse the migrations.

@@ -6,11 +6,14 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+
 <script src="https://apis.google.com/js/platform.js" async defer></script>
+
 <link rel="stylesheet" type="text/css" href="{{ asset('css/index.css') }}">
 
-<meta name="csrf-token" content="{{ csrf_token() }}">
 
+ <meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<script src="https://apis.google.com/js/platform.js" async defer></script>
 		<script src={{asset("js/room/room.js")}} ></script>

@@ -19,21 +19,24 @@ $(document).ready(function() {
 
     	//$("#input-game").click(function(){
     		//$("#Form-CP").submit(function(event){
+    			/*
 			$( "#input-game" ).on('click',function() {
 
 			
     		console.log('click');
     		event.preventDefault();
 	        $.ajax({
+    			*/
 	            /* the route pointing to the post function */
-	            url: '/game/casa',
-	            type: 'POST',
+	            
+	            //url: '/game/casa',
+	            //type: 'POST',
 	            /* send the csrf-token and the input to the controller */
+	            /* 
 	            data: {
 	            	personaje: "agustin"
 	            },
 	            dataType: 'JSON',
-	            /* 
 	            headers: {
 	        		'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
 	    		},
@@ -42,8 +45,8 @@ $(document).ready(function() {
 	                alert(data);
 	                //$(".writeinfo").append(data.msg); 
 	            }
-	            */
 	        })
 	    });
+	            */
 			
 });
