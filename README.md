@@ -3,6 +3,7 @@ Requerimientos
 php 7 >=
 curl
 libpng-dev
+openssl
 
 
 
@@ -47,6 +48,10 @@ CONFIGURACION
 			PUSHER_APP_KEY=
 			PUSHER_APP_SECRET=
 			PUSHER_APP_CLUSTER=
+
+		Configurar Una clave personal para la creacion de una key de la api
+
+			PERSONAL_API_KEY="Aqui va cualquier texto" 
 
 Inicio
 =======
