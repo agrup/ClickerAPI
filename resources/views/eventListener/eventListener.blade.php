@@ -19,7 +19,7 @@
       @endforeach
     </select>
 
-    <button  value="CREAR" id="input-game" class="clase" @click.prevent="postComment">Crear</button>
+    <button  value="CREAR" id="input-game" class="clase" @click.prevent="postCreate">Crear</button>
   
     <div class="partidas-container"  >
 
@@ -67,7 +67,7 @@
                        }
                   );
               },
-              postComment() {
+              postCreate() {
                   axios.post('/game', {
                       //partida: this.user.id,
                       personaje:this.PersonajeSelect,
@@ -103,7 +103,7 @@
                     //h.appendChild(t);
                     //document.body.appendChild(a);
                     
-                    $('.ul-container').append('<li><a href="'+e.url+'" >HOST: '+e.personaje_p1+' Partida: '+e.id+'</a></li>');
+                    $('.ul-container').append('<li><a href=/game/unirme/'+e.id+' >HOST: '+e.personaje_p1+' Partida: '+e.id+'</a></li>');
                     /*
                     */
 

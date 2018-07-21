@@ -17,6 +17,7 @@ class ServiceObserverProvider extends ServiceProvider
     public function boot()
     {
         User::observe(ServiceObserver::class);
+        
     }
 
     /**

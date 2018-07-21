@@ -9,6 +9,6 @@ class ServiceObserver
     {
    		//$user->api_token = bin2hex(openssl_random_pseudo_bytes(30));
    		//$user->email = 'agustinrodriguez206@gmail.com';
-
+    	
 	}
 }

@@ -16,10 +16,17 @@ class Game extends Model
         protected $guarded = [];
     	
         public function Host()
+        {
+            // belongsTo(RelatedModel, foreignKey = host_id, keyOnRelatedModel = id)
+            return $this->belongsTo(Player::class ,'host_id');
+        }
+
+        public function getGameByUrl()
     	{
-    		// belongsTo(RelatedModel, foreignKey = host_id, keyOnRelatedModel = id)
-    		return $this->belongsTo(Player::class ,'host_id');
+            return self::where();
     	}
+
+
 
 
 

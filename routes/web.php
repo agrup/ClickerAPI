@@ -32,11 +32,11 @@ Route::get('/game', 'HomeController@index')->name('game');
 
 	//ruta para crear partidas online
 
-Route::post('/game', 'PartidaController@Crear');
+Route::post('/game', 'PartidaController@Crear')->middleware('auth');
 
 //Node Routes
 	//ruta para redireccionar al juego en node
-Route::get('/game/node', 'NodeController@show')->name('node');
+Route::get('/game/unirme/{id}', 'PartidaController@unirme')->name('unirme');
 
 
 Route::get('/game/Crear+Jugador', 'PlayerController@show');

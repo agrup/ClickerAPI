@@ -17,5 +17,9 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 Route::middleware('auth:api')->get('/game', function (Request $request) {
-    return Game::find($request->game);
+	//var_dump(Game::find($request->game));
+	//dd($request);
+	$game =Game::where('id',$request->game)->where('url',$request->signature)->first();
+    return $game;
+    //return Game::find($request->game);
 });
