@@ -27,4 +27,18 @@ class Player extends Model
         
     }
 
+
+        // hasMany(RelatedModel, foreignKeyOnRelatedModel = player_id, localKey = id)
+  /**
+         * Player belongs to .
+         *
+         * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+         */
+        public function PlayerPersonaje()
+        {
+            // belongsTo(RelatedModel, foreignKey = _id, keyOnRelatedModel = id)
+            return $this->belongsTo(Personaje::class, 'User');
+        }
+    
+
 }

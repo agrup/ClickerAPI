@@ -23,7 +23,8 @@ class CreateGamesTable extends Migration
             $table->integer('opnente_id')->nullable()->defualt(null);
             $table->integer('personaje_p2')->nullable()->default(null);
             
-            $table->text('url');
+            $table->text('url1')->nullable();
+            $table->text('url2')->nullable();
             $table->boolean('Estado')->default(false);
             $table->timestamps();
         });

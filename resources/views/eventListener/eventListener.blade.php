@@ -74,8 +74,6 @@
 
                   })
                   .then((response) => {
-                    console.log('this2',this.partidas);
-                    console.log('this3',response.data);
                       this.partidas.push(response.data);
                     console.log('this5',this.partidas);
 
@@ -88,25 +86,10 @@
               	listen() {
               	 Echo.channel('channelEvent')
   		    	       .listen('eventTrigger', (e) => {
-                    //console.log(e.id);
-                    //this.partidas.unshift('e');
-                    //var a = document.createElement("a");
-                    //a.attr('href',e.url);
-                    //a.attr('value','Partida'+e.id)
-                    //alert(e);
-                    console.log('this4',e);
                     console.log('Partidas: ',this.partidas)
                     console.log('Partidas2: ',this);
-                    //this.partidas.push(e);
-                    //var a = document.createTextNode('a');
-                    //a.attr('href',e.url);
-                    //h.appendChild(t);
-                    //document.body.appendChild(a);
-                    
+                  
                     $('.ul-container').append('<li><a href=/game/unirme/'+e.id+' >HOST: '+e.personaje_p1+' Partida: '+e.id+'</a></li>');
-                    /*
-                    */
-
 		    	         })
         		}
           }
