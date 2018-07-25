@@ -14,8 +14,10 @@
 
   	<div id="app">
     
+        @if(isset($personajeActual) )
+          <h4>{{$personajeActual->name}}</h4>
       @if(isset($personajes))
-      <h4>{{$personajeActual->name}}</h4>
+
 <!-- 
       <input type="text" name="Personaje" id="select-personaje" v-model="PersonajeSelect" value={{$personajes[0]->id}}>
       
@@ -38,6 +40,9 @@
 
 
 
+        @else
+          <h4>Sin Personaje</h4>
+        @endif
      @endif
   		
   	</div>
