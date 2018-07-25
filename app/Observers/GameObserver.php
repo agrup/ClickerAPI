@@ -5,5 +5,5 @@ use App\Game;
 
 class ServiceObserver
 {
-   
+
 }
