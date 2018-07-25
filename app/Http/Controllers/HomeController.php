@@ -4,7 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 Use App\Player;
-Use App\Personajes;
+Use App\Game;
+Use App\Personaje;
 
 class HomeController extends Controller
 {
@@ -27,11 +28,28 @@ class HomeController extends Controller
     {
         //$playersOnline =Player::getPlayers()->tojson();
         //$personajes = Personajes::all()->tojson();
+        $personajes = Personaje::where('User',\Auth::user()->id)->get();
+            
+        $partidas= Game::where('Estado',false)->orderBy('id','desc')->take(20)->get();
+        $partidaResult=[];
+        foreach($partidas as $partida){
 
-        return view('principal.index')
-                                    //->with(compact('playersOnline'))
-                                    //->with(compact('personajes'))
-            ;
+           array_push($partidaResult,['id'=>$partida->id,
+                            'Personaje'=>$partida->Personaje->name,
+                            'User'=>$partida->Personaje()->first()->User()->first()->name
+            ]);
+        };
+
+      $partidas =  $partidaResult;
+      $personajeActual=$personajes->first();
+//      var_dump($partidas);
+//dd($partidas);
+        return view('principal.index')->with(compact('personajes'))
+                                        ->with(compact('partidas'))
+                                        ->with(compact('personajeActual'))
+
+                                        ;
+
     }
 }
 

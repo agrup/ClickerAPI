@@ -8,7 +8,9 @@ use Socialite;
 Use Auth;
 Use App\User;
 Use App\Player;
-Use App\Personajes;
+Use App\Personaje;
+Use App\Game;
+
 
 
 class LoginController extends Controller
@@ -65,7 +67,7 @@ class LoginController extends Controller
             $user = User::create([
                 'name'=>$providerUser->getName(),
                 'email'=>$providerUser->getEmail(),
-                'password'=>bcrypt('acavaunpasswordparaharcodearelgooglelogin'),
+                'password'=>bcrypt('acavaunpasswordparaharcodearelapilogin'),
                 //'provider'=>strtoupper($provider),
                 'provider_id'=>$providerUser->id,
              ]);
@@ -81,11 +83,33 @@ class LoginController extends Controller
          */
         //$playersOnline =Player::getPlayers()->tojson();
         //$personajes = Personajes::all()->tojson();
+        $personajes = Personaje::where('User',\Auth::user()->id)->get();
+        //$partidas= Game::where('Estado',false);
+            
+        $partidas= Game::where('Estado',false)->orderBy('id','desc')->take(20)->get();
+        $partidaResult=[];
+        foreach($partidas as $partida){
 
-        return view('principal.index')
+           array_push($partidaResult,['id'=>$partida->id,
+                            'Personaje'=>$partida->Personaje->name,
+                            'User'=>$partida->Personaje()->first()->User()->first()->name
+            ]);
+        };
+
+      $partidas =  $partidaResult;
+      $personajeActual=$personajes->first();
+//      var_dump($partidas);
+//dd($partidas);
+        return view('principal.index')->with(compact('personajes'))
+                                        ->with(compact('partidas'))
+                                        ->with(compact('personajeActual'))
+
+                                        ;
+
+       //return view('principal.index')
                                     //->with(compact('playersOnline'))
-                                    //->with(compact('personajes'))
-            ;
+                                    //->with(compact('personajes'));
+            
 
         //return redirect()->to('/game');
         //return $user->token;

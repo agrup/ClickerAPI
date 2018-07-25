@@ -15,8 +15,23 @@ window.Vue = require('vue');
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
+/*
 Vue.component('example-component', require('./components/ExampleComponent.vue'));
-
 const app = new Vue({
-    el: '#app'
+    el: '#app',
+    created(){
+
+	    Echo.channel('channelEvent')
+		    .listen('eventTrigger', (e) => {
+				//alert('Evento');
+				var h = document.createElement("H1");
+			    var t = document.createTextNode("Hello World");
+			    h.appendChild(t);
+				alert('hola');
+			    document.body.appendChild(h);
+				$('p-partida').append('Evento');
+
+		    });
+    }
 });
+*/

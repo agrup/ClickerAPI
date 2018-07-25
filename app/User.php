@@ -26,4 +26,24 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+            // hasMany(RelatedModel, foreignKeyOnRelatedModel = player_id, localKey = id)
+  /**
+         * Player belongs to .
+         *
+         * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+         */
+        public function userPersonaje()
+        {
+            // belongsTo(RelatedModel, foreignKey = _id, keyOnRelatedModel = id)
+            return $this->hasMany(Personaje::class, 'User');
+        }
+/*
+        public function usershow()
+        {
+
+        }
+*/
+
+
 }

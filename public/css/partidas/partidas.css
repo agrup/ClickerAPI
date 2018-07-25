@@ -1,0 +1,97 @@
+/* Style the tab */
+a
+{
+    text-decoration: none
+}
+.tab {
+    float: left;
+    border: 2px solid black;
+    background-color: #f1f1f1;
+    width: 50%;
+    height:215px;
+    padding: 1%;
+    flex-basis: 100%;
+    padding: 0 1%;
+
+}
+.lista{
+overflow: scroll;
+    max-height: 180px;
+}
+
+/* Style the buttons that are used to open the tab content */
+.tab button {
+    border:black 1px solid;
+    display: block;
+    background-color: inherit;
+    color: black;
+    /*padding: 22px 16px;*/
+    width: 99%;
+   margin: 1px;
+    outline: none;
+    text-align: left;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+/* Change background color of buttons on hover */
+.tab button:hover {
+    background-color: #ddd;
+}
+
+/* Create an active/current "tab button" class */
+.tab button.active {
+    background-color: #ccc;
+}
+
+/* Style the tab content */
+.tabcontent {
+    float: left;
+
+}
+.games-container
+{
+    display:flex;
+}
+.tab    
+{
+position: relative;
+}
+.tab > h2
+{
+    text-align: center;
+    padding:0%;
+    margin-top: 0;
+    margin-bottom: 0;
+    font-size: 20px;
+}
+#app
+{
+    background-color: #f1f1f1;
+    border: 4px solid red;
+    width: 28%;
+    max-height: 200px;
+}
+.clase
+{
+    width: 19%;
+    margin: 0 3% 0 1%;
+    position: absolute;
+    bottom: 4px;
+    left: 0;
+}
+img{
+    width: 93%;
+    height: 93%;
+}
+h4
+{
+        margin: 1% 1% 1% 25%;
+}
+.tablinks
+{
+    text-align: center;
+}
+html,body { 
+  overflow:hidden; 
+}
