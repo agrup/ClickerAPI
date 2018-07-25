@@ -5,42 +5,68 @@
 <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
 		
     <script src={{asset("js/app.js")}} charset="utf-8"></script>
+    <script src={{asset("js/partidas/partidas.js")}} charset="utf-8"></script>
+<link rel="stylesheet" type="text/css" href="{{ asset('css/partidas/partidas.css') }}">
+ <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 
+  <div class="games-container">
+    
 
-	<body>
-
-  
-	<div id="app">
-  
-    @if(isset($personajes))
-    <select name="Personaje" id="select-personaje" v-model="PersonajeSelect">
-      @foreach($personajes as $personaje)
-        <option value="{{$personaje->id}}">{{$personaje->name}}</option>
-      @endforeach
-    </select>
-
-    <button  value="CREAR" id="input-game" class="clase" @click.prevent="postCreate">Crear</button>
-  
-    <div class="partidas-container"  >
-
-      <div class="c">
-        <h4 class="media-heading"></h4>
-        <ul class="ul-container">
-         
-        </ul>
+  	<div id="app">
+    
+      @if(isset($personajes))
+      <h4>{{$personajeActual->name}}</h4>
+<!-- 
+      <input type="text" name="Personaje" id="select-personaje" v-model="PersonajeSelect" value={{$personajes[0]->id}}>
+      
+    
+      <select name="Personaje" id="select-personaje" v-model="PersonajeSelect">
         
+
+        @foreach($personajes as $personaje)
+          <option value="{{$personaje->id}}">{{$personaje->name}}</option>
+        @endforeach
+          <option value="{{$personaje->id}}" selected>{{$personaje->name}} </option>
+      </select>
+-->
+        <img src={{asset("img/")}}{{$personaje->img}}.png alt="imagen">
+
+      <button  value="CREAR" id="input-game" class="clase" @click.prevent="postCreate">Crear Nueva Partida</button>
+    
+
+
+
+
+
+     @endif
+  		
+  	</div>
+      <div class="tab">
+      <h2>Lobby</h2>
+      <div class="lista" id="lista">
+        
+      @foreach($partidas as $game)
+        <a href="/game/unirme/{{$game['id']}}">
+          
+          <button class="tablinks" @click="openGame('{{$game['id']}}')">Partida:{{$game['id']}} {{$game['Personaje']}}->->{{$game['User']}}</button>
+        </a>
+
+        
+      @endforeach
+
       </div>
-    </div>
-
-
-
-
-   @endif
-		
-	</div>
-
-
+      </div>
+  </div>
+<!-- -->
   <script>
+
+  var obj = document.createElement("audio");
+  obj.src = "https://bigsoundbank.com/UPLOAD/ogg/0364.ogg";
+  obj.volume = 0.1;
+  obj.autoPlay = false;
+  obj.preLoad = true;
+  obj.controls = true;
+
       const app = new Vue({
           el: '#app',
           data: {
@@ -70,7 +96,7 @@
               postCreate() {
                   axios.post('/game', {
                       //partida: this.user.id,
-                      personaje:this.PersonajeSelect,
+                      //personaje:this.PersonajeSelect,
 
                   })
                   .then((response) => {
@@ -86,12 +112,46 @@
               	listen() {
               	 Echo.channel('channelEvent')
   		    	       .listen('eventTrigger', (e) => {
+
+
+
+                     obj.play();
+                    
+                    $('#lista').prepend("<a href=/game/unirme/"+e.id+" >  <button class='tablinks' id="+e.id+" )'>Partida:"+e.id+" "+e.personaje+"->->"+e.user+"</button> </a>");
+ 
+
+                    $('#'+e.id).animate({
+                        backgroundColor: "yellow",
+                        color: 'red',
+                    },5000 , function(){
+
+                    $('#'+e.id).animate({
+                        backgroundColor: '#f1f1f1',
+                        color: 'black',
+                    },20);
+                  });
+
+
+                    /*
                     console.log('Partidas: ',this.partidas)
                     console.log('Partidas2: ',this);
                   
                     $('.ul-container').append('<li><a href=/game/unirme/'+e.id+' >HOST: '+e.personaje_p1+' Partida: '+e.id+'</a></li>');
+                    */
 		    	         })
-        		}
+        		},
+              openGame(id){
+                  axios.get('/game/unirme/'+id)
+                       .then((response) => {
+                        //console.log('this',response.data);
+                           //this.partidas = response.data
+                           //this.partidas = this.PersonajeSelect
+                       })
+                       .catch(function (error) {
+                           console.log(error);
+                       }
+                  );
+              }
           }
       })
 

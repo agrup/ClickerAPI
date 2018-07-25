@@ -12,4 +12,10 @@ class Personaje extends Model
      * @var array
      */
     protected $guarded = [];
+    
+            public function User()
+        {
+            // belongsTo(RelatedModel, foreignKey = host_id, keyOnRelatedModel = id)
+            return $this->belongsTo(User::class ,'User');
+        }
 }

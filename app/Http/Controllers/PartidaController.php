@@ -29,8 +29,9 @@ class PartidaController extends Controller
     $game= Game::create([
         'host_id'=>$userId,
         //'host_id'=>1023,
-        'personaje_p1'=>$request->personaje,
-   
+        //'personaje_p1'=>$request->personaje,
+        'personaje_p1'=>\Auth::user()->userPersonaje->first()->id,
+    
             //creao el hash de la partida
         //'url'=>URL::temporarySignedRoute('unirme',now()->addMinutes(30))
         'url1'=>bin2hex(openssl_random_pseudo_bytes(30)),

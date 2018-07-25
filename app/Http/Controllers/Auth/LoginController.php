@@ -9,6 +9,8 @@ Use Auth;
 Use App\User;
 Use App\Player;
 Use App\Personaje;
+Use App\Game;
+
 
 
 class LoginController extends Controller
@@ -82,8 +84,28 @@ class LoginController extends Controller
         //$playersOnline =Player::getPlayers()->tojson();
         //$personajes = Personajes::all()->tojson();
         $personajes = Personaje::where('User',\Auth::user()->id)->get();
+        //$partidas= Game::where('Estado',false);
+            
+        $partidas= Game::where('Estado',false)->orderBy('id','desc')->take(20)->get();
+        $partidaResult=[];
+        foreach($partidas as $partida){
 
-        return view('principal.index')->with(compact('personajes'));
+           array_push($partidaResult,['id'=>$partida->id,
+                            'Personaje'=>$partida->Personaje->name,
+                            'User'=>$partida->Personaje()->first()->User()->first()->name
+            ]);
+        };
+
+      $partidas =  $partidaResult;
+      $personajeActual=$personajes->first();
+//      var_dump($partidas);
+//dd($partidas);
+        return view('principal.index')->with(compact('personajes'))
+                                        ->with(compact('partidas'))
+                                        ->with(compact('personajeActual'))
+
+                                        ;
+
        //return view('principal.index')
                                     //->with(compact('playersOnline'))
                                     //->with(compact('personajes'));

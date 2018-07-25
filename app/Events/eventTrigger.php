@@ -10,6 +10,8 @@ use Illuminate\Foundation\Events\Dispatchable;
 use Illuminate\Broadcasting\InteractsWithSockets;
 use Illuminate\Contracts\Broadcasting\ShouldBroadcast;
 use App\Game;
+use App\Personaje;
+use App\Auth;
 
 class eventTrigger implements ShouldBroadcast
 {
@@ -42,12 +44,15 @@ class eventTrigger implements ShouldBroadcast
     {
 
 
+
       return [
 
         'url'=> $this->game->url,
         'personaje_p1'=>$this->game->personaje_p1,
-        'id'=>$this->game->id
+        'id'=>$this->game->id,
         //'id' => $this->id
+        'personaje'=> Personaje::find($this->game->personaje_p1)->first()->name,
+        'user'=>\Auth::User()->name
         ]
       ;
         
