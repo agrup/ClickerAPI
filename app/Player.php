@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Player extends Model
 {
+    protected $guarded = [];
     /**
      * Player has many HostGame.
      *

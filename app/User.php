@@ -38,12 +38,11 @@ class User extends Authenticatable
             // belongsTo(RelatedModel, foreignKey = _id, keyOnRelatedModel = id)
             return $this->hasMany(Personaje::class, 'User');
         }
-/*
-        public function usershow()
+        public function userPlayer()
         {
-
+            return $this->belongsTo(Player::class,'id');
         }
-*/
+
 
 
 }

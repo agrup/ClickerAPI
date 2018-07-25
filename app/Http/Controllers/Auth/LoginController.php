@@ -71,6 +71,14 @@ class LoginController extends Controller
                 //'provider'=>strtoupper($provider),
                 'provider_id'=>$providerUser->id,
              ]);
+            //Creo el player
+            $player=Player::create([
+                'NickName'=>$providerUser->getName(),
+                'especialidad'=>"",
+                'Puntos'=>0,
+                'millas'=>1000,
+            ]);
+
 
          }
          Auth::login($user);
