@@ -53,8 +53,7 @@
 
 		</section>
 				
-				<label for="name">Nombre</label>
-				<input name="name" id="name" type="text">
+
 				<input name="Especie" type="text" id="Especie">	
 				<input type="submit" value="Guardar">
 			</form>
