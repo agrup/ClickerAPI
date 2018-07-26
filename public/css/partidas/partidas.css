@@ -5,11 +5,11 @@ a
 }
 .tab {
     float: left;
-    border: 2px solid black;
+    border: 9px gray inset;
     background-color: #f1f1f1;
     width: 50%;
-    height:215px;
-    padding: 1%;
+    height: 215px;
+
     flex-basis: 100%;
     padding: 0 1%;
 
@@ -86,7 +86,7 @@ img{
 }
 h4
 {
-        margin: 1% 1% 1% 25%;
+    margin: 1% 1% 1% 25%;
 }
 .tablinks
 {

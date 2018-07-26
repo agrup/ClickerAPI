@@ -94,7 +94,7 @@ class PartidaController extends Controller
       $personaje1->user= [
                   'name'=>User::find($game->host_id)->name, 
                   //Player en realidad es Personaje Tengo que refactorizarlo
-                  'Player'=>Personaje::find( $personaje1->Especie)->name,
+                  'Player'=>Personaje::find( $personaje1->id)->name,
                   'img'=>$personaje1->img
       ];
       /*
@@ -108,7 +108,7 @@ class PartidaController extends Controller
         $personaje2->user= [
                     'name'=>User::find($game->opnente_id)->name, 
                     //Player en realidad es Personaje Tengo que refactorizarlo
-                    'Player'=>Personaje::find( $personaje2->Especie)->name,
+                    'Player'=>Personaje::find( $personaje2->id)->name,
                     'img'=>$personaje2->img
         ];
       }else{

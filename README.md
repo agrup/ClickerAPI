@@ -53,6 +53,9 @@ CONFIGURACION
 
 			PERSONAL_API_KEY="Aqui va cualquier texto" 
 
+			GAME_URL="URL a donde se va a redireccionar el jugador con el puerto "
+			 #GAME_URL=http://localhost:5000/game/
+
 Inicio
 =======
 
@@ -62,4 +65,7 @@ Inicio
 	npm run watch
 
 
+POST INSTALACION
+=================
 
+	Se creara un user admin que cuenta con un toquen para que las aplicaciones que la consuman puenda usar el auth
