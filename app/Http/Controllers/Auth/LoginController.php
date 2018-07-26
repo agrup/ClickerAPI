@@ -73,24 +73,19 @@ class LoginController extends Controller
              ]);
             //Creo el player
             $player=Player::create([
-                'NickName'=>$providerUser->getName(),
+                'nickname'=>$providerUser->getName(),
                 'especialidad'=>"",
-                'Puntos'=>0,
+                'experiencia'=>0,
                 'millas'=>1000,
             ]);
 
 
          }
          Auth::login($user);
-         /*
-         PlayerOnline::create([
-            'name'=>Auth::user()->name,
-            'connect'=>1,
-            ]);
+        //Paso la informacion del Player asociado al usuario auth
+        $player = Player::find(Auth::user()->id);   
 
-         */
-        //$playersOnline =Player::getPlayers()->tojson();
-        //$personajes = Personajes::all()->tojson();
+
         $personajes = Personaje::where('User',\Auth::user()->id)->get();
         //$partidas= Game::where('Estado',false);
             
@@ -111,7 +106,7 @@ class LoginController extends Controller
         return view('principal.index')->with(compact('personajes'))
                                         ->with(compact('partidas'))
                                         ->with(compact('personajeActual'))
-
+                                        ->with(compact('player'))
                                         ;
 
        //return view('principal.index')

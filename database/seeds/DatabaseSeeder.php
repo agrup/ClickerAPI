@@ -24,6 +24,12 @@ class DatabaseSeeder extends Seeder
                 'password' => bcrypt('password'),
                 'api_token' => bin2hex(openssl_random_pseudo_bytes(30))
             ]);
+         \App\Player::create([
+            'nickname'=>" ",
+            'especialidad'=>" ",
+            'experiencia'=>0,
+            'millas'=>0,
+         ]);
 
     }
 }

@@ -26,6 +26,9 @@ class HomeController extends Controller
      */
     public function index()
     {
+        //Paso la informacion del Player asociado al usuario auth
+        $player = Player::find(\Auth::user()->id);   
+
         //$playersOnline =Player::getPlayers()->tojson();
         //$personajes = Personajes::all()->tojson();
         $personajes = Personaje::where('User',\Auth::user()->id)->get();
@@ -47,7 +50,7 @@ class HomeController extends Controller
         return view('principal.index')->with(compact('personajes'))
                                         ->with(compact('partidas'))
                                         ->with(compact('personajeActual'))
-
+                                        ->with(compact('player'))
                                         ;
 
     }
