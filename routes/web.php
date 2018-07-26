@@ -25,6 +25,7 @@ Route::get('auth/{provider}', 'Auth\LoginController@redirectToProvider');
 Route::get('auth/{provider}/callback', 'Auth\LoginController@handleProviderCallback');
 
 
+Route::get('/', 'HomeController@index')->name('game');
 
 // Ruta Principal
 
@@ -34,7 +35,7 @@ Route::get('/game', 'HomeController@index')->name('game');
 
 Route::post('/game', 'PartidaController@Crear')->middleware('auth');
 
-//Node Routes
+//Node Routes 
 	//ruta para redireccionar al juego en node
 Route::get('/game/unirme/{id}', 'PartidaController@unirme')->name('unirme');
 

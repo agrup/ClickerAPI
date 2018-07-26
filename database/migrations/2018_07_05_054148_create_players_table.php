@@ -18,6 +18,7 @@ class CreatePlayersTable extends Migration
             $table->text('nickname');
             $table->text('especialidad');
             $table->integer('experiencia')->default(0);
+            $table->integer('nivel')->default(1);
             $table->integer('oro')->default(0);
             $table->integer('millas')->default(1000);
             $table->timestamps();
