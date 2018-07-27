@@ -28,9 +28,29 @@
 ul.ul-menu{
     display: flex;
     flex-direction: column;
+
 }
 
 @media screen and (max-height: 450px) {
     .sidenav {padding-top: 15px;}
     .sidenav a {font-size: 18px;}
+}
+@media only screen and (max-width: 1173px){
+    .sidenav
+    {
+        width:100%;
+        padding-top: 0%;
+    }
+    h1{
+        display:none;
+    }
+    ul.ul-menu{
+
+    flex-direction: row;
+}
+.bar-vertical {
+    flex-basis: 80%;
+    height: 21em;
+}
+
 }
