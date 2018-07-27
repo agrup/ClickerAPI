@@ -11,7 +11,16 @@
 <h1>Menu</h1>
 	<ul class="ul-menu">
 		<li>
-			<a href="/game/Crear+Personaje">Crear Nuevo Personaje</a>
+
+			<a href="/game/Crear+Personaje">Personaje</a>
+			
+		</li>
+				<li>
+			<a href="/game/Crear+Personaje">Perfil</a>
+			
+		</li>
+				<li>
+			<a href="/game/Crear+Personaje">Tienda</a>
 			
 		</li>
 		<li>

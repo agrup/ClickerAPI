@@ -13,7 +13,8 @@
     
 
   	<div id="app">
-    
+      <div calss="incon-container">
+        
         @if(isset($personajeActual) )
           <h4>{{$personajeActual->name}}</h4>
       @if(isset($personajes))
@@ -31,7 +32,7 @@
           <option value="{{$personaje->id}}" selected>{{$personaje->name}} </option>
       </select>
 -->
-        <img src={{asset("img/")}}{{$personaje->img}}.png alt="imagen">
+        <img src={{asset("img/")}}{{$personaje->img}}-2.png alt="imagen" id="img-1">
 
       <button  value="CREAR" id="input-game" class="clase" @click.prevent="postCreate">Crear Nueva Partida</button>
     
@@ -40,11 +41,12 @@
 
 
 
+      </div>
         @else
           <h4>Sin Personaje</h4>
         @endif
      @endif
-  		
+      
   	</div>
       <div class="tab">
       <h2>Lobby</h2>

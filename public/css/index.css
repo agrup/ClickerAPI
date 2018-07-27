@@ -16,20 +16,21 @@ body
 	height: 100%;
 	font-family: 'Baloo+Chettan';font-size: 20px;
 }
+
 .left {
 	flex-basis: auto;
-	    height: 21em;
+	 height: 22em;
 }
 
 .right {
 	flex-basis: 15%;
-	    height: 21em;
+	    height: 22em;
 }
 .principal
 {
-	    height: 21em;
 
 	flex-basis: 80%;
+	height: 22em;
 
 
 }
@@ -47,7 +48,7 @@ body
 .bar-vertical
 {
 	flex-basis: 80%;
-	    height: 24em;
+	height: 22em;
 	
 
 }
@@ -55,5 +56,28 @@ body
 {
 	 
 	flex-basis: 20%;
+}
+
+@media only screen and (max-width: 1173px){
+
+.bar-containers
+{
+	flex-direction: column;
+	    margin-top: 47px;
+}
+.left {
+	flex-basis: auto;
+	    height: 15%;
+	    width: 100%
+}
+.left .right
+{
+	height: 22em;
+}
+.right
+{
+	display:none;
+}
+
 }
 

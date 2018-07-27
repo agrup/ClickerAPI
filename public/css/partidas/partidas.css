@@ -52,6 +52,7 @@ overflow: scroll;
 .games-container
 {
     display:flex;
+    z-index: 1;
 }
 .tab    
 {
@@ -70,7 +71,7 @@ position: relative;
     background-color: #f1f1f1;
     border: 4px solid red;
     width: 28%;
-    max-height: 200px;
+
 }
 .clase
 {
@@ -79,11 +80,17 @@ position: relative;
     position: absolute;
     bottom: 4px;
     left: 0;
+    color: #3c1a05;
+    background-color: #fe6505;
+    border-color: #833400;
 }
-img{
-    width: 93%;
-    height: 93%;
+#img-1{
+
+    padding-left:10%;
+    max-width: 200px;
+    max-height: 200px;
 }
+
 h4
 {
     margin: 1% 1% 1% 25%;
@@ -94,4 +101,31 @@ h4
 }
 html,body { 
   overflow:hidden; 
+}
+@media only screen and (max-width: 1173px){
+    #app{
+        flex-basis: 80%;
+    }
+    .clase{
+        width: 41%;
+    }
+    #img-1 {
+
+
+    width: 100%;
+
+}@media only screen and (max-width: 600px){
+
+
+    #img-1 {
+
+        padding-left: 0%;
+
+
+    }
+.clase {
+    width: 98%;
+        height: 48px;
+    position: relative; 
+}
 }
