@@ -54,6 +54,10 @@ class HomeController extends Controller
                                         ;
 
     }
+
+  public function cambiarAvatar(Request $request){
+
+  }  
 }
 
 

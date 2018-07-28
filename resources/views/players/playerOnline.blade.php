@@ -4,8 +4,11 @@
 @auth
 	<!--<h2 class="titulo">  {{ Auth::user()->name }}</h2>--> 
 	<h2 class="titulo">{{$player->nickname}}</h2>
-	<form>
-		
+	
+	<form enctype="multipart/form-data" action="/game">
+		@csrf
+		<input type="file" name="avatar">
+		<input type="submit" name="Editar">
 	</form>
 	<h3 class="titulo">Nivel: {{$player->nivel}}</h3>
 	<h3 class="titulo">Experiencia: {{$player->experiencia}}</h3>

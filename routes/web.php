@@ -35,6 +35,9 @@ Route::get('/game', 'HomeController@index')->name('game');
 
 Route::post('/game', 'PartidaController@Crear')->middleware('auth');
 
+//
+Route::post('/game','HomeController@cambiarAvatar');
+//
 //Node Routes 
 	//ruta para redireccionar al juego en node
 Route::get('/game/unirme/{id}', 'PartidaController@unirme')->name('unirme');
