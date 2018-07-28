@@ -29,3 +29,5 @@ Route::middleware('auth:api')->get('/game', function (Request $request) {
 */
 
 Route::middleware('auth:api')->get('/game', 'PartidaController@Game');
+
+Route::middleware('auth:api')->get('/game/terminar', 'PartidaController@Terminar');

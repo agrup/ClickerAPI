@@ -12,21 +12,18 @@
 	<ul class="ul-menu">
 		<li>
 
-			<a href="/game/Crear+Personaje">Personaje</a>
+			<a href="/game/Crear+Personaje" clase="link-menu">Personaje</a>
 			
 		</li>
 				<li>
-			<a href="/game/Crear+Personaje">Perfil</a>
+			<a href="/game/Perfil" clase="link-menu">Perfil</a>
 			
 		</li>
 				<li>
-			<a href="/game/Crear+Personaje">Tienda</a>
+			<a href="/game/Tienda" clase="link-menu">Tienda</a>
 			
 		</li>
-		<li>
-			
-			
-		</li>
+
 	</ul>
 
 	
