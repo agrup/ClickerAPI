@@ -13,10 +13,11 @@ class UserAvatarController extends Controller
      * @param  Request  $request
      * @return Response
      */
-    public function update(Request $request)
+    public function editarPlayer(Request $request)
     {
         $path = $request->file('avatar')->store('avatars');
 
         return $path;
     }
+
 }

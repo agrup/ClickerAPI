@@ -36,7 +36,8 @@ Route::get('/game', 'HomeController@index')->name('game');
 Route::post('/game', 'PartidaController@Crear')->middleware('auth');
 
 //
-Route::post('/game','HomeController@cambiarAvatar');
+Route::get('/editar','HomeController@editarPlayer')->name('editar');
+Route::post('editar','PlayerController@editarPlayer')->name('editar');
 //
 //Node Routes 
 	//ruta para redireccionar al juego en node

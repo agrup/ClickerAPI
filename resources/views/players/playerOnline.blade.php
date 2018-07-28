@@ -3,20 +3,22 @@
 
 @auth
 	<!--<h2 class="titulo">  {{ Auth::user()->name }}</h2>--> 
-	<h2 class="titulo">{{$player->nickname}}</h2>
+	<h4 class="titulo">{{$player->nickname}}</h2>
+	@if($player->avatar=="default.jgp")
+		<img class="fotoPerfil" src="{{asset('/storage/default.jpg')}}" > 
+	@endif	
+		<img class="fotoPerfil" src="{{asset('/storage/'.$player->avatar)}}" > 
 	
-	<form enctype="multipart/form-data" action="/game">
-		@csrf
-		<input type="file" name="avatar">
-		<input type="submit" name="Editar">
+	<form action="/editar" method="get">
+		<input type="submit" name="" value="Editar" class="botonEditar">
 	</form>
-	<h3 class="titulo">Nivel: {{$player->nivel}}</h3>
-	<h3 class="titulo">Experiencia: {{$player->experiencia}}</h3>
-	<h3 class="titulo">Oro: {{$player->oro}}</h3>
-	<h3 class="titulo">Millas: {{$player->millas}}</h3>
+	<h5 class="datosPlayer">Nivel: {{$player->nivel}}</h3>
+	<h5 class="datosPlayer">Experiencia: {{$player->experiencia}}</h3>
+	<h5 class="datosPlayer">Oro: {{$player->oro}}</h3>
+	<h5 class="datosPlayer">Millas: {{$player->millas}}</h3>
 
 	
-	<img src="">
+	
 @endguest
 </div>
 	

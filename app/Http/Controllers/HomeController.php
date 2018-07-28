@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 Use App\Player;
 Use App\Game;
 Use App\Personaje;
+use Image;
 
 class HomeController extends Controller
 {
@@ -56,8 +57,21 @@ class HomeController extends Controller
     }
 
   public function cambiarAvatar(Request $request){
-
+        if($request->hasFile('avatar')){
+            $avatar=$request->file('avatar');
+            $filename = time().'.'.$avatar->getClientOriginalExtension();
+            Image::make($avatar)->resize(300,300)->save(public_path('/img/'.$filename));
+            $user=Auth::user();
+            $user->$avatar=$filename;
+            $user->save();
+        }
+        return view('principal.index',array(user=>Auth::user()));
   }  
+  public function editarPlayer(){
+    $player = Player::find(\Auth::user()->id);   
+        return view('players.modifPlayer') ->with(compact('player'))
+                                        ;
+  }
 }
 
 
