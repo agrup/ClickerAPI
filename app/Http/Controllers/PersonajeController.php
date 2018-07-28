@@ -24,7 +24,7 @@ class PersonajeController extends Controller
         //dd($request);
         $personaje->create([
 
-            'name'=>\Auth::user()->name,
+            'name'=>$PersonajeBase->name,
             'Especie'=>$request->Especie,
             'User'=> \Auth::user()->id,
             'img'=>$PersonajeBase->img,
