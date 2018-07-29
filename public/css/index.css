@@ -12,7 +12,8 @@
 
 
 body
-{
+{	
+	background-color: #444
 	height: 100%;
 	font-family: 'Baloo+Chettan';font-size: 20px;
 }
@@ -57,6 +58,12 @@ body
 	 
 	flex-basis: 20%;
 }
+
+img
+{
+	width: 100%;
+}
+
 
 @media only screen and (max-width: 1173px){
 

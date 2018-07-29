@@ -75,6 +75,7 @@ Inicio
 
 	npm run watch
 
+	Url de ingreso 127.0.0.1:8000/game
 
 POST INSTALACION
 =================

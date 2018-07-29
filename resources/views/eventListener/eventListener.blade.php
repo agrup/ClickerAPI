@@ -44,6 +44,7 @@
       </div>
         @else
           <h4>Sin Personaje</h4>
+             <img src={{asset("img/sinPersonaje.png")}} alt="imagen" id="img-1">
         @endif
      @endif
       
