@@ -23,6 +23,7 @@ class CreateMarkersTable extends Migration
             $table->integer('experiencia')->nullable()->defualt(null);
             $table->double('ataque')->nullable()->defualt(null);
             $table->double('vida')->nullable()->defualt(null);
+            $table->string('completa')->default('incompleta');
             $table->timestamps();
         });
     }

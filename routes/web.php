@@ -53,5 +53,6 @@ Route::get('/game/Crear+Personaje', 'PersonajeController@show')->middleware('aut
 //Route::post('/game/Crear+Personaje', 'PersonajesController@store');
 Route::post('/game/GuardarPersonaje', 'PersonajeController@store')->middleware('auth');
 
-
+//viajar
+Route::post('/viajar','HomeController@viajar')->name('viajar');
 

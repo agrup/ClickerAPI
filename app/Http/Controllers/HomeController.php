@@ -8,6 +8,7 @@ Use App\Game;
 Use App\Personaje;
 Use App\marker;
 use Image;
+use DB;
 
 class HomeController extends Controller
 {
@@ -73,6 +74,43 @@ class HomeController extends Controller
     $player = Player::find(\Auth::user()->id);   
         return view('players.modifPlayer') ->with(compact('player'))
                                         ;
+  }
+
+  public function viajar(){
+
+        //Paso la informacion del Player asociado al usuario auth
+        $player = Player::find(\Auth::user()->id);   
+
+        //$playersOnline =Player::getPlayers()->tojson();
+        //$personajes = Personajes::all()->tojson();
+        $personajes = Personaje::where('User',\Auth::user()->id)->get();
+            
+        $partidas= Game::where('Estado',false)->orderBy('id','desc')->take(20)->get();
+        $partidaResult=[];
+        foreach($partidas as $partida){
+           array_push($partidaResult,['id'=>$partida->id,
+                            'Personaje'=>$partida->Personaje->name,
+                            'User'=>$partida->Personaje()->first()->User()->first()->name
+            ]);
+        };
+      //marcas
+      $markers=marker::all();  
+      $partidas =  $partidaResult;
+      $personajeActual=$personajes->first();
+      //hago update en las marcas
+      $player = Player::find(\Auth::user()->id);   
+         DB::table('markers')
+            ->where('id', $player->id)
+            ->update(['completo' => 'completo']);
+
+
+        return view('principal.index')->with(compact('personajes'))
+                                        ->with(compact('partidas'))
+                                        ->with(compact('personajeActual'))
+                                        ->with(compact('player'))
+                                        ->with(compact('markers'))
+                                        ;
+
   }
 }
 

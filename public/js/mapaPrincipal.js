@@ -142,7 +142,7 @@
          
 
         var infowindow = new google.maps.InfoWindow({
-          content: contentString
+          content: document.getElementById("infobox"),
         });
 
        
