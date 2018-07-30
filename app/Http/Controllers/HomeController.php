@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 Use App\Player;
 Use App\Game;
 Use App\Personaje;
+Use App\marker;
 use Image;
 
 class HomeController extends Controller
@@ -37,24 +38,25 @@ class HomeController extends Controller
         $partidas= Game::where('Estado',false)->orderBy('id','desc')->take(20)->get();
         $partidaResult=[];
         foreach($partidas as $partida){
-
            array_push($partidaResult,['id'=>$partida->id,
                             'Personaje'=>$partida->Personaje->name,
                             'User'=>$partida->Personaje()->first()->User()->first()->name
             ]);
         };
-
+      //marcas
+      $markers=marker::all();  
       $partidas =  $partidaResult;
       $personajeActual=$personajes->first();
-//      var_dump($partidas);
-//dd($partidas);
+
         return view('principal.index')->with(compact('personajes'))
                                         ->with(compact('partidas'))
                                         ->with(compact('personajeActual'))
                                         ->with(compact('player'))
+                                        ->with(compact('markers'))
                                         ;
 
     }
+
 
   public function cambiarAvatar(Request $request){
         if($request->hasFile('avatar')){

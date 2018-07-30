@@ -10,8 +10,7 @@ Use App\User;
 Use App\Player;
 Use App\Personaje;
 Use App\Game;
-
-
+Use App\marker;
 
 class LoginController extends Controller
 {
@@ -99,15 +98,19 @@ class LoginController extends Controller
             ]);
         };
 
+      $markers=marker::all();  
       $partidas =  $partidaResult;
       $personajeActual=$personajes->first();
-//      var_dump($partidas);
-//dd($partidas);
+
         return view('principal.index')->with(compact('personajes'))
                                         ->with(compact('partidas'))
                                         ->with(compact('personajeActual'))
                                         ->with(compact('player'))
+                                        ->with(compact('markers'))
                                         ;
+
+    
+
 
        //return view('principal.index')
                                     //->with(compact('playersOnline'))

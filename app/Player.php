@@ -40,6 +40,9 @@ class Player extends Model
             // belongsTo(RelatedModel, foreignKey = _id, keyOnRelatedModel = id)
             return $this->belongsTo(Personaje::class, 'User');
         }
+        public function Markers(){
+            return $this->hasMany(marker::class,'id');
+        }
     
 
 }

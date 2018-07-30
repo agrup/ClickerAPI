@@ -8,6 +8,7 @@ use DB;
 Use App\Player;
 Use App\Game;
 Use App\Personaje;
+Use App\marker;
 use Image;
 
 class PlayerController extends Controller
@@ -40,7 +41,7 @@ class PlayerController extends Controller
                             'User'=>$partida->Personaje()->first()->User()->first()->name
             ]);
         };
-
+        $markers=marker::all();  
       $partidas =  $partidaResult;
       $personajeActual=$personajes->first();    
       //////////////----------------------------///////////////////
@@ -56,11 +57,15 @@ class PlayerController extends Controller
     $imagen->resize(150,150);
     $imagen->save('storage/user'.$player->id.'img.jpg');
 
-    return view('principal.index') ->with(compact('player'))
-                                   -> with(compact('personajes'))
+   
+    
+        return view('principal.index')->with(compact('personajes'))
                                         ->with(compact('partidas'))
-                                        ->with(compact('personajeActual'));
-                                        
-                                    
+                                        ->with(compact('personajeActual'))
+                                        ->with(compact('player'))
+                                        ->with(compact('markers'))
+                                        ;
+
     }
+
 }
