@@ -6,7 +6,7 @@
 
 <div class="sidenav">
 @guest
-<h1>Players</h1>
+
 @else
 <h1>Menu</h1>
 	<ul class="ul-menu">

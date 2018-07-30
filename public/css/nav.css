@@ -11,7 +11,7 @@
 }
 */
 .navbar {
-        max-height: 58px;
+      /*   max-height: 58px;*/
     position: fixed;
     display: -ms-flexbox;
     display: flex;
