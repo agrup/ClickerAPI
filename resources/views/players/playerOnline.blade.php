@@ -15,7 +15,7 @@
 	<h5 class="datosPlayer">Nivel: {{$player->nivel}}</h3>
 	<h5 class="datosPlayer">Experiencia: {{$player->experiencia}}</h3>
 	<h5 class="datosPlayer">Oro: {{$player->oro}}</h3>
-	<h5 class="datosPlayer">Millas: {{$player->millas}}</h3>
+	<h5 class="datosPlayer" id="millas" data-valor="{{$player->millas}}">Millas: {{$player->millas}}</h3>
 
 	
 	

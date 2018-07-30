@@ -53,7 +53,7 @@ class PlayerController extends Controller
     //Storage::putFileAs('public',$request->avatar,'user'.$player->id.'img.jpg');
 
     $imagen=Image::make($request->avatar);
-    $imagen->resize(100,100);
+    $imagen->resize(150,150);
     $imagen->save('storage/user'.$player->id.'img.jpg');
 
     return view('principal.index') ->with(compact('player'))

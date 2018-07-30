@@ -1,9 +1,12 @@
-
+ var markerActual;
+ var millas=0;
       function initMap() {
+       
         var bsAs = {lat: -34.603722,lng:  -58.381592};
         var map = new google.maps.Map(document.getElementById('map'), {
           zoom: 2,
-          center: bsAs
+          center: bsAs,
+          scrollwheel:false,
         });
         var pinColor = "0066FF";
       var pinImageAzul = new google.maps.MarkerImage("http://chart.apis.google.com/chart?chst=d_map_pin_letter&chld=%E2%80%A2|" + pinColor,
@@ -48,87 +51,86 @@
         var Camerun={lat:  5.593246,lng:  12.553059};
         var Egipto={lat:  26.396317,lng:  28.921499};
         /////////////////////////////////////////7
-        var marker5 = new google.maps.Marker({
+      
+      
+
+         var marker = new google.maps.Marker({
+          position: bsAs,
+          map: map,
+          title: 'Uluru (Ayers Rock)',
+          id:1,
+          millas:1000,
+        });
+         this.markerActual=marker;
+
+        var marker2 = new google.maps.Marker({
+          position: inglaterra,
+          map: map,
+          title: 'Uluru (Ayers Rock)',
+          icon:pinImageAmarillo,
+          id:2,
+          millas:1000,
+
+        });
+        var marker3 = new google.maps.Marker({
+          position: sdChile,
+          map: map,
+          title: 'Uluru (Ayers Rock)',
+          icon:pinImageAmarillo,
+          id:3,
+          millas:1000,
+        });
+        var marker4 = new google.maps.Marker({
+          position: saoPaulo,
+          map: map,
+          title: 'Uluru (Ayers Rock)',
+          icon:pinImageAmarillo,
+          id:4,
+          millas:1000,
+        });
+          var marker5 = new google.maps.Marker({
           position: angola,
           map: map,
           title: 'Uluru (Ayers Rock)',
-          icon:pinImageAmarillo
+          icon:pinImageAmarillo,
+          id:5,
+          millas:1000,
 
         });
         var marker6 = new google.maps.Marker({
           position: botsuana,
           map: map,
           title: 'Uluru (Ayers Rock)',
-          icon:pinImageAmarillo
+          icon:pinImageAmarillo,
+          id:6,
+          millas:1000,
         });
         var marker7 = new google.maps.Marker({
           position: Congo,
           map: map,
           title: 'Uluru (Ayers Rock)',
-          icon:pinImageAmarillo
+          icon:pinImageAmarillo,
+          id:7,
+          millas:1000,
         });
         var marker8 = new google.maps.Marker({
           position: Camerun,
           map: map,
           title: 'Uluru (Ayers Rock)',
-          icon:pinImageAmarillo
+          icon:pinImageAmarillo,
+          id:8,
+          millas:1000,
         });
         var marker9 = new google.maps.Marker({
           position: Egipto,
           map: map,
           title: 'Uluru (Ayers Rock)',
-          icon:pinImageAmarillo
+          icon:pinImageAmarillo,
+          id:9,
+          millas:1000,
         });
-        marker5.addListener('click', function() {
-          infowindow.open(map, marker5);
-        });
-        marker6.addListener('click', function() {
-          infowindow.open(map, marker6);
-        });
-        marker7.addListener('click', function() {
-          infowindow.open(map, marker7);
-        });
-        marker8.addListener('click', function() {
-          infowindow.open(map, marker8);
-        });
-        marker9.addListener('click', function() {
-          infowindow.open(map, marker9);
-        });
+    
 
-
-         var marker = new google.maps.Marker({
-          position: bsAs,
-          map: map,
-          title: 'Uluru (Ayers Rock)'
-        });
-        var marker2 = new google.maps.Marker({
-          position: inglaterra,
-          map: map,
-          title: 'Uluru (Ayers Rock)',
-         pinImageAzul
-
-
-        });
-        var marker3 = new google.maps.Marker({
-          position: sdChile,
-          map: map,
-          title: 'Uluru (Ayers Rock)'
-        });
-        var marker4 = new google.maps.Marker({
-          position: saoPaulo,
-          map: map,
-          title: 'Uluru (Ayers Rock)'
-        });
-
-        marker2.addListener('click', function() {
-          infowindow.open(map, marker2);
-        });
-        marker3.addListener('click', function() {
-          infowindow.open(map, marker3);
-        });
-        marker4.addListener('click', function() {
-          infowindow.open(map, marker4);
-        });
          var contentString = '<div id="content">'+
             '<div id="siteNotice">'+
             '</div>'+
@@ -136,7 +138,7 @@
             '<div id="bodyContent">'+
             '<p><b>+10 Oro</b></p>'+
              '<p><b>+15000 Millas</b></p>'+
-            '<a href="#">Obtener</a> '+
+            '<a href="#" onclick="viajar()" id="1" >Viajar</a> '+
         
             '</div>'+
             '</div>';
@@ -147,30 +149,147 @@
 
        
         marker.addListener('click', function() {
+          //alert($("#millas").text());
+          markerActual=this.id;
+          millas=this.millas;
+          numMillas=$("#millas").data("valor");
+          if(numMillas>=millas){
+            millas=millas-numMillas;
+            alert(millas);
+            $("#millas").text("Millas "+millas);
+         }
+         this.setIcon(pinImageAzul);
+
+          
           infowindow.open(map, marker);
         });
         marker2.addListener('click', function() {
+          millas=this.millas;
+          numMillas=$("#millas").data("valor");
+          if(numMillas>=millas){
+            //markerActual.setIcon(pinImageAzul);
+            //cambio el mnarker actual
+            //markerActual=this.id;
+            this.setIcon();
+            alert(markerActual.id);
+            markerActual.setIcon(pinImageAzul);
+            markerActual=marker2;
+            alert(markerActual.id);
+          } 
+            
           infowindow.open(map, marker2);
         });
         marker3.addListener('click', function() {
+          markerActual=this.id;
+           millas=this.millas;
+          numMillas=$("#millas").data("valor");
+          if(numMillas>=millas){
+            //markerActual.setIcon(pinImageAzul);
+            //cambio el mnarker actual
+            //markerActual=this.id;
+            this.setIcon();
+            alert(markerActual.id);
+            markerActual.setIcon(pinImageAzul);
+            markerActual=marker3;
+          } 
           infowindow.open(map, marker3);
         });
         marker4.addListener('click', function() {
+          markerActual=this.id;
+           millas=this.millas;
+          numMillas=$("#millas").data("valor");
+          if(numMillas>=millas){
+            //markerActual.setIcon(pinImageAzul);
+            //cambio el mnarker actual
+            //markerActual=this.id;
+            this.setIcon();
+            alert(markerActual.id);
+            markerActual.setIcon(pinImageAzul);
+            markerActual=marker4;
+          } 
           infowindow.open(map, marker4);
         });
         marker5.addListener('click', function() {
+          markerActual=this.id;
+           millas=this.millas;
+          numMillas=$("#millas").data("valor");
+          if(numMillas>=millas){
+            //markerActual.setIcon(pinImageAzul);
+            //cambio el mnarker actual
+            //markerActual=this.id;
+            this.setIcon();
+            alert(markerActual.id);
+            markerActual.setIcon(pinImageAzul);
+            markerActual=marker5;
+          } 
           infowindow.open(map, marker5);
         });
         marker6.addListener('click', function() {
+          markerActual=this.id;
+           millas=this.millas;
+          numMillas=$("#millas").data("valor");
+          if(numMillas>=millas){
+            //markerActual.setIcon(pinImageAzul);
+            //cambio el mnarker actual
+            //markerActual=this.id;
+            this.setIcon();
+            alert(markerActual.id);
+            markerActual.setIcon(pinImageAzul);
+            markerActual=marker6;
+          } 
           infowindow.open(map, marker6);
         });
         marker7.addListener('click', function() {
+          markerActual=this.id;
+           millas=this.millas;
+          numMillas=$("#millas").data("valor");
+          if(numMillas>=millas){
+            //markerActual.setIcon(pinImageAzul);
+            //cambio el mnarker actual
+            //markerActual=this.id;
+            this.setIcon();
+            alert(markerActual.id);
+            markerActual.setIcon(pinImageAzul);
+            markerActual=marker7;
+          } 
           infowindow.open(map, marker7);
         });
         marker8.addListener('click', function() {
+          markerActual=this.id;
+           millas=this.millas;
+          numMillas=$("#millas").data("valor");
+          if(numMillas>=millas){
+            //markerActual.setIcon(pinImageAzul);
+            //cambio el mnarker actual
+            //markerActual=this.id;
+            this.setIcon();
+            alert(markerActual.id);
+            markerActual.setIcon(pinImageAzul);
+            markerActual=marker8;
+          } 
           infowindow.open(map, marker8);
         });
         marker9.addListener('click', function() {
+          markerActual=this.id;
+           millas=this.millas;
+          numMillas=$("#millas").data("valor");
+          if(numMillas>=millas){
+            //markerActual.setIcon(pinImageAzul);
+            //cambio el mnarker actual
+            //markerActual=this.id;
+            this.setIcon();
+            alert(markerActual.id);
+            markerActual.setIcon(pinImageAzul);
+            markerActual=marker9;
+          } 
           infowindow.open(map, marker9);
         });
       }
+
+      //---------------------------------------------------------------------//
+      //jquery para modificar los markers
+      function viajar(){
+        
+      }
+
+      
