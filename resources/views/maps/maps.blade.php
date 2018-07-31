@@ -20,10 +20,22 @@
             </div>
             <h1 id="firstHeading" >Botín</h1>
             <div id="bodyContent">
-            <h4>Distancia: {{$marka->distancia}}</h4>
+            <h3>Distancia: {{$marka->distancia}}</h3>
+            @if($marka->oro)
             <p><b>+{{$marka->oro}} Oro</b></p>
+            @endif
+            @if($marka->millas)
             <p><b>+{{$marka->millas}} Millas</b></p>
+            @endif
+            @if($marka->experiencia)
             <p><b>+{{$marka->experiencia}} Experiencia</b></p>
+            @endif
+            @if($marka->ataque)
+            <p><b>+{{$marka->ataque}} Ataque</b></p>
+            @endif
+            @if($marka->vida)
+            <p><b>+{{$marka->ataque}} Vida</b></p>
+            @endif
             <form method="post" action="{{route('viajar')}}">
             	@csrf
             	<input type="submit" name="" value="Viajar y Cobrar">
