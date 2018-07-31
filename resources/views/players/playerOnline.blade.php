@@ -3,7 +3,7 @@
 
 @auth
 	<!--<h2 class="titulo">  {{ Auth::user()->name }}</h2>--> 
-	<h4 class="titulo" id="nombrePlayer">{{$player->nickname}}</h4><a href="#openModal">Lanzar el modal</a>
+	<h4 class="titulo" id="nombrePlayer">{{$player->nickname}}</h4><a href="#openModal">Cambiar Nickname</a>
 
 	@if($player->avatar=="default.jgp")
 		<img class="fotoPerfil" src="{{asset('/storage/default.jpg')}}" > 
@@ -23,10 +23,12 @@
 	<div>
 		<a href="#close" title="Close" class="close">X</a>
 		<h2 class="tituloModal">Ingresa tu nuevo NickName:</h2>
-		<form  method="post">
+		
+			
 			<input type="text" name="nickname" class="modalInput">
-			<input type="button" name="" value="Aceptar" class="modalSubmit">
-		</form>
+			<button class="modalSubmit">Aceptar</button> >
+			
+		
 	</div>
 </div>
 @endguest

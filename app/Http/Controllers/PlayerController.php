@@ -67,4 +67,14 @@ class PlayerController extends Controller
 
     }
 
+    public static function editarPerfil(){
+
+        $nickname = request()->input('nick');
+        $player = Player::find(\Auth::user()->id);   
+        DB::table('players')
+            ->where('id', $player->id)
+            ->update(['nickname' => $nickname]);
+        return response()->json($nickname);;
+    }
+
 }

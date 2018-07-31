@@ -17,6 +17,7 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="https://apis.google.com/js/platform.js" async defer></script>
 <script src={{asset("js/room/room.js")}} ></script>
+<script src={{asset("js/cambiarNombre.js")}} ></script>
 
 <link href='https://fonts.googleapis.com/css?family=Sofia' rel='stylesheet'>
 

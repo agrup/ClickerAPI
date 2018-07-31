@@ -55,4 +55,5 @@ Route::post('/game/GuardarPersonaje', 'PersonajeController@store')->middleware('
 
 //viajar
 Route::post('/viajar','HomeController@viajar')->name('viajar');
-
+//Player
+Route::post('/cambiarNombre','PlayerController@editarPerfil');
