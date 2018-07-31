@@ -24,6 +24,8 @@ class DatabaseSeeder extends Seeder
         DB::table('markers')->insert(['distancia'=>1000,'latitud'=>-22.420846,'longitud'=>23.777657,'oro'=>80,'completa'=>'incompleta']);
         DB::table('markers')->insert(['distancia'=>1000,'latitud'=> -2.837668,'longitud'=>24.232843,'ataque'=>0.3,'vida'=>10,'completa'=>'incompleta']);
         DB::table('markers')->insert(['distancia'=>1000,'latitud'=>5.593246,'longitud'=>12.553059,'oro'=>50,'millas'=>1000,'completa'=>'incompleta']);
+        
+    
 
         $key = env('PERSONAL_API_KEY');
          \App\User::create([

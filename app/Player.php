@@ -25,7 +25,7 @@ class Player extends Model
 
     public static function createPlayer()
     {
-        
+          
     }
 
 
@@ -40,8 +40,8 @@ class Player extends Model
             // belongsTo(RelatedModel, foreignKey = _id, keyOnRelatedModel = id)
             return $this->belongsTo(Personaje::class, 'User');
         }
-        public function Markers(){
-            return $this->hasMany(marker::class,'id');
+        public function markers(){
+            return $this->belongsToMany('App\marker','marker_player','player_id','marker_id');
         }
     
 

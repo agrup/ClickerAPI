@@ -36,10 +36,14 @@
             @if($marka->vida)
             <p><b>+{{$marka->ataque}} Vida</b></p>
             @endif
+            @if(($player->millas)>=($marka->distancia))
             <form method="post" action="{{route('viajar')}}">
             	@csrf
             	<input type="submit" name="" value="Viajar y Cobrar">
             </form>
+            @else
+            <p style="font-color : red"><b>No posee sufieciente millas para viajar</b></p>    
+            @endif
             
        </div>
        </div>

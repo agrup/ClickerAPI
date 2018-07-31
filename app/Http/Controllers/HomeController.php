@@ -45,7 +45,11 @@ class HomeController extends Controller
             ]);
         };
       //marcas
-      $markers=marker::all();  
+      //$markers=marker::all(); 
+
+
+      $markers=$player->markers; 
+
       $partidas =  $partidaResult;
       $personajeActual=$personajes->first();
 

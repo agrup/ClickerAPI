@@ -77,6 +77,8 @@ class LoginController extends Controller
                 'experiencia'=>0,
                 'millas'=>1000,
             ]);
+            //Creo los markers asociados al player
+            
 
 
          }
@@ -98,7 +100,7 @@ class LoginController extends Controller
             ]);
         };
 
-      $markers=marker::all();  
+      $markers=$player->marker;   
       $partidas =  $partidaResult;
       $personajeActual=$personajes->first();
 
