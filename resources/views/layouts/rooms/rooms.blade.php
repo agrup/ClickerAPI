@@ -15,12 +15,17 @@
 			<a href="/game/Crear+Personaje" clase="link-menu">Personaje</a>
 			
 		</li>
-				<li>
+		<li>
+			<a href="/game/Mi+Personaje" clase="link-menu">Mi Personaje</a>
+			
+		
+		</li>
+		<li>
 			<a href="/game/Perfil" clase="link-menu">Perfil</a>
 			
 		</li>
-				<li>
-			<a href="/game/Tienda" clase="link-menu">Tienda</a>
+		<li>
+			<a href="/game/Trainer" clase="link-menu">Trainer</a>
 			
 		</li>
 

@@ -45,8 +45,12 @@ Route::get('/game/Crear+Jugador', 'PlayerController@show');
 //Creacion de personajes
 
 Route::get('/game/Crear+Personaje', 'PersonajeController@show')->middleware('auth');
+Route::get('/game/Mi+Personaje', 'PersonajeController@showMi')->middleware('auth');
+
+
 //Route::post('/game/Crear+Personaje', 'PersonajesController@store');
 Route::post('/game/GuardarPersonaje', 'PersonajeController@store')->middleware('auth');
 
+Route::get('/game/Trainer', 'TrainerController@show')->middleware('auth');
 
 
