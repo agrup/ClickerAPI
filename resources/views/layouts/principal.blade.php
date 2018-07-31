@@ -18,6 +18,7 @@
 <script src="https://apis.google.com/js/platform.js" async defer></script>
 <script src={{asset("js/room/room.js")}} ></script>
 <script src={{asset("js/cambiarNombre.js")}} ></script>
+<script src={{asset("js/avatar.js")}} ></script>
 
 <link href='https://fonts.googleapis.com/css?family=Sofia' rel='stylesheet'>
 

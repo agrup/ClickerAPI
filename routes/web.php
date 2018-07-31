@@ -36,7 +36,7 @@ Route::get('/game', 'HomeController@index')->name('game');
 Route::post('/game', 'PartidaController@Crear')->middleware('auth');
 
 //
-Route::get('/editar','HomeController@editarPlayer')->name('editar');
+//Route::get('/editar','HomeController@editarPlayer')->name('editar');
 Route::post('editar','PlayerController@editarPlayer')->name('editar');
 //
 //Node Routes 
@@ -56,4 +56,4 @@ Route::post('/game/GuardarPersonaje', 'PersonajeController@store')->middleware('
 //viajar
 Route::post('/viajar','HomeController@viajar')->name('viajar');
 //Player
-Route::post('/cambiarNombre','PlayerController@editarPerfil');
+Route::POST('/cambiarNombre','PlayerController@editarPerfil');

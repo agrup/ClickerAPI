@@ -121,8 +121,29 @@ transition: opacity 400ms ease-in;
 	 background-color: red;
     border: none;
     color: white;
+    font-size: 20px; 
     padding: 10px 20px;
     text-decoration: none;
     margin: 4px 2px;
     cursor: pointer;
+
+   
+}
+/* para subir la img del usuario */
+	 .upload-button {
+    padding: 4px;
+    border: 1px solid black;
+    border-radius: 5px;
+    display: block;
+    float: left;
+}
+
+.profile-pic {
+    max-width: 200px;
+    max-height: 200px;
+    display: block;
+}
+
+.file-upload {
+    display: none;
 }

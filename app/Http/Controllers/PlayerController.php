@@ -10,13 +10,14 @@ Use App\Game;
 Use App\Personaje;
 Use App\marker;
 use Image;
+use Illuminate\Support\Facades\Input;
 
 class PlayerController extends Controller
 {
     public static function show()
     {
     	return view('players.CreatePlayer');
-    }z
+    }
     public static function store()
     {
     	
@@ -26,7 +27,7 @@ class PlayerController extends Controller
     {
     	
     }
-    public function editarPlayer(Request $request)
+    public function editarPlayer( Request $request)
     {
         //////////////--------------------////////////////
      $personajes = Personaje::where('User',\Auth::user()->id)->get();
@@ -52,10 +53,15 @@ class PlayerController extends Controller
     //guardo la imagen        
     //Storage::putFileAs('public',$request->avatar,'user'.$player->id.'img.jpg');
 
-    $imagen=Image::make($request->avatar);
+    //$imagen=Image::make($request->avatar);
+    
+          
+    $imagen=Image::make($request->file('file')->getRealPath());
     $imagen->resize(150,150);
     $imagen->save('storage/user'.$player->id.'img.jpg');
 
+
+     //$url    = Storage::url('public/user'.$player->id.'img.jpg');
    
     
         return view('principal.index')->with(compact('personajes'))
@@ -63,18 +69,20 @@ class PlayerController extends Controller
                                         ->with(compact('personajeActual'))
                                         ->with(compact('player'))
                                         ->with(compact('markers'))
+                                       // ->with(response()->json("{{asset('/storage/'".$player->avatar.")}}"))
                                         ;
 
     }
 
     public static function editarPerfil(){
 
-        $nickname = request()->input('nick');
+        $nickname = request()->input('nickname');
         $player = Player::find(\Auth::user()->id);   
         DB::table('players')
             ->where('id', $player->id)
             ->update(['nickname' => $nickname]);
-        return response()->json($nickname);;
+        return response()->json($nickname);
     }
+   
 
 }
