@@ -10,8 +10,7 @@ Use App\User;
 Use App\Player;
 Use App\Personaje;
 Use App\Game;
-
-
+Use App\marker;
 
 class LoginController extends Controller
 {
@@ -71,18 +70,23 @@ class LoginController extends Controller
                 //'provider'=>strtoupper($provider),
                 'provider_id'=>$providerUser->id,
              ]);
+            //Creo el player
+            $player=Player::create([
+                'nickname'=>$providerUser->getName(),
+                'especialidad'=>"",
+                'experiencia'=>0,
+                'millas'=>1000,
+            ]);
+            //Creo los markers asociados al player
+            
+
 
          }
          Auth::login($user);
-         /*
-         PlayerOnline::create([
-            'name'=>Auth::user()->name,
-            'connect'=>1,
-            ]);
+        //Paso la informacion del Player asociado al usuario auth
+        $player = Player::find(Auth::user()->id);   
 
-         */
-        //$playersOnline =Player::getPlayers()->tojson();
-        //$personajes = Personajes::all()->tojson();
+
         $personajes = Personaje::where('User',\Auth::user()->id)->get();
         //$partidas= Game::where('Estado',false);
             
@@ -96,15 +100,19 @@ class LoginController extends Controller
             ]);
         };
 
+      $markers=$player->marker;   
       $partidas =  $partidaResult;
       $personajeActual=$personajes->first();
-//      var_dump($partidas);
-//dd($partidas);
+
         return view('principal.index')->with(compact('personajes'))
                                         ->with(compact('partidas'))
                                         ->with(compact('personajeActual'))
-
+                                        ->with(compact('player'))
+                                        ->with(compact('markers'))
                                         ;
+
+    
+
 
        //return view('principal.index')
                                     //->with(compact('playersOnline'))

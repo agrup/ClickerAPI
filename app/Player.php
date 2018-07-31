@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Player extends Model
 {
+    protected $guarded = [];
     /**
      * Player has many HostGame.
      *
@@ -24,7 +25,7 @@ class Player extends Model
 
     public static function createPlayer()
     {
-        
+          
     }
 
 
@@ -38,6 +39,9 @@ class Player extends Model
         {
             // belongsTo(RelatedModel, foreignKey = _id, keyOnRelatedModel = id)
             return $this->belongsTo(Personaje::class, 'User');
+        }
+        public function markers(){
+            return $this->belongsToMany('App\marker','marker_player','player_id','marker_id');
         }
     
 

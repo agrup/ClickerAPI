@@ -25,6 +25,7 @@ Route::get('auth/{provider}', 'Auth\LoginController@redirectToProvider');
 Route::get('auth/{provider}/callback', 'Auth\LoginController@handleProviderCallback');
 
 
+Route::get('/', 'HomeController@index')->name('game');
 
 // Ruta Principal
 
@@ -34,7 +35,11 @@ Route::get('/game', 'HomeController@index')->name('game');
 
 Route::post('/game', 'PartidaController@Crear')->middleware('auth');
 
-//Node Routes
+//
+//Route::get('/editar','HomeController@editarPlayer')->name('editar');
+Route::post('editar','PlayerController@editarPlayer')->name('editar');
+//
+//Node Routes 
 	//ruta para redireccionar al juego en node
 Route::get('/game/unirme/{id}', 'PartidaController@unirme')->name('unirme');
 
@@ -51,6 +56,12 @@ Route::get('/game/Mi+Personaje', 'PersonajeController@showMi')->middleware('auth
 //Route::post('/game/Crear+Personaje', 'PersonajesController@store');
 Route::post('/game/GuardarPersonaje', 'PersonajeController@store')->middleware('auth');
 
+
 Route::get('/game/Trainer', 'TrainerController@show')->middleware('auth');
 
+
+//viajar
+Route::post('/viajar','HomeController@viajar')->name('viajar');
+//Player
+Route::POST('/cambiarNombre','PlayerController@editarPerfil');
 

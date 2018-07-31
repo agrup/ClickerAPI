@@ -84,12 +84,14 @@ position: relative;
     background-color: #fe6505;
     border-color: #833400;
 }
+
 #img-1{
 
     padding-left:10%;
     max-width: 200px;
     max-height: 200px;
 }
+
 
 h4
 {
@@ -101,6 +103,7 @@ h4
 }
 html,body { 
   overflow:hidden; 
+
 }
 @media only screen and (max-width: 1173px){
     #app{
@@ -113,8 +116,10 @@ html,body {
 
 
     width: 100%;
+  background-color: black;
 
-}@media only screen and (max-width: 600px){
+}
+@media only screen and (max-width: 600px){
 
 
     #img-1 {
@@ -128,4 +133,25 @@ html,body {
         height: 48px;
     position: relative; 
 }
+
+}
+.fotoPerfil{
+    
+    margin-left: 5px;
+    margin-right: 5px;
+}
+.datosPlayer{
+    margin:0.5rem; 
+    color: red;
+}
+.botonEditar{
+     background-color: red; /* Green */
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+
 }

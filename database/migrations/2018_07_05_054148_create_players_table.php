@@ -15,9 +15,12 @@ class CreatePlayersTable extends Migration
     {
         Schema::create('players', function (Blueprint $table) {
             $table->increments('id');
-            $table->text('NickName');
+            $table->text('nickname');
             $table->text('especialidad');
-            $table->integer('Puntos')->default(0);
+            $table->string('avatar')->default('default.jpg');
+            $table->integer('experiencia')->default(0);
+            $table->integer('nivel')->default(1);
+            $table->integer('oro')->default(0);
             $table->integer('millas')->default(1000);
             $table->timestamps();
         });
