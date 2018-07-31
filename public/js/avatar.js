@@ -1,9 +1,8 @@
 
 $(document).ready(function(){
+   
     var readURL;
-    $("#but_upload").click(function(){
-        $(".file-upload").click();
-        readURL = function(input) {
+    readURL = function(input) {
         if (input.files && input.files[0]) {
             var reader = new FileReader();
 
@@ -14,7 +13,8 @@ $(document).ready(function(){
             reader.readAsDataURL(input.files[0]);
         }
         }
-    
+    $("#but_upload").click(function(){
+            
         var fd = new FormData();
         var files = $('#file')[0].files[0];
         fd.append('file',files);
@@ -41,6 +41,10 @@ $(document).ready(function(){
         readURL(this);
 
 
+    });
+ $("#up").click(function(){
+        $('#file').show();
+        $('#but_upload').show();
     });
 
 });
