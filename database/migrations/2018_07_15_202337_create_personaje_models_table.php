@@ -18,7 +18,7 @@ class CreatePersonajeModelsTable extends Migration
             $table->increments('id');
             $table->double('vida')->default(50);
             $table->double('ataque')->default(1);
-            $table->double('defensa')->default(0);
+            $table->double('Defensa')->default(0);
             $table->text('img')->default("/");
             $table->text('name')->default("");
 

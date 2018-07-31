@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	
+		<link rel="stylesheet" type="text/css" href="{{ asset('css/player/miPersonaje.css') }}">
 	<link rel="stylesheet" type="text/css" href="{{ asset('css/player/createPersonaje.css') }}">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<script type="text/javascript" src="{{asset("js/personaje/personaje.js")}}"></script>
@@ -14,20 +14,14 @@
 
 <main>
 	
+	@if(isset($personaje))
 
 <div class="player-container clearfix" >
 	
 	<div id="img-container">
-			
-			<!--
 
-			
-
-
-			
-			-->
 		<div class="click-content click-display-container">
-			@foreach($personajeModel as $personaje)
+
 				<div class="click-display-container mySlides">
 				  <img src={{ asset('img'.$personaje->img).'.png' }} >
 				  <div class="click-display-bottomleft click-large click-container click-padding-16 click-black">
@@ -35,28 +29,10 @@
 				  </div>
 
 				</div>
-				
-
-
-			@endforeach
-
-
-			<button class="click-button click-display-left click-black" id="plusDivs-1" >&#10094;</button>
-			<button class="click-button click-display-right click-black" id="plusDivs1" >&#10095;</button>
 
 		</div>
 
-<form id="name-input" action="/game/GuardarPersonaje" mclass="" method="POST" id="myForm" >
-			@csrf
-		<section class="select-image" >
-		
 
-		</section>
-				
-
-				<input name="Especie" type="text" id="Especie">	
-				<input type="submit" value="Guardar">
-			</form>
 	</div>
 	
 	
@@ -74,6 +50,14 @@
 @endif
 @if(isset($error))
 	<h1 class="alert alert-errors">{{$error}}</h1>
+@endif
+
+@else
+	<div class="sin-personaje">
+		
+	         <h4>Sin Personaje</h4>
+            <img src={{asset("img/sinPersonaje.png")}} alt="imagen" id="img-1">
+	</div>
 @endif
 
 </main>	

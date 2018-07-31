@@ -50,18 +50,27 @@ class PersonajeController extends Controller
 
         $succes='Exito al cargar Personaje Nuevo';
         return view('personajes.personajes')->with(compact('succes'))
+                                            //->withErrors('Ya cuenta con un personaje')
+                                            //->withSucces('Personaje Guardado Exitosamente')
                                             ->with(compact('personajeModel'));
         }else{
             $personajeModel = PersonajeModel::all();
-            $succes='Ya cuenta con un personaje';
-        return view('personajes.personajes')->with(compact('succes'))
+            $error='Ya cuenta con un personaje';
+        return view('personajes.personajes')->with(compact('error'))
+                                            //->withErrors('Ya cuenta con un personaje')
+                                            //->withSucces('Ya cuenta con un personaje')
                                             ->with(compact('personajeModel'));
         }
 
     }
 
-    public static function create()
+    public static function showMi()
     {
-    	
+
+        $personaje = \Auth::user()->userPersonaje->first();
+        $personajeModel = \Auth::user()->userPersonaje()->get();
+    	return view('personajes.miPersonaje')->with(compact('personaje'))
+                                            ->with(compact('personajeModel'));
+        ;
     }
 }
