@@ -45,6 +45,7 @@
 		 	}else{
 		 		mark.addListener('click', function() {
             	infowindow.open(map, this);
+            	
             
 			});
 		 		var infowindow = new google.maps.InfoWindow({

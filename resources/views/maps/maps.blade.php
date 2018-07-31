@@ -15,7 +15,7 @@
  		<p data-marka="{{$marka->vida}}" hidden class="vida{{$marka->id}}">vida</p>
  		<p data-marka="{{$marka->completa}}" hidden class="completa{{$marka->id}}">vida</p>
  	</div>
-	 <div id="infobox{{$marka->id}}" >
+	 <div id="infobox{{$marka->id}}" class="infoboxMapa" >
             <div id="siteNotice">
             </div>
             <h1 id="firstHeading" >Botín</h1>
