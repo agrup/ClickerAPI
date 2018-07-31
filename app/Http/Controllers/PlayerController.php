@@ -16,8 +16,7 @@ class PlayerController extends Controller
     public static function show()
     {
     	return view('players.CreatePlayer');
-    }
-
+    }z
     public static function store()
     {
     	
