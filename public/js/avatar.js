@@ -28,7 +28,9 @@ $(document).ready(function(){
             success: function(response){
                 if(response != 0){
                     //$("#img").attr("src",response);
-                    location.reload();
+                    //location.reload();
+                    $('#file').hide();
+                  $('#but_upload').hide();
                 }else{
                     alert('file not uploaded');
                 }
@@ -36,7 +38,9 @@ $(document).ready(function(){
         });
        
 
-    });
+    }); 
+    
+
      $("#file").on('change', function(){
         readURL(this);
 
