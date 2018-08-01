@@ -13,10 +13,11 @@
     
 
   	<div id="app">
-    
+      <div calss="incon-container">
+        
         @if(isset($personajeActual) )
           <h4>{{$personajeActual->name}}</h4>
-      @if(isset($personajes))
+          @if(isset($personajes))
 
 <!-- 
       <input type="text" name="Personaje" id="select-personaje" v-model="PersonajeSelect" value={{$personajes[0]->id}}>
@@ -31,7 +32,7 @@
           <option value="{{$personaje->id}}" selected>{{$personaje->name}} </option>
       </select>
 -->
-        <img src={{asset("img/")}}{{$personaje->img}}.png alt="imagen">
+        <img src={{asset("img/")}}{{$personaje->img}}-2.png alt="imagen" id="img-1">
 
       <button  value="CREAR" id="input-game" class="clase" @click.prevent="postCreate">Crear Nueva Partida</button>
     
@@ -39,12 +40,15 @@
 
 
 
-
+        @endif
         @else
           <h4>Sin Personaje</h4>
-        @endif
+            <img src={{asset("img/sinPersonaje.png")}} alt="imagen" id="img-1">
      @endif
-  		
+
+  
+      </div>
+      
   	</div>
       <div class="tab">
       <h2>Lobby</h2>

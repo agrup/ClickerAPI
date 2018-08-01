@@ -4,22 +4,40 @@
     z-index: 1;
     top: 0;
     left: 0;
-    background-color: #111;
+    background-color: red;
     overflow-x: hidden;
     padding-top: 20px;
+    border-radius: 0px 9px
 }
 
 .sidenav a{
     text-decoration: none;
-
-    color: #818181;
+    color: #6a2a00;     
     display: block;
 }
 
 .sidenav a:hover {
     color: #f1f1f1;
 }
-
+.sidenav li
+{
+        padding: inherit;
+        cursor: pointer;
+    border: 2px solid #888060;
+    background: #e6d9a2;
+    background: -webkit-linear-gradient(#e6d9a2 50%,#dbce9a);
+    background: -moz-linear-gradient(#e6d9a2 50%,#dbce9a);
+    background: -ms-linear-gradient(#e6d9a2 50%,#dbce9a);
+    background: -o-linear-gradient(#e6d9a2 50%,#dbce9a);
+    text-align: center;
+    padding: 6px 10px;
+    border-radius: 5px;
+    text-transform: uppercase;
+    text-shadow: 0 0 16px #f4f3f0;
+    box-shadow: 0 0 15px #bebebe;
+    color: #222;
+    margin: 5px 0;
+}
 .main {
     margin-left: 160px; /* Same as the width of the sidenav */
     font-size: 28px; /* Increased text to enable scrolling */
@@ -28,9 +46,33 @@
 ul.ul-menu{
     display: flex;
     flex-direction: column;
+        padding: 10% 10%;
+
 }
 
 @media screen and (max-height: 450px) {
     .sidenav {padding-top: 15px;}
     .sidenav a {font-size: 18px;}
+}
+@media only screen and (max-width: 1173px){
+    .sidenav a{
+        padding: 0 20px;
+    }
+    .sidenav
+    {
+        width:100%;
+        padding-top: 0%;
+    }
+    h1{
+        display:none;
+    }
+    ul.ul-menu{
+    padding:0px;
+    flex-direction: row;
+}
+.bar-vertical {
+    flex-basis: 80%;
+    height: 21em;
+}
+
 }

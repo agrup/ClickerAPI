@@ -26,11 +26,12 @@ class PartidaController extends Controller
 
     //Creao La Partida
      //dd($userId);
+    //var_dump((\Auth::user()->userPersonaje)->orderBy('id', 'desc')->first()->id);
     $game= Game::create([
         'host_id'=>$userId,
         //'host_id'=>1023,
         //'personaje_p1'=>$request->personaje,
-        'personaje_p1'=>\Auth::user()->userPersonaje->first()->id,
+        'personaje_p1'=>(\Auth::user()->userPersonaje())->orderBy('id', 'desc')->first()->id,
     
             //creao el hash de la partida
         //'url'=>URL::temporarySignedRoute('unirme',now()->addMinutes(30))
@@ -60,7 +61,7 @@ class PartidaController extends Controller
        
     if($game && $game->host_id!=$userId->id ){
       $game->opnente_id=$userId->id;
-      $game->personaje_p2= Personaje::where('User',$userId->id)->first()->id;
+      $game->personaje_p2= \Auth::user()->userPersonaje()->latest()->first()->id;
       //$game->url2=bin2hex(openssl_random_pseudo_bytes(30));
       $game->save();
 
@@ -68,6 +69,7 @@ class PartidaController extends Controller
     return Redirect::to(env('GAME_URL').$game->id.'/'.$userId->name.'/'.$game->url2);
     
     }else{
+    
 
 
     return Redirect::to(env('GAME_URL').$game->id.'/'.$userId->name.'/'.$game->url1);
@@ -94,7 +96,7 @@ class PartidaController extends Controller
       $personaje1->user= [
                   'name'=>User::find($game->host_id)->name, 
                   //Player en realidad es Personaje Tengo que refactorizarlo
-                  'Player'=>Personaje::find( $personaje1->Especie)->name,
+                  'Player'=>Personaje::find( $personaje1->id)->name,
                   'img'=>$personaje1->img
       ];
       /*
@@ -108,22 +110,13 @@ class PartidaController extends Controller
         $personaje2->user= [
                     'name'=>User::find($game->opnente_id)->name, 
                     //Player en realidad es Personaje Tengo que refactorizarlo
-                    'Player'=>Personaje::find( $personaje2->Especie)->name,
+                    'Player'=>Personaje::find( $personaje2->id)->name,
                     'img'=>$personaje2->img
         ];
       }else{
         $personaje2=null;
       }
 
-
-/*
-
-
-*/
-      /*
-
-
-      */
       $gameJSON = ['Player1'=>$personaje1,
                     'Player2'=>$personaje2,
                     'Game'=>$game->id,
@@ -148,6 +141,37 @@ class PartidaController extends Controller
   }
 
   }
+
+
+  public function Terminar (Request $request)
+  {
+
+    $ganador = Game::where('url1',$request->ganador)->first();
+
+    if($ganador != null ){
+      //return $gandor->host_id;
+      if($ganador->url2 == $request->perdedor){
+
+        //DARLE LOS PUNTOS AL GANADOR
+
+      return $ganador->host_id;
+        }
+    }else
+    {
+    $ganador = Game::where('url2',$request->ganador)->first();
+    if($ganador != null ){
+      //return $gandor->host_id;
+      if($ganador->url1 == $request->perdedor){
+        //DARLE LOS PUNTOS AL GANADOR
+        return $ganador->opnente_id;
+      }
+      //return Game::where('url1',$request->ganador)->first()->oponente_id;
+    };
+
+  };
+
+}
+
 
 }
 /*

@@ -11,7 +11,7 @@
 }
 */
 .navbar {
-        max-height: 58px;
+      /*   max-height: 58px;*/
     position: fixed;
     display: -ms-flexbox;
     display: flex;
@@ -140,7 +140,8 @@ logout-form{
   
 
 }
-@media only screen and (max-width: 600px){
+
+@media only screen and (max-width: 1173px){
 
     .navbar-brand
     {
@@ -153,4 +154,8 @@ logout-form{
         -ms-flex-pack: start;
         justify-content: flex-start;
     }
+    .container
+{
+  font-size: 10px;
+}
 }

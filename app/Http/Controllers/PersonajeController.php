@@ -18,13 +18,17 @@ class PersonajeController extends Controller
     public  function store(Request $request)
     {
  
+        $user=\Auth::user()->userPersonaje()->first();
+        if ($user == null){
+
+
         $PersonajeBase = PersonajeModel::find($request->Especie);
 
-    	$personaje = new Personaje;
+        $personaje = new Personaje;
         //dd($request);
         $personaje->create([
 
-            'name'=>$request->name,
+            'name'=>$PersonajeBase->name,
             'Especie'=>$request->Especie,
             'User'=> \Auth::user()->id,
             'img'=>$PersonajeBase->img,
@@ -45,12 +49,28 @@ class PersonajeController extends Controller
                 $personajeModel = PersonajeModel::all();
 
         $succes='Exito al cargar Personaje Nuevo';
-    	return view('personajes.personajes')->with(compact('succes'))
+        return view('personajes.personajes')->with(compact('succes'))
+                                            //->withErrors('Ya cuenta con un personaje')
+                                            //->withSucces('Personaje Guardado Exitosamente')
                                             ->with(compact('personajeModel'));
+        }else{
+            $personajeModel = PersonajeModel::all();
+            $error='Ya cuenta con un personaje';
+        return view('personajes.personajes')->with(compact('error'))
+                                            //->withErrors('Ya cuenta con un personaje')
+                                            //->withSucces('Ya cuenta con un personaje')
+                                            ->with(compact('personajeModel'));
+        }
+
     }
 
-    public static function create()
+    public static function showMi()
     {
-    	
+
+        $personaje = \Auth::user()->userPersonaje->first();
+        $personajeModel = \Auth::user()->userPersonaje()->get();
+    	return view('personajes.miPersonaje')->with(compact('personaje'))
+                                            ->with(compact('personajeModel'));
+        ;
     }
 }

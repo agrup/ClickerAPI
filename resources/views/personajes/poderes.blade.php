@@ -29,7 +29,7 @@
 			  <div class="card-header">Defensa</div>
 			  <div class="card-main">
 			    <i class="material-icons">verified_user</i>
-			    <div class="main-description">{{$personaje->defensa}}</div>
+			    <div class="main-description">{{$personaje->Defensa}}</div>
 			  </div>
 			</div>
 		</div>

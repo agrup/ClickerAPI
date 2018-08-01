@@ -50,7 +50,9 @@
 				</section>
 				
 				<section class="principal">
-					
+					@guest
+					<img src="img/presentacion.jpg" alt="">
+					@endif
 		    		@yield('jugador2')
 		    	
 

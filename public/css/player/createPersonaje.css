@@ -1,5 +1,11 @@
-.player-container
+body
+{
 
+  font-family: 'Baloo+Chettan';font-size: 20px;
+
+}
+
+.player-container
 {
 	display: flex;
 	width: 100%;
@@ -18,6 +24,28 @@ img
 .clearfix {
     overflow: auto;
 }
+
+.alert-errors {
+
+    color: #a94442;
+    background-color: #f2dede;
+    border-color: #ebccd1;
+}
+
+.alert {
+      text-align: center;
+    font-size: 20px;
+    padding: 15px;
+    margin-bottom: 20px;
+    border: 1px solid transparent;
+    border-radius: 4px;
+}
+.alert-success {
+    color: #3c763d;
+    background-color: #dff0d8;
+    border-color: #d6e9c6;
+}
+
 div.clearfix {
     border: 3px solid #4CAF50;
     padding: 5px;
@@ -36,7 +64,7 @@ div.clearfix {
   font-size: 22px;
   font-weight: 600;
   border-bottom: 1px solid #EF9A9A;
-  background-color: #FFEBEE;
+  background-color: #444;
   padding: 5px 10px;
 }
 .card-main {
@@ -72,7 +100,8 @@ main
 
 .power-container
 {
-  padding-left: 9em;
+  padding-left: 8%;
+  /*padding-left: 9em;*/
   text-align: center;
   color:red;
 }
@@ -140,38 +169,103 @@ main
   visibility:hidden;
 }
 
-@media only screen and (max-width: 600px){
+input
+{
+    width: 100%;
+    
+}
+
+.principal-container
+{
+  padding:5%;
+}
+.special-container
+{
+  padding:5%;
+}
+
+
+
+
+
+@media only screen and (max-width: 1173px){
 
   .power-container
   {
       padding-left: 0%;
+        padding:1%;
+
   }
   .player-container
   {
 
      width: 100%;
     display: block;                
-  
-
   }
+
+.principal-container
+{
+  padding: 1% 10%;
+}
+.special-container
+{
+  padding:1%;
+}
+
+main
+{
+  /*padding:3%;*/
+}
   img
   {
-    width: 150px;
-    height: 150PX;
+    width: 220px;
+    height: 220PX;
+
   }
+
+div.click-display-container.mySlides{
+  padding:0 30%;
+}
+div.card-main
+{
+  padding:5px 0;
+}
+
+
   div.clearfix 
   {
-    margin-top: 15%;
+    margin-top: 10%;
   }
   .icons-container {
     padding-left: 0%;
+
   }
+
+
   h3
   {
     font-size: 0.8em;
+    margin:1%;
   }
   .card-header {
 
     font-size: 14px;
   }
+}
+input
+{
+      margin: 2px;
+    height: 30px;
+    background-color: #49b949;
+    border-color: green;
+    color: #0c420c;
+    width: 100%;
+}
+@media only screen and (max-height: 500px)
+{
+  div.clearfix {
+    margin-top: 100%;
+}
+
+
 }
