@@ -4,7 +4,7 @@ php 7 >=
 curl
 libpng-dev
 openssl
-
+php7.2-gd
 
 
 INSTALACION
@@ -69,6 +69,8 @@ CONFIGURACION
 
 Inicio
 =======
+	
+	php artisan storage:link
 
 	php artisan migrate --seed
 	php artisan serve

@@ -99,8 +99,8 @@ class LoginController extends Controller
                             'User'=>$partida->Personaje()->first()->User()->first()->name
             ]);
         };
-
-      $markers=$player->marker;   
+         $markers=marker::all(); 
+      //$markers=$player->marker;   
       $partidas =  $partidaResult;
       $personajeActual=$personajes->first();
 

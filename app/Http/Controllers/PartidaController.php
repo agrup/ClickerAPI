@@ -7,6 +7,7 @@ use App\Events\eventTrigger;
 use App\Personaje;
 use App\Game;
 use App\User;
+use App\Player;
 use Illuminate\Support\Facades\URL;
 use Redirect;
 use Illuminate\Support\Facades\Auth;
@@ -15,22 +16,12 @@ class PartidaController extends Controller
 {
   public function Crear(Request $request)
   {
-   //$response = $request->partida;
+
     $userId=\Auth::user()->id;
-     //Busco los personajes para el User       
-    //$personajes = Personaje::where('User',$userId)->get();
 
-    //$personaje = $request->personaje;
-
-     //Busco el elegido
-
-    //Creao La Partida
-     //dd($userId);
-    //var_dump((\Auth::user()->userPersonaje)->orderBy('id', 'desc')->first()->id);
     $game= Game::create([
         'host_id'=>$userId,
-        //'host_id'=>1023,
-        //'personaje_p1'=>$request->personaje,
+
         'personaje_p1'=>(\Auth::user()->userPersonaje())->orderBy('id', 'desc')->first()->id,
     
             //creao el hash de la partida
@@ -53,28 +44,40 @@ class PartidaController extends Controller
 
 
  // dd($request->fullurl());
+
     $userId=(Auth::user());
     $game = Game::where('id',$request->id)->first();
     //dd($game, $userId->id);
    
-       $game2= $game;
+      // $game2= $game;
        
-    if($game && $game->host_id!=$userId->id ){
-      $game->opnente_id=$userId->id;
-      $game->personaje_p2= \Auth::user()->userPersonaje()->latest()->first()->id;
-      //$game->url2=bin2hex(openssl_random_pseudo_bytes(30));
-      $game->save();
+   // if(!($game->isLLena())){
 
-    //return Redirect::to('http://localhost:5000/game/'.$game->id.'/'.$userId->name.'/'.$game->url2);
-    return Redirect::to(env('GAME_URL').$game->id.'/'.$userId->name.'/'.$game->url2);
-    
+
+
+        if($game && $game->host_id!=$userId->id ){
+          $game->opnente_id=$userId->id;
+          $game->personaje_p2= \Auth::user()->userPersonaje()->latest()->first()->id;
+          //$game->url2=bin2hex(openssl_random_pseudo_bytes(30));
+          $game->save();
+
+        //return Redirect::to('http://localhost:5000/game/'.$game->id.'/'.$userId->name.'/'.$game->url2);
+        return Redirect::to(env('GAME_URL').$game->id.'/'.$userId->name.'/'.$game->url2);
+        
+        }else{
+        
+          return Redirect::to(env('GAME_URL').$game->id.'/'.$userId->name.'/'.$game->url1);
+
+        }
+      /*
     }else{
-    
 
-
-    return Redirect::to(env('GAME_URL').$game->id.'/'.$userId->name.'/'.$game->url1);
-      
-    };
+     $error="Lo sentimos la partida esta llena";
+      //event(eventTrigger($partidallena));
+      //return response()->json($partidallena); 
+      return view('errores.index')->with(compact(['error']));
+    }*/
+    ;
     
   
   }
@@ -146,23 +149,57 @@ class PartidaController extends Controller
   public function Terminar (Request $request)
   {
 
-    $ganador = Game::where('url1',$request->ganador)->first();
+/*
+*/
+    $premio = [     'oro'=>50,
+                    'experiencia'=>20,
+                    'millas'=>200
+                    ];
 
+
+
+    $ganador = Game::where('url1',$request->ganador)->first();
+     $gandor->terminar();
     if($ganador != null ){
       //return $gandor->host_id;
       if($ganador->url2 == $request->perdedor){
 
         //DARLE LOS PUNTOS AL GANADOR
+        /*
+        User::find($ganador->host_id)->userPlayer()->updatePlayer(
+
+          $oro=$premio->oro,
+          $experiencia=$premio->experiencia,
+          $millas=$premio->millas,
+
+          );
+        */
 
       return $ganador->host_id;
         }
     }else
     {
     $ganador = Game::where('url2',$request->ganador)->first();
+
+    $gandor->terminar();
     if($ganador != null ){
       //return $gandor->host_id;
       if($ganador->url1 == $request->perdedor){
         //DARLE LOS PUNTOS AL GANADOR
+
+/*
+
+        User::find($ganador->opnente_id)->userPlayer()
+
+        ->updatePlayer(
+
+          $oro=$premio->oro,
+          $experiencia=$premio->experiencia,
+          $millas=$premio->millas,
+
+          );
+*/
+
         return $ganador->opnente_id;
       }
       //return Game::where('url1',$request->ganador)->first()->oponente_id;

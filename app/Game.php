@@ -34,6 +34,11 @@ class Game extends Model
     	{
             return self::where();
     	}
+        public function Terminar()
+        {
+            $this->Estado = true;
+            $this->save();
+        }
 
 
 }
