@@ -11,6 +11,7 @@ Use App\Player;
 Use App\Personaje;
 Use App\Game;
 Use App\marker;
+Use App\marker_player;
 
 class LoginController extends Controller
 {
@@ -53,8 +54,8 @@ class LoginController extends Controller
     public function handleProviderCallback($provider)
     {
         $providerUser = Socialite::driver($provider)->stateless()->user();
-        //dd($user);
-
+        
+         $markers=marker::all();
         /* Verifica que la cuenta tenga un mail*/
         if($providerUser->email ==null){
                 $providerUser->email = $providerUser->getName();
@@ -78,7 +79,12 @@ class LoginController extends Controller
                 'millas'=>1000,
             ]);
             //Creo los markers asociados al player
-            
+           
+            foreach ($markers as $k=>$marka) {
+              $player->markers()->attach($k+1,['player_id'=>$player->id,'completa'=>'incompleta']);
+            }
+           
+              
 
 
          }
@@ -99,10 +105,16 @@ class LoginController extends Controller
                             'User'=>$partida->Personaje()->first()->User()->first()->name
             ]);
         };
-         $markers=marker::all(); 
+
+         //$markers=marker::all(); 
       //$markers=$player->marker;   
+
+
+     // $markers=$player->marker;   
+
       $partidas =  $partidaResult;
       $personajeActual=$personajes->first();
+      $markers=$player->markers;
 
         return view('principal.index')->with(compact('personajes'))
                                         ->with(compact('partidas'))

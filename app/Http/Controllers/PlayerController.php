@@ -29,22 +29,8 @@ class PlayerController extends Controller
     }
     public function editarPlayer( Request $request)
     {
-        //////////////--------------------////////////////
-     $personajes = Personaje::where('User',\Auth::user()->id)->get();
-            
-        $partidas= Game::where('Estado',false)->orderBy('id','desc')->take(20)->get();
-        $partidaResult=[];
-        foreach($partidas as $partida){
-
-           array_push($partidaResult,['id'=>$partida->id,
-                            'Personaje'=>$partida->Personaje->name,
-                            'User'=>$partida->Personaje()->first()->User()->first()->name
-            ]);
-        };
-        $markers=marker::all();  
-      $partidas =  $partidaResult;
-      $personajeActual=$personajes->first();    
-      //////////////----------------------------///////////////////
+       
+   
 
     $player = Player::find(\Auth::user()->id);   
 
@@ -54,11 +40,13 @@ class PlayerController extends Controller
     DB::table('players')
             ->where('id', $player->id)
             ->update(['avatar' => 'user'.$player->id.'img.jpg']);
+<<<<<<< HEAD
 */
     //guardo la imagen        
     //Storage::putFileAs('public',$request->avatar,'user'.$player->id.'img.jpg');
+=======
+>>>>>>> cbb8a2d344fb4b237241c02fe288422afd24872a
 
-    //$imagen=Image::make($request->avatar);
     
     /*
     */      
@@ -67,16 +55,10 @@ class PlayerController extends Controller
     $imagen->save('storage/user'.$player->id.'img.jpg');
 
 
-     //$url    = Storage::url('public/user'.$player->id.'img.jpg');
+      
    
-    
-        return view('principal.index')->with(compact('personajes'))
-                                        ->with(compact('partidas'))
-                                        ->with(compact('personajeActual'))
-                                        ->with(compact('player'))
-                                        ->with(compact('markers'))
-                                       // ->with(response()->json("{{asset('/storage/'".$player->avatar.")}}"))
-                                        ;
+   
+   
 
     }
 

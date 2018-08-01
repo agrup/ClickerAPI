@@ -1,12 +1,12 @@
 .sideplay {
    
-    height: 100%;
+    height: 28rem;
     z-index: 1;
     top: 0;
     right: 0;
     background-color: #111;
     overflow-x: hidden;
-    padding-top: 20px;
+  
 }
 
 .sideplay a{
@@ -30,4 +30,7 @@
 @media screen and (max-height: 450px) {
     .sideplay {padding-top: 15px;}
     .sideplay a {font-size: 18px;}
+}
+.datosPlayer{
+    margin-bottom: 1px;
 }
