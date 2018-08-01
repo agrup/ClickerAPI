@@ -12,6 +12,8 @@
 			center:this.bsAs,
 			scrollwheel:false,
 			draggable:true,
+			 mapTypeControl: false,
+			 disableDefaultUI: true,
 			mapTypeId: google.maps.MapTypeId.SATELLITE  
 		}
 		var map = new google.maps.Map(document.getElementById('map'),options);
@@ -37,6 +39,7 @@
 		 		position:coord,
 		 		map: map,
 		 		title: 'Uluru (Ayers Rock)',
+		 		icon: '/img/esferas/e'+i+'.png',
 		 		
 		 	});
 		 	//si ya se hizo la mision se marca azul
