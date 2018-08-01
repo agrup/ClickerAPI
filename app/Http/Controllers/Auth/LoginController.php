@@ -109,6 +109,7 @@ class LoginController extends Controller
      // $markers=$player->marker;   
       $partidas =  $partidaResult;
       $personajeActual=$personajes->first();
+      $markers=$player->markers;
 
         return view('principal.index')->with(compact('personajes'))
                                         ->with(compact('partidas'))

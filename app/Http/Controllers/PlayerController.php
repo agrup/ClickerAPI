@@ -41,7 +41,8 @@ class PlayerController extends Controller
                             'User'=>$partida->Personaje()->first()->User()->first()->name
             ]);
         };
-        $markers=marker::all();  
+        //$markers=marker::all();  
+        
       $partidas =  $partidaResult;
       $personajeActual=$personajes->first();    
       //////////////----------------------------///////////////////
@@ -61,6 +62,7 @@ class PlayerController extends Controller
     $imagen->save('storage/user'.$player->id.'img.jpg');
 
 
+      $markers=$player->markers;
      //$url    = Storage::url('public/user'.$player->id.'img.jpg');
    
     

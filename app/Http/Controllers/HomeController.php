@@ -81,7 +81,12 @@ class HomeController extends Controller
   }
 
   public function viajar(){
-
+        $id = request()->input('id');
+        $millas = request()->input('millas');
+        $experiencia = request()->input('experiencia');
+        $oro = request()->input('oro');
+        $ataque = request()->input('ataque');
+        $vida = request()->input('vida');
         //Paso la informacion del Player asociado al usuario auth
         $player = Player::find(\Auth::user()->id);   
 
@@ -99,16 +104,20 @@ class HomeController extends Controller
         };
       //marcas
       //$markers=marker::all();
-      $player = Player::find(\Auth::user()->id);   
-      $id = request()->input('id');        
+      $player = Player::find(\Auth::user()->id);
+      DB::table('players')
+            ->where('id', $player->id)
+            ->update(['nickname' => $nickname]); 
+              
 
       $player->markers()->updateExistingPivot($id,['player_id'=>$player->id,'completa'=>'completa']);
-      $markers=$player->markers; 
+     
+      $markers=$player->markers;
 
       $partidas =  $partidaResult;
       $personajeActual=$personajes->first();
       //hago update en las marcas
-        
+      
         /* DB::table('markers')
             ->where('id', $player->id)
             ->update(['completo' => 'completo']);*/

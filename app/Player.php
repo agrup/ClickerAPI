@@ -42,7 +42,7 @@ class Player extends Model
         }
         public function markers(){
             return $this->belongsToMany('App\marker','marker_player','player_id','marker_id')
-            ->withPivot('player_id','completa_');
+            ->withPivot('player_id','completa');
             ;
         }
     
