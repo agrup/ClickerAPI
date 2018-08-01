@@ -164,7 +164,9 @@ img
 
 }
 
-
+#map > div{
+ background-color: black;
+}
    
 }
 /* para subir la img del usuario */
@@ -186,6 +188,6 @@ img
     display: none;
 }
 .infoboxMapa{
-	
+		color: white;
 }
 

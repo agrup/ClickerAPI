@@ -32,7 +32,8 @@ $(document).ready(function(){
                     $('#file').hide();
                   $('#but_upload').hide();
                 }else{
-                    alert('file not uploaded');
+                    $('#file').hide();
+                  $('#but_upload').hide();
                 }
             },
         });

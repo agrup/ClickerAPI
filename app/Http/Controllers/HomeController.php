@@ -82,11 +82,21 @@ class HomeController extends Controller
 
   public function viajar(){
         $id = request()->input('id');
-        $player = Player::find(\Auth::user()->id);   
+        $player = Player::find(\Auth::user()->id);  
+        $personajes = Personaje::where('User',\Auth::user()->id)->get();
+        $personajeActual=$personajes->first(); 
          //compruebo la marca actual
         $markaActual=$player->markers->find($id)->completa;  
-        if(){
+        if($markaActual=='incompleta'){
+          $experiencia=$player->markers->find($id)->experiencia;
+          $millas=$player->markers->find($id)->millas;
+          $oro=$player->markers->find($id)->oro;
+          $player->updatePlayer($oro,$experiencia,$millas);
 
+          if(isset($personajeActual)){
+          $vida=$player->markers()->find($id)->vida;
+          $ataque=  $player->markers()->find($id)->ataque;
+          $personajeActual->updatePersonaje($vida,$ataque); }
         }
         /*$millas = request()->input('millas');
         if(!isset($millas)){$millas=0;}
@@ -107,7 +117,7 @@ class HomeController extends Controller
 
         //$playersOnline =Player::getPlayers()->tojson();
         //$personajes = Personajes::all()->tojson();
-        $personajes = Personaje::where('User',\Auth::user()->id)->get();
+        
             
         $partidas= Game::where('Estado',false)->orderBy('id','desc')->take(20)->get();
         $partidaResult=[];
@@ -129,13 +139,12 @@ class HomeController extends Controller
       $markers=$player->markers;
 
       $partidas =  $partidaResult;
-      $personajeActual=$personajes->first();
+      
      
       
       //update del Player
-      $player->updatePlayer($oro,$experiencia,$millas);
-      if(isset($personajeActual)){
-        $personajeActual->updatePersonaje($vida,$ataque); }
+      
+     
         /* DB::table('markers')
             ->where('id', $player->id)
             ->update(['completo' => 'completo']);*/
