@@ -16,10 +16,10 @@ class CreateMarkerPlayerTable extends Migration
         Schema::create('marker_player', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('marker_id')->unsigned();
-            $table->foreign('marker_id')->references('id')->on('players');
+            $table->foreign('marker_id')->references('id')->on('markers');
             
             $table->integer('player_id')->unsigned();
-            $table->foreign('player_id')->references('id')->on('markers');
+            $table->foreign('player_id')->references('id')->on('players');
             $table->string('completa')->deault('incompleta');
             $table->timestamps();
         });

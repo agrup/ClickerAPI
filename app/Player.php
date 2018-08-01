@@ -41,7 +41,9 @@ class Player extends Model
             return $this->belongsTo(Personaje::class, 'User');
         }
         public function markers(){
-            return $this->belongsToMany('App\marker','marker_player','player_id','marker_id');
+            return $this->belongsToMany('App\marker','marker_player','player_id','marker_id')
+            ->withPivot('player_id','completa');
+            ;
         }
     
 
