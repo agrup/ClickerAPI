@@ -92,6 +92,8 @@ class HomeController extends Controller
         if(!isset($ataque)){$ataque=0;}
         $vida = request()->input('vida');
         if(!isset($vida)){$vida=0;}
+        $distancia=request()->input('distancia');
+        $millas=$millas-$distancia;
         //Paso la informacion del Player asociado al usuario auth
         $player = Player::find(\Auth::user()->id);   
 
@@ -107,22 +109,23 @@ class HomeController extends Controller
                             'User'=>$partida->Personaje()->first()->User()->first()->name
             ]);
         };
-      //marcas
       //$markers=marker::all();
       $player = Player::find(\Auth::user()->id);
       /*DB::table('players')
             ->where('id', $player->id)
             ->update(['nickname' => $nickname]); */
               
-
+        //hago update en las marcas     
       $player->markers()->updateExistingPivot($id,['player_id'=>$player->id,'completa'=>'completa']);
      
       $markers=$player->markers;
 
       $partidas =  $partidaResult;
       $personajeActual=$personajes->first();
-      //hago update en las marcas
-      
+     
+      //update del Player
+      $player->updatePlayer($oro,$experiencia,$millas);
+
         /* DB::table('markers')
             ->where('id', $player->id)
             ->update(['completo' => 'completo']);*/

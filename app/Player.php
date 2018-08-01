@@ -3,7 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
-
+use Eloquent;
 class Player extends Model
 {
     protected $guarded = [];
@@ -44,6 +44,12 @@ class Player extends Model
             return $this->belongsToMany('App\marker','marker_player','player_id','marker_id')
             ->withPivot('player_id','completa');
             ;
+        }
+        public  function updatePlayer($oro,$experiencia,$millas){
+           $this->experiencia = $this->experiencia + $experiencia; 
+            $this->millas = $this->millas + $millas;
+            $this->oro = $this->oro + $oro;
+            $this->save();
         }
     
 

@@ -28,13 +28,14 @@
                     <h1 id="firstHeading" >Botín</h1>
                     <div id="bodyContent">
                     <h3>Distancia: {{$marka->distancia}}</h3>
+                    <input type="" name="distancia" hidden value="{{$marka->distancia}}">
                     @if($marka->oro)
                         <p><b>+{{$marka->oro}} Oro</b></p>
                         <input type="" name="oro" hidden value="{{$marka->oro}}">
                     @endif
                     @if($marka->millas)
                         <p><b>+{{$marka->millas}} Millas</b></p>
-                        <input type="" name="milas" hidden value="{{$marka->milas}}">
+                        <input type="" name="millas" hidden value="{{$marka->millas}}">
                     @endif
                     @if($marka->experiencia)
                         <p><b>+{{$marka->experiencia}} Experiencia</b></p>
