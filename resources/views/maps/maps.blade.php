@@ -3,6 +3,7 @@
 
 	
  <div id="map" class="mapa"></div>
+
  @foreach($markers as $marka)
  	<div data-marka="{{$marka->id}}" class="markerConteiner" hidden>
  		<p data-marka="{{$marka->distancia}}" hidden class="distancia{{$marka->id}}">distancia</p>
@@ -13,11 +14,12 @@
  		<p data-marka="{{$marka->experiencia}}" hidden class="experiencia{{$marka->id}}">experiencia</p>
  		<p data-marka="{{$marka->ataque}}" hidden class="ataque{{$marka->id}}">ataque</p>
  		<p data-marka="{{$marka->vida}}" hidden class="vida{{$marka->id}}">vida</p>
- 		<p data-marka="{{$marka->completa}}" hidden class="completa{{$marka->id}}">vida</p>
+ 		
  	</div>
 	 <div id="infobox{{$marka->id}}" class="infoboxMapa" >
             <div id="siteNotice">
             </div>
+            <p data-marka="{{$marka->completa}}"  class="completa{{$marka->id}}">{{$marka->completa}}</p>
             <h1 id="firstHeading" >Botín</h1>
             <div id="bodyContent">
             <h3>Distancia: {{$marka->distancia}}</h3>
@@ -40,6 +42,7 @@
             <form method="post" action="{{route('viajar')}}">
             	@csrf
             	<input type="submit" name="" value="Viajar y Cobrar">
+                <input type="" name="id" hidden value="{{$marka->id}}">
             </form>
             @else
             <p style="font-color : red"><b>No posee sufieciente millas para viajar</b></p>    

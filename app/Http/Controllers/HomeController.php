@@ -98,14 +98,20 @@ class HomeController extends Controller
             ]);
         };
       //marcas
-      $markers=marker::all();  
+      //$markers=marker::all();
+      $player = Player::find(\Auth::user()->id);   
+      $id = request()->input('id');        
+
+      $player->markers()->updateExistingPivot($id,['player_id'=>$player->id,'completa'=>'completa']);
+      $markers=$player->markers; 
+
       $partidas =  $partidaResult;
       $personajeActual=$personajes->first();
       //hago update en las marcas
-      $player = Player::find(\Auth::user()->id);   
-         DB::table('markers')
+        
+        /* DB::table('markers')
             ->where('id', $player->id)
-            ->update(['completo' => 'completo']);
+            ->update(['completo' => 'completo']);*/
 
 
         return view('principal.index')->with(compact('personajes'))
