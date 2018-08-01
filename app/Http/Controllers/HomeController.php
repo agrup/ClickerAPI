@@ -83,10 +83,15 @@ class HomeController extends Controller
   public function viajar(){
         $id = request()->input('id');
         $millas = request()->input('millas');
+        if(!isset($millas)){$millas=0;}
         $experiencia = request()->input('experiencia');
+        if(!isset($experiencia)){$experiencia=0;}
         $oro = request()->input('oro');
+        if(!isset($oro)){$oro=0;}
         $ataque = request()->input('ataque');
+        if(!isset($ataque)){$ataque=0;}
         $vida = request()->input('vida');
+        if(!isset($vida)){$vida=0;}
         //Paso la informacion del Player asociado al usuario auth
         $player = Player::find(\Auth::user()->id);   
 
@@ -105,9 +110,9 @@ class HomeController extends Controller
       //marcas
       //$markers=marker::all();
       $player = Player::find(\Auth::user()->id);
-      DB::table('players')
+      /*DB::table('players')
             ->where('id', $player->id)
-            ->update(['nickname' => $nickname]); 
+            ->update(['nickname' => $nickname]); */
               
 
       $player->markers()->updateExistingPivot($id,['player_id'=>$player->id,'completa'=>'completa']);

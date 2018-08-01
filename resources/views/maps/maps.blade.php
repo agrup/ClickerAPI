@@ -16,10 +16,14 @@
  		<p data-marka="{{$marka->vida}}" hidden class="vida{{$marka->id}}">vida</p>
  		
  	</div>
-       <form method="post" action="{{route('viajar')}}">
+       
+            
         	 <div id="infobox{{$marka->id}}" class="infoboxMapa" >
                     <div id="siteNotice">
+
                     </div>
+                    <form method="post" action="{{route('viajar')}}">
+                        @csrf
                     <p data-marka="{{$marka->completa}}"  class="completa{{$marka->id}}">{{$marka->pivot->completa}}</p>
                     <h1 id="firstHeading" >Botín</h1>
                     <div id="bodyContent">
@@ -46,9 +50,10 @@
                     @endif
                     @if(($player->millas)>=($marka->distancia))
                  
-                    	@csrf
-                    	<input type="submit" name="" value="Viajar y Cobrar">
-                        <input type="" name="id" hidden value="{{$marka->id}}">
+                    @if($marka->pivot->completa=='incompleta')
+                     <input type="submit" name="" value="Viajar y Cobrar">
+                    @endif
+                    <input type="" name="id" hidden value="{{$marka->id}}">        	
                        
             </form>
             @else
