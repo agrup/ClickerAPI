@@ -82,7 +82,13 @@ class HomeController extends Controller
 
   public function viajar(){
         $id = request()->input('id');
-        $millas = request()->input('millas');
+        $player = Player::find(\Auth::user()->id);   
+         //compruebo la marca actual
+        $markaActual=$player->markers->find($id)->completa;  
+        if(){
+
+        }
+        /*$millas = request()->input('millas');
         if(!isset($millas)){$millas=0;}
         $experiencia = request()->input('experiencia');
         if(!isset($experiencia)){$experiencia=0;}
@@ -93,9 +99,11 @@ class HomeController extends Controller
         $vida = request()->input('vida');
         if(!isset($vida)){$vida=0;}
         $distancia=request()->input('distancia');
-        $millas=$millas-$distancia;
+        $millas=$millas-$distancia;*/
+
+
         //Paso la informacion del Player asociado al usuario auth
-        $player = Player::find(\Auth::user()->id);   
+       
 
         //$playersOnline =Player::getPlayers()->tojson();
         //$personajes = Personajes::all()->tojson();
@@ -123,9 +131,11 @@ class HomeController extends Controller
       $partidas =  $partidaResult;
       $personajeActual=$personajes->first();
      
+      
       //update del Player
       $player->updatePlayer($oro,$experiencia,$millas);
-
+      if(isset($personajeActual)){
+        $personajeActual->updatePersonaje($vida,$ataque); }
         /* DB::table('markers')
             ->where('id', $player->id)
             ->update(['completo' => 'completo']);*/
