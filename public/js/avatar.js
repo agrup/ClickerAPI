@@ -36,6 +36,9 @@ $(document).ready(function(){
                   $('#but_upload').hide();
                 }
             },
+            error: function(XMLHttpRequest, textStatus, errorThrown) {
+
+            alert("Error con la imagen");}
         });
        
 

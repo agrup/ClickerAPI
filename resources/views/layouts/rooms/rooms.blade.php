@@ -12,7 +12,7 @@
 	<ul class="ul-menu">
 		<li>
 
-			<a href="/game/Crear+Personaje" clase="link-menu">Personaje</a>
+			<a href="/game/Crear+Personaje" clase="link-menu">Seleccionar PersonajeS</a>
 			
 		</li>
 		<li>

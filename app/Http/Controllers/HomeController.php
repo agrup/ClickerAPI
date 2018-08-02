@@ -45,10 +45,10 @@ class HomeController extends Controller
             ]);
         };
       //marcas
-      $markers=marker::all(); 
+      //$markers=marker::all(); 
 
 
-      //$markers=$player->markers; 
+      $markers=$player->markers; 
 
       $partidas =  $partidaResult;
       $personajeActual=$personajes->first();
@@ -81,43 +81,13 @@ class HomeController extends Controller
   }
 
   public function viajar(){
-        $id = request()->input('id');
-        $player = Player::find(\Auth::user()->id);  
-        $personajes = Personaje::where('User',\Auth::user()->id)->get();
-        $personajeActual=$personajes->first(); 
-         //compruebo la marca actual
-        $markaActual=$player->markers->find($id)->completa;  
-        if($markaActual=='incompleta'){
-          $experiencia=$player->markers->find($id)->experiencia;
-          $millas=$player->markers->find($id)->millas;
-          $oro=$player->markers->find($id)->oro;
-          $player->updatePlayer($oro,$experiencia,$millas);
-
-          if(isset($personajeActual)){
-          $vida=$player->markers()->find($id)->vida;
-          $ataque=  $player->markers()->find($id)->ataque;
-          $personajeActual->updatePersonaje($vida,$ataque); }
-        }
-        /*$millas = request()->input('millas');
-        if(!isset($millas)){$millas=0;}
-        $experiencia = request()->input('experiencia');
-        if(!isset($experiencia)){$experiencia=0;}
-        $oro = request()->input('oro');
-        if(!isset($oro)){$oro=0;}
-        $ataque = request()->input('ataque');
-        if(!isset($ataque)){$ataque=0;}
-        $vida = request()->input('vida');
-        if(!isset($vida)){$vida=0;}
-        $distancia=request()->input('distancia');
-        $millas=$millas-$distancia;*/
-
 
         //Paso la informacion del Player asociado al usuario auth
-       
+        $player = Player::find(\Auth::user()->id);   
 
         //$playersOnline =Player::getPlayers()->tojson();
         //$personajes = Personajes::all()->tojson();
-        
+        $personajes = Personaje::where('User',\Auth::user()->id)->get();
             
         $partidas= Game::where('Estado',false)->orderBy('id','desc')->take(20)->get();
         $partidaResult=[];
@@ -127,28 +97,21 @@ class HomeController extends Controller
                             'User'=>$partida->Personaje()->first()->User()->first()->name
             ]);
         };
-      //$markers=marker::all();
-      $player = Player::find(\Auth::user()->id);
-      /*DB::table('players')
-            ->where('id', $player->id)
-            ->update(['nickname' => $nickname]); */
-              
-        //hago update en las marcas     
-      $player->markers()->updateExistingPivot($id,['player_id'=>$player->id,'completa'=>'completa']);
-     
-      $markers=$player->markers;
-
+      //marcas
+      //$markers=marker::all();  
       $partidas =  $partidaResult;
+      $personajeActual=$personajes->first();
+      //hago update en las marcas
+      $player = Player::find(\Auth::user()->id);   
+      $player->completo='completo';
+      $player->save();
       
-     
-      
-      //update del Player
-      
-     
-        /* DB::table('markers')
+      /*
+         DB::table('markers')
             ->where('id', $player->id)
-            ->update(['completo' => 'completo']);*/
+            ->update(['completo' => 'completo']);
 
+      */
 
         return view('principal.index')->with(compact('personajes'))
                                         ->with(compact('partidas'))

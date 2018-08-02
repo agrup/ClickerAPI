@@ -33,6 +33,11 @@ class PlayerController extends Controller
    
 
     $player = Player::find(\Auth::user()->id);   
+    $imagen=Image::make($request->file('file')->getRealPath());
+    $imagen->resize(150,150);
+    $imagen->save('storage/user'.$player->id.'img.jpg');
+    /*
+    */      
 
     $player->avatar = 'user'.$player->id.'img.jpg';
     $player->save();
@@ -40,19 +45,13 @@ class PlayerController extends Controller
     DB::table('players')
             ->where('id', $player->id)
             ->update(['avatar' => 'user'.$player->id.'img.jpg']);
-<<<<<<< HEAD
 */
+
     //guardo la imagen        
     //Storage::putFileAs('public',$request->avatar,'user'.$player->id.'img.jpg');
-=======
->>>>>>> cbb8a2d344fb4b237241c02fe288422afd24872a
+
 
     
-    /*
-    */      
-    $imagen=Image::make($request->file('file')->getRealPath());
-    $imagen->resize(150,150);
-    $imagen->save('storage/user'.$player->id.'img.jpg');
 
 
       

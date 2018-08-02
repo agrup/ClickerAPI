@@ -16,12 +16,12 @@
 	<h3 class="titulo">Experiencia: {{$player->experiencia}}</h3>
 	<h3 class="titulo">Oro: {{$player->oro}}</h3>
 	<h3 class="titulo">Millas: {{$player->millas}}</h3>
-
+	
 	<input type="file" name="avatar">
 	<input type="submit" name="">
 	</form>
+
 @endguest
-	
 
 	
 	
