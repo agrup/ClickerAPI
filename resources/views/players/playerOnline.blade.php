@@ -22,7 +22,7 @@
            <img class="profile-pic" id="img" src="{{asset('/storage/'.$player->avatar)}}" > 
         </div>
         <div >
-        	<input type="button" id="up">Subir Foto</button>
+        	<input type="button" id="up" class="subirFoto" value="Cambiar"></button>
             <input type="file" id="file" name="file"  accept="image/*" hidden />
             <input type="button" class="button" value="Subir" id="but_upload" hidden>
         </div>

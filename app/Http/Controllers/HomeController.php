@@ -82,12 +82,26 @@ class HomeController extends Controller
 
   public function viajar(){
 
-        //Paso la informacion del Player asociado al usuario auth
-        $player = Player::find(\Auth::user()->id);   
-
-        //$playersOnline =Player::getPlayers()->tojson();
-        //$personajes = Personajes::all()->tojson();
+        $id = request()->input('id');
+        $player = Player::find(\Auth::user()->id);  
         $personajes = Personaje::where('User',\Auth::user()->id)->get();
+        $personajeActual=$personajes->first(); 
+         //compruebo la marca actual
+        $markaActual=$player->markers->find($id)->completa;  
+        if($markaActual=='incompleta'){
+          $experiencia=$player->markers->find($id)->experiencia;
+          $millas=$player->markers->find($id)->millas;
+          $oro=$player->markers->find($id)->oro;
+          $player->updatePlayer($oro,$experiencia,$millas);
+
+          if(isset($personajeActual)){
+          $vida=$player->markers()->find($id)->vida;
+          $ataque=  $player->markers()->find($id)->ataque;
+          $personajeActual->updatePersonaje($vida,$ataque); }
+        }
+  
+        
+
             
         $partidas= Game::where('Estado',false)->orderBy('id','desc')->take(20)->get();
         $partidaResult=[];

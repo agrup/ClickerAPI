@@ -1,6 +1,8 @@
 
 $(document).ready(function(){
-   
+    $('#up').click(function(){
+         $('#up').hide();   
+    });   
     var readURL;
     readURL = function(input) {
         if (input.files && input.files[0]) {
@@ -14,7 +16,7 @@ $(document).ready(function(){
         }
         }
     $("#but_upload").click(function(){
-            
+        
         var fd = new FormData();
         var files = $('#file')[0].files[0];
         fd.append('file',files);
@@ -31,9 +33,11 @@ $(document).ready(function(){
                     //location.reload();
                     $('#file').hide();
                   $('#but_upload').hide();
+                  $('#up').show();  
                 }else{
                     $('#file').hide();
                   $('#but_upload').hide();
+                  $('#up').show(); 
                 }
             },
             error: function(XMLHttpRequest, textStatus, errorThrown) {
