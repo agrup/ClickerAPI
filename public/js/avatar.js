@@ -10,6 +10,8 @@ $(document).ready(function(){
 
             reader.onload = function (e) {
                 $('.profile-pic').attr('src', e.target.result);
+                $('.profile-pic').attr('height', '150px');
+                $('.profile-pic').attr('width', '150px');
             }
     
             reader.readAsDataURL(input.files[0]);

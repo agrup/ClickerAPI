@@ -13,7 +13,7 @@
 		<li>
 
 
-			<a href="/game/Crear+Personaje" clase="link-menu">Seleccionar PersonajeS</a>
+			<a href="/game/Crear+Personaje" clase="link-menu">Seleccionar Personaje</a>
 
 			
 		</li>
