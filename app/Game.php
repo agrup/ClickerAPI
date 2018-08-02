@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\URL;
 
 use App\Player;
 use App\Personaje;
+use App\User;
 
 class Game extends Model
 {
@@ -34,6 +35,20 @@ class Game extends Model
     	{
             return self::where();
     	}
+        public function Terminar($ganador)
+        {
+
+            User::find($ganador)->userPlayer()->updatePlayer(
+
+          $oro=$premio->oro,
+          $experiencia=$premio->experiencia,
+          $millas=$premio->millas
+
+          );
+
+            $this->Estado = true;
+            $this->save();
+        }
 
 
 }

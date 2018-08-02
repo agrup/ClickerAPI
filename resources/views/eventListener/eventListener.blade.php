@@ -55,7 +55,7 @@
       <div class="lista" id="lista">
         
       @foreach($partidas as $game)
-        <a href="/game/unirme/{{$game['id']}}">
+        <a href="">
           
           <button class="tablinks" @click="openGame('{{$game['id']}}')">Partida:{{$game['id']}} {{$game['Personaje']}}->->{{$game['User']}}</button>
         </a>
@@ -88,11 +88,13 @@
           mounted() {
               this.getComments();
                this.listen();
+               //this.error();
           },
           methods: {
               getComments() {
                   axios.get('/game')
                        .then((response) => {
+
                         //console.log('this',response.data);
                            //this.partidas = response.data
                            //this.partidas = this.PersonajeSelect
@@ -109,6 +111,7 @@
 
                   })
                   .then((response) => {
+
                       this.partidas.push(response.data);
                     console.log('this5',this.partidas);
 
@@ -121,9 +124,6 @@
               	listen() {
               	 Echo.channel('channelEvent')
   		    	       .listen('eventTrigger', (e) => {
-
-
-
                      obj.play();
                     
                     $('#lista').prepend("<a href=/game/unirme/"+e.id+" >  <button class='tablinks' id="+e.id+" )'>Partida:"+e.id+" "+e.personaje+"->->"+e.user+"</button> </a>");
@@ -147,11 +147,15 @@
                   
                     $('.ul-container').append('<li><a href=/game/unirme/'+e.id+' >HOST: '+e.personaje_p1+' Partida: '+e.id+'</a></li>');
                     */
-		    	         })
+		    	         });
+
         		},
+
               openGame(id){
                   axios.get('/game/unirme/'+id)
                        .then((response) => {
+                        //console.log(response);
+                        console.log('casa2');
                         //console.log('this',response.data);
                            //this.partidas = response.data
                            //this.partidas = this.PersonajeSelect

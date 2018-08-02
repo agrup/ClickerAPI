@@ -81,7 +81,8 @@ class HomeController extends Controller
   }
 
   public function viajar(){
-        $id = request()->input('id');
+
+$id = request()->input('id');
         $player = Player::find(\Auth::user()->id);  
         $personajes = Personaje::where('User',\Auth::user()->id)->get();
         $personajeActual=$personajes->first(); 
@@ -91,8 +92,10 @@ class HomeController extends Controller
           $experiencia=$player->markers->find($id)->experiencia;
           $millas=$player->markers->find($id)->millas;
           $oro=$player->markers->find($id)->oro;
+
           $distancia=$player->markers->find($id)->distancia;
           $player->updatePlayer($oro,$experiencia,$millas,$distancia);
+
 
           if(isset($personajeActual)){
           $vida=$player->markers()->find($id)->vida;
@@ -120,7 +123,6 @@ class HomeController extends Controller
       $player->markers()->updateExistingPivot($id,['player_id'=>$player->id,'completa'=>'completa']);
      
       $markers=$player->markers;
-
       $partidas =  $partidaResult;
       
      
@@ -131,8 +133,6 @@ class HomeController extends Controller
         /* DB::table('markers')
             ->where('id', $player->id)
             ->update(['completo' => 'completo']);*/
-
-
         return view('principal.index')->with(compact('personajes'))
                                         ->with(compact('partidas'))
                                         ->with(compact('personajeActual'))

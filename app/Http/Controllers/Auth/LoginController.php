@@ -106,7 +106,12 @@ class LoginController extends Controller
             ]);
         };
 
+         //$markers=marker::all(); 
+      //$markers=$player->marker;   
+
+
      // $markers=$player->marker;   
+
       $partidas =  $partidaResult;
       $personajeActual=$personajes->first();
       $markers=$player->markers;

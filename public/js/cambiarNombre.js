@@ -6,7 +6,7 @@ $(document).ready(function(){
             if(nick==""){
                 alert("no se permiten nicks en blanco");
             }else{
-                $("#nombrePlayer").text(nick);
+                //$("#nombrePlayer").text(nick);
             //var token=$("#_token").val();
             $.ajax({
             url: "cambiarNombre",
@@ -19,12 +19,16 @@ $(document).ready(function(){
             /*contentType: "application/json",*/
 
             }).done(function (data){
-                var resp=data.responseJSON;
-
-                
+               // var resp=data.responseJSON;
+               $("#nombrePlayer").text(data);
+                console.log(data);
             });
             }
 			
             
 		});
+
+        
+
+        
 });
