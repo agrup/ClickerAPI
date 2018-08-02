@@ -24,10 +24,16 @@
                     </div>
                     <form method="post" action="{{route('viajar')}}">
                         @csrf
-                    <p data-marka="{{$marka->completa}}"  class="completa{{$marka->id}}">{{$marka->pivot->completa}}</p>
-                    <h1 id="firstHeading" >Botín</h1>
+                    <p data-marka="{{$marka->completa}}"  class="completa{{$marka->id}}" style="color:blue">
+                        @if($marka->pivot->completa=='completa')
+                            Esfera capturada!
+                        @else
+                            Obten millas para obtener la esfera
+                        @endif
+                    </p>
+                    <h1 id="firstHeading" >Esfera</h1>
                     <div id="bodyContent">
-                    <h3>Distancia: {{$marka->distancia}}</h3>
+                    <h3>Distancia: {{$marka->distancia}} millas</h3>
                     <input type="" name="distancia" hidden value="{{$marka->distancia}}">
                     @if($marka->oro)
                         <p><b>+{{$marka->oro}} Oro</b></p>
@@ -58,7 +64,7 @@
                        
             </form>
             @else
-                <p style="font-color : red"><b>No posee sufieciente millas para viajar</b></p>    
+                <p style="color : red"><b>No posee suficientes millas para viajar</b></p>    
             @endif
             
        </div>

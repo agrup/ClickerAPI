@@ -14,6 +14,7 @@
 			draggable:true,
 			 mapTypeControl: false,
 			 disableDefaultUI: true,
+			 label:false,
 			mapTypeId: google.maps.MapTypeId.SATELLITE  
 		}
 		var map = new google.maps.Map(document.getElementById('map'),options);
@@ -38,7 +39,7 @@
 			var mark = new google.maps.Marker({
 		 		position:coord,
 		 		map: map,
-		 		title: 'Uluru (Ayers Rock)',
+		 		title: 'Esfera de '+i+' estrellas',
 		 		icon: '/img/esferas/e'+i+'.png',
 		 		
 		 	});
