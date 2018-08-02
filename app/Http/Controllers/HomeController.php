@@ -87,11 +87,12 @@ class HomeController extends Controller
         $personajeActual=$personajes->first(); 
          //compruebo la marca actual
         $markaActual=$player->markers->find($id)->completa;  
-        if($markaActual=='incompleta'){
+        if($markaActual=='incompleta' && $player->millas>=$player->markers->find($id)->millas){
           $experiencia=$player->markers->find($id)->experiencia;
           $millas=$player->markers->find($id)->millas;
           $oro=$player->markers->find($id)->oro;
-          $player->updatePlayer($oro,$experiencia,$millas);
+          $distancia=$player->markers->find($id)->distancia;
+          $player->updatePlayer($oro,$experiencia,$millas,$distancia);
 
           if(isset($personajeActual)){
           $vida=$player->markers()->find($id)->vida;

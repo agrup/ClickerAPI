@@ -20,12 +20,13 @@
 			
 		
 		</li>
+		
 		<li>
-			<a href="/game/Perfil" clase="link-menu">Perfil</a>
+			<a href="/game/Trainer" clase="link-menu">Entrenamiento</a>
 			
 		</li>
 		<li>
-			<a href="/game/Trainer" clase="link-menu">Trainer</a>
+			<a href="/game/Perfil" clase="link-menu">Tabla de Posiciones</a>
 			
 		</li>
 

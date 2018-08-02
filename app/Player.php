@@ -45,7 +45,7 @@ class Player extends Model
             ->withPivot('player_id','completa');
             ;
         }
-        public  function updatePlayer($oro,$experiencia,$millas){
+        public  function updatePlayer($oro,$experiencia,$millas,$distancia){
             //recupero la experiencia actual
             if(isset($experiencia)){
                 $sumexp=$this->experiencia + $experiencia;
@@ -57,6 +57,8 @@ class Player extends Model
                 }
             }
             if(isset($millas)){$this->millas = $this->millas + $millas;} 
+
+            $this->millas=$this->millas-$distancia;
             if (isset($oro)){$this->oro = $this->oro + $oro;}
             
             $this->save();
