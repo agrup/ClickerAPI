@@ -162,7 +162,7 @@ class PartidaController extends Controller
       if($ganador->url2 == $request->perdedor){
 
         //DARLE LOS PUNTOS AL GANADOR
-        $ganador->Terminar(2);
+        $ganador->Terminar($ganador->host_id);
         
         
         /*
@@ -189,7 +189,7 @@ class PartidaController extends Controller
       //return $gandor->host_id;
       if($ganador->url1 == $request->perdedor){
         //DARLE LOS PUNTOS AL GANADOR
-        $ganador->Terminar(1);
+        $ganador->Terminar($ganador->oponent_id);
         
 /*
 

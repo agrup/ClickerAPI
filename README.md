@@ -26,7 +26,9 @@ CONFIGURACION
 			GOOGLE_ID=
 
 		var mas en https://developers.google.com/+/web/api/rest/oauth
-	
+		
+		habilitar google+ api
+
 		Configurar Cuenta Faccebook 
 
 			FACEBOOK_ID = 
@@ -44,20 +46,9 @@ CONFIGURACION
 			DB_USERNAME=
 			DB_PASSWORD=
 
-		Configurar cuenta PUSHER
 
-			BROADCAST_DRIVER=pusher
 
-			PUSHER_APP_ID=
-			PUSHER_APP_KEY=
-			PUSHER_APP_SECRET=
-			PUSHER_APP_CLUSTER=
 
-		ver mas en www.pusher.com 
-
-			ir a channels app 
-			create channels app
-			en apps key estan las credenciales
 
 		Configurar Una clave personal para la creacion de una key de la api
 		(se creara una clave de 60 caracteres hexadecimales que se usara en el juego (ClikerGame))
@@ -74,6 +65,8 @@ Inicio
 
 	php artisan migrate --seed
 	php artisan serve
+
+	php artisan key:generate
 
 	npm run watch
 

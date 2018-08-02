@@ -182,7 +182,7 @@ transition: opacity 400ms ease-in;
 
 .profile-pic {
 	
-      padding-left: 21px;
+    padding: 21px;
     max-width: 150px;
     max-height: 150px;
     display: block;

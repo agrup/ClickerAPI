@@ -1,9 +1,9 @@
-	@auth
+  @auth
   <meta charset="UTF-8">
   
 
 <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
-		
+    
     <script src={{asset("js/app.js")}} charset="utf-8"></script>
     <script src={{asset("js/partidas/partidas.js")}} charset="utf-8"></script>
 <link rel="stylesheet" type="text/css" href="{{ asset('css/partidas/partidas.css') }}">
@@ -12,7 +12,8 @@
   <div class="games-container">
     
 
-  	<div id="app">
+
+    <div id="app">
       <div calss="incon-container">
         
         @if(isset($personajeActual) )
@@ -42,6 +43,7 @@
 
         @endif
         @else
+
           <h4>Sin Personaje</h4>
             <img src={{asset("img/sinPersonaje.png")}} alt="imagen" id="img-1">
      @endif
@@ -49,24 +51,28 @@
   
       </div>
       
-  	</div>
+    </div>
       <div class="tab">
-      <h2>Lobby</h2>
+      <div class="title-container">
+        
+        <h2 class="loby">Lobby</h2>
+        <p>Juga y obtene Experiencia y Oro</p>
+      </div>
       <div class="lista" id="lista">
         
       @foreach($partidas as $game)
-        <a href="">
+        <a href="{{asset("/game/unirme/")}}/{{$game['id']}}">
           
           <button class="tablinks" @click="openGame('{{$game['id']}}')">Partida:{{$game['id']}} {{$game['Personaje']}}->->{{$game['User']}}</button>
         </a>
 
-        
       @endforeach
 
       </div>
       </div>
   </div>
-<!-- -->
+<!--
+ -->
   <script>
 
   var obj = document.createElement("audio");
@@ -121,9 +127,9 @@
                       console.log(error);
                   })
               },
-              	listen() {
-              	 Echo.channel('channelEvent')
-  		    	       .listen('eventTrigger', (e) => {
+                listen() {
+                 Echo.channel('channelEvent')
+                   .listen('eventTrigger', (e) => {
                      obj.play();
                     
                     $('#lista').prepend("<a href=/game/unirme/"+e.id+" >  <button class='tablinks' id="+e.id+" )'>Partida:"+e.id+" "+e.personaje+"->->"+e.user+"</button> </a>");
@@ -140,16 +146,17 @@
                     },20);
                   });
 
+/*
 
                     /*
+                    */
                     console.log('Partidas: ',this.partidas)
                     console.log('Partidas2: ',this);
                   
                     $('.ul-container').append('<li><a href=/game/unirme/'+e.id+' >HOST: '+e.personaje_p1+' Partida: '+e.id+'</a></li>');
-                    */
-		    	         });
+                   });
 
-        		},
+            },
 
               openGame(id){
                   axios.get('/game/unirme/'+id)
@@ -170,7 +177,7 @@
 
   </script>
 
-	@endauth
+  @endauth
 
 </body> 
 </html>

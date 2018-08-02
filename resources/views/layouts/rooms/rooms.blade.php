@@ -24,11 +24,15 @@
 		</li>
 		
 		<li>
-			<a href="/game/Trainer" clase="link-menu">Entrenamiento</a>
+			<a href="/game/Trainer" clase="link-menu">Velocidad</a>
 			
 		</li>
 		<li>
 			<a href="/game/Perfil" clase="link-menu">Tabla de Posiciones</a>
+			
+		</li>
+				<li>
+			<a href="/game/Reacciona" clase="link-menu">Reacciona</a>
 			
 		</li>
 

@@ -13,6 +13,12 @@ class TrainerController extends Controller
     	return view('trainer.trainer');
 		
 	}
+		public function show2()
+	{
+
+    	return view('trainer.reaccion');
+		
+	}
 
 
 }

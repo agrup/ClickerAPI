@@ -58,6 +58,7 @@ Route::post('/game/GuardarPersonaje', 'PersonajeController@store')->middleware('
 
 
 Route::get('/game/Trainer', 'TrainerController@show')->middleware('auth');
+Route::get('/game/Reacciona', 'TrainerController@show2')->middleware('auth');
 
 
 //viajar
