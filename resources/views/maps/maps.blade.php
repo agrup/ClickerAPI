@@ -64,7 +64,10 @@
                        
             </form>
             @else
-                <p style="color : red"><b>No posee suficientes millas para viajar</b></p>    
+                @if($marka->pivot->completa=='incompleta')
+                        <p style="color : red"><b>No posee suficientes millas para viajar</b></p>  
+                @endif
+                   
             @endif
             
        </div>
