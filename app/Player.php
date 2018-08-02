@@ -62,6 +62,8 @@ class Player extends Model
             if (isset($oro)){$this->oro = $this->oro + $oro;}
             
             $this->save();
+
+            
         }
     
 
