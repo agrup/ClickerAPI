@@ -37,6 +37,10 @@ class Game extends Model
     	}
         public function Terminar($ganador)
         {
+                $premio = [     'oro'=>50,
+                    'experiencia'=>20,
+                    'millas'=>200
+                    ];
 
             User::find($ganador)->userPlayer()->updatePlayer(
 

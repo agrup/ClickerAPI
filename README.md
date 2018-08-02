@@ -5,7 +5,7 @@ curl
 libpng-dev
 openssl
 php7.2-gd
-
+postgresql 9 >=
 
 INSTALACION
 ============
