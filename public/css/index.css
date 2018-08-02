@@ -35,6 +35,11 @@ body
 
 
 }
+
+.principal > img{
+	width: 100%;
+}
+
 .mapa{
 	
 	width: 100%;
@@ -176,9 +181,12 @@ transition: opacity 400ms ease-in;
 }
 
 .profile-pic {
+	
+      padding-left: 21px;
     max-width: 200px;
     max-height: 200px;
     display: block;
+    border-radius: 50%;
 }
 
 .file-upload {
@@ -198,7 +206,7 @@ transition: opacity 400ms ease-in;
     border: none;
     color: white;
     font-size: 20px; 
-    padding: 10px 20px;
+    padding: 10px 28%;
     text-decoration: none;
     margin: 4px 2px;
     cursor: pointer;

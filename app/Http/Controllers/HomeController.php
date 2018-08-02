@@ -82,7 +82,7 @@ class HomeController extends Controller
 
   public function viajar(){
 
-        $id = request()->input('id');
+$id = request()->input('id');
         $player = Player::find(\Auth::user()->id);  
         $personajes = Personaje::where('User',\Auth::user()->id)->get();
         $personajeActual=$personajes->first(); 
@@ -93,7 +93,6 @@ class HomeController extends Controller
           $millas=$player->markers->find($id)->millas;
           $oro=$player->markers->find($id)->oro;
           $player->updatePlayer($oro,$experiencia,$millas);
-
           if(isset($personajeActual)){
           $vida=$player->markers()->find($id)->vida;
           $ataque=  $player->markers()->find($id)->ataque;
@@ -101,7 +100,6 @@ class HomeController extends Controller
         }
   
         
-
             
         $partidas= Game::where('Estado',false)->orderBy('id','desc')->take(20)->get();
         $partidaResult=[];
@@ -111,22 +109,26 @@ class HomeController extends Controller
                             'User'=>$partida->Personaje()->first()->User()->first()->name
             ]);
         };
-      //marcas
-      //$markers=marker::all();  
-      $partidas =  $partidaResult;
-      $personajeActual=$personajes->first();
-      //hago update en las marcas
-      $player = Player::find(\Auth::user()->id);   
-      $player->completo='completo';
-      $player->save();
-      
-      /*
-         DB::table('markers')
+      //$markers=marker::all();
+      $player = Player::find(\Auth::user()->id);
+      /*DB::table('players')
             ->where('id', $player->id)
-            ->update(['completo' => 'completo']);
-
-      */
-
+            ->update(['nickname' => $nickname]); */
+              
+        //hago update en las marcas     
+      $player->markers()->updateExistingPivot($id,['player_id'=>$player->id,'completa'=>'completa']);
+     
+      $markers=$player->markers;
+      $partidas =  $partidaResult;
+      
+     
+      
+      //update del Player
+      
+     
+        /* DB::table('markers')
+            ->where('id', $player->id)
+            ->update(['completo' => 'completo']);*/
         return view('principal.index')->with(compact('personajes'))
                                         ->with(compact('partidas'))
                                         ->with(compact('personajeActual'))
