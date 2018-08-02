@@ -98,25 +98,7 @@ class HomeController extends Controller
           $ataque=  $player->markers()->find($id)->ataque;
           $personajeActual->updatePersonaje($vida,$ataque); }
         }
-        /*$millas = request()->input('millas');
-        if(!isset($millas)){$millas=0;}
-        $experiencia = request()->input('experiencia');
-        if(!isset($experiencia)){$experiencia=0;}
-        $oro = request()->input('oro');
-        if(!isset($oro)){$oro=0;}
-        $ataque = request()->input('ataque');
-        if(!isset($ataque)){$ataque=0;}
-        $vida = request()->input('vida');
-        if(!isset($vida)){$vida=0;}
-        $distancia=request()->input('distancia');
-        $millas=$millas-$distancia;*/
-
-
-        //Paso la informacion del Player asociado al usuario auth
-       
-
-        //$playersOnline =Player::getPlayers()->tojson();
-        //$personajes = Personajes::all()->tojson();
+  
         
             
         $partidas= Game::where('Estado',false)->orderBy('id','desc')->take(20)->get();

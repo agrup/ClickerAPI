@@ -129,10 +129,10 @@ transition: opacity 400ms ease-in;
     border: none;
     color: white;
     font-size: 20px; 
-    padding: 10px 20px;
+    padding: 5px 10px;
     text-decoration: none;
     margin: 4px 2px;
-    cursor: pointer;
+    cursor: pointer;}
 
 
 
@@ -193,3 +193,24 @@ transition: opacity 400ms ease-in;
 	font-size: 1rem;
 }
 
+.subirFoto{
+		 background-color: red;
+    border: none;
+    color: white;
+    font-size: 20px; 
+    padding: 10px 20px;
+    text-decoration: none;
+    margin: 4px 2px;
+    cursor: pointer;
+
+}
+.button{
+	 background-color: red;
+    border: none;
+    color: white;
+    font-size: 20px; 
+    padding: 10px 20px;
+    text-decoration: none;
+    margin: 4px 2px;
+    cursor: pointer;
+}
