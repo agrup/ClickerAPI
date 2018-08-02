@@ -103,3 +103,49 @@ body main
       left: 1107px;
   top:22px;
 }
+@media only screen and (max-width: 1173px){
+    .click-Zone
+{
+  width: 20%;
+  margin: 15% 0% 0% 50%;
+  text-align: center;
+}
+.clickeable img
+{
+  width: 200px;
+
+
+}
+
+
+}
+@media only screen and (max-width: 573px){
+.card-main {
+  
+    
+}
+.clickeable img
+{
+  width: 100px;
+
+
+}
+.tablero{
+  position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100px;
+
+}
+.records{
+  position: fixed;
+    
+    bottom: 0;
+   width: 100px;
+}
+.card{
+  margin: 0px;
+  width: 80px;
+}
+
+}

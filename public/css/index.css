@@ -152,7 +152,7 @@ transition: opacity 400ms ease-in;
 }
 .left {
 	flex-basis: auto;
-	    height: 15%;
+	    height: 5em;
 	    width: 100%
 }
 .left .right
@@ -167,7 +167,7 @@ transition: opacity 400ms ease-in;
 }
 
 #map > div{
- background-color: black;
+	
 }
    
 }
@@ -223,4 +223,23 @@ transition: opacity 400ms ease-in;
     text-decoration: none;
     margin: 4px 2px;
     cursor: pointer;
+}
+@media only screen and (max-width: 590px){
+	.left{
+		font-size: 12px;
+	}
+}
+@media only screen and (max-width: 375px){
+	.left{
+		font-size: 10px;
+
+	}
+	li{
+		padding: 0px;
+		margin: 0px;
+	}
+	.sidenav a{
+		padding: 0px;
+		margin: 0px;
+	}
 }

@@ -4,7 +4,7 @@
   markers:[],
   millas:0,
   bsAs : {lat: -34.603722,lng:  -58.381592},
-  infowindow : [],
+ 
 	iniciar:function initMap(){
 		
 		//var bsAs = {lat: -34.603722,lng:  -58.381592};
@@ -42,12 +42,12 @@
 		 		mark.setIcon(pinImageAzul);
 		 	}else{
 		 		mark.addListener('click', function() {
-            	Mapa.infowindow [1].open(map, this);
+            	infowindow .open(map, this);
             	
             
 			});
 
-		 		Mapa.infowindow [1]= new google.maps.InfoWindow({
+		 		var infowindow = new google.maps.InfoWindow({
 		          content: document.getElementById("infobox"+i),
 		        });
 		 	}
