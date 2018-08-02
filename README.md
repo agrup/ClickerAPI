@@ -25,7 +25,7 @@ CONFIGURACION
 			GOOGLE_URL=
 			GOOGLE_ID=
 
-		var mas en https://console.developers.google.com
+		var mas en https://developers.google.com/+/web/api/rest/oauth
 	
 		Configurar Cuenta Faccebook 
 

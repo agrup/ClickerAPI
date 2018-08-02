@@ -151,10 +151,7 @@ class PartidaController extends Controller
 
 /*
 */
-    $premio = [     'oro'=>50,
-                    'experiencia'=>20,
-                    'millas'=>200
-                    ];
+
 
 
 
