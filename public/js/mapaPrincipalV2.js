@@ -37,14 +37,21 @@
 		 		icon: '/img/esferas/e'+i+'.png',
 		 		
 		 	});
+		 	 mark.addListener('click', toggleBounce);
+		 		 function toggleBounce() {
+		        if (mark.getAnimation() !== null) {
+		          mark.setAnimation(null);
+		        } else {
+		          mark.setAnimation(google.maps.Animation.BOUNCE);
+		        }}
 		 	//si ya se hizo la mision se marca azul
 		 	if(completa=="completa"){
 		 		mark.setIcon(pinImageAzul);
 		 	}else{
-		 		mark.addListener('click', function() {
+		 		
+		 		
+		        mark.addListener('click', function() {
             	infowindow .open(map, this);
-            	
-            
 			});
 
 		 		var infowindow = new google.maps.InfoWindow({
@@ -56,5 +63,8 @@
 
 	
 	},
+	dialogo: function cargarDialog(){
+		
+		}
 
 };

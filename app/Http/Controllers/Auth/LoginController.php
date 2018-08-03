@@ -71,6 +71,7 @@ class LoginController extends Controller
                 //'provider'=>strtoupper($provider),
                 'provider_id'=>$providerUser->id,
              ]);
+            $error_code=5;
             //Creo el player
             $player=Player::create([
                 'nickname'=>$providerUser->getName(),
@@ -115,12 +116,13 @@ class LoginController extends Controller
       $partidas =  $partidaResult;
       $personajeActual=$personajes->first();
       $markers=$player->markers;
-
+     
         return view('principal.index')->with(compact('personajes'))
                                         ->with(compact('partidas'))
                                         ->with(compact('personajeActual'))
                                         ->with(compact('player'))
                                         ->with(compact('markers'))
+                                        ->with(compact('error_code'));
                                         ;
 
     

@@ -1,8 +1,9 @@
 @section('jugador2')
 	
 
-	
- <div id="map" class="mapa"></div>
+	 
+    
+ <div id="map" class="mapa" ></div>
 
  @foreach($markers as $marka)
  	<div data-marka="{{$marka->id}}" class="markerConteiner" hidden>
@@ -73,13 +74,37 @@
        </div>
        </div>
  @endforeach
-
+ <div id="dialog">
+     <p>Utiliza tus millas para viajar y recolectar las esferas del Dragon!</p>
+ </div>
+<!-- The Modal -->
+<div id="id01" class="w3-modal">
+  <div class="w3-modal-content">
+    <div class="w3-container">
+      <span onclick="document.getElementById('id01').style.display='none'" 
+      class="w3-button w3-display-topright">&times;</span>
+      <p>Some text in the Modal..</p>
+      <p>Some text in the Modal..</p>
+    </div>
+  </div>
+</div>
  
-
+  
     <script type="text/javascript" src="{{asset("js/mapaPrincipalV2.js")}}"></script>
     <script async defer
     src="https://maps.googleapis.com/maps/api/js?key={{env("GOOGLE_MAP_KEY")}}&callback=Mapa.iniciar">
     </script>
+    <link href='https://fonts.googleapis.com/css?family=Hanalei Fill' rel='stylesheet'>
+    @if( !empty($error_code)&&$error_code == 5)
+        <script>
+            $(document).ready(function(){
+                  
+                    document.getElementById("amodal2").click();
+                    //alert($("#amodal").text());
+             });
+               
+        </script>
+        @endif
 
 @endsection
 

@@ -21,11 +21,11 @@
 	<input type="file" name="avatar">
 	<input type="submit" name="">
 	</form>
-
-@endguest
-
-	
 	
 @endguest
+
+
+
+
 </body>
 </html>
