@@ -53,7 +53,7 @@
 				<section class="principal">
 					@guest
 					@yield('content')
-						
+					@include('bienvenido')
 					@endif
 		    		@yield('jugador2')
 		    	

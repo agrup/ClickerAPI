@@ -24,7 +24,7 @@ mejorTiempo:1000,
 		} ,
 
 	init:function(){
- 
+ 			$('.clickeable-hide').hide()
 			$( "#dialog" ).dialog({
 				title:"Click entrenamiento",
 				//position: [2000,5],
@@ -35,7 +35,7 @@ mejorTiempo:1000,
 
 			$('.clickeable').on('click',function(){
 				this.perdio=false;
-				$('.clickeable').removeClass('clickeable');
+				//$('.clickeable').removeClass('clickeable');
 				$( ".ui-dialog" ).hide();
 				if (!this.inicio ){
 				this.inicio = true;
@@ -56,8 +56,10 @@ mejorTiempo:1000,
 	editsrc: function(a,c){
 		if(!this.perdio){
 		a.attr('src','/img/broly2.png')
-
-		c.addClass('reaccionable');
+		a.hide();
+		alert('casa');
+		$('.clickeable-hide').show();
+		//c.addClass('reaccionable');
 		//c.removeClass('clickeable');
 
 		reaccion.cambia(c);

@@ -33,11 +33,11 @@ body
 }
 .principal
 {
-
-	flex-basis: 80%;
-	height: 26rem;
-	border-style: solid;
-	border-color: white;
+/*margin-top: 8%;*/
+    flex-basis: 80%;
+    height: 39rem;
+    border-style: solid;
+    border-color: white;
 }
 
 .principal > img{
@@ -52,6 +52,7 @@ body
 }
 .container-vertical
 {
+	overflow: hidden;
 	display: flex;
 	flex-direction:column;
 }
@@ -259,6 +260,10 @@ color: red;
     border-color: white;
     
 	z-index: 1;
+}
+.foo:hover
+{
+	opacity: 0.5;
 }
 embed{
 	float: right;

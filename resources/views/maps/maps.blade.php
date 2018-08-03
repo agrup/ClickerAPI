@@ -96,7 +96,7 @@
     src="https://maps.googleapis.com/maps/api/js?key={{env("GOOGLE_MAP_KEY")}}&callback=Mapa.iniciar">
     </script>
     <link href='https://fonts.googleapis.com/css?family=Hanalei Fill' rel='stylesheet'>
-    @if( !empty($error_code)&&$error_code == 5)
+     @if(!isset($personajeActual) )
         <script>
             $(document).ready(function(){
                   
@@ -105,6 +105,8 @@
              });
                
         </script>
+        @endif
+    @if( (!empty($error_code)&&$error_code == 5))
         @endif
 
 @endsection

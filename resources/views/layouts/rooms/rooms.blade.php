@@ -27,14 +27,7 @@
 			<a href="/game/Trainer" class="link-menu">Velocidad</a>
 			
 		</li>
-		<li>
-			<a href="/game/Perfil" class="link-menu">Tabla de Posiciones</a>
-			
-		</li>
-				<li>
-			<a href="/game/Reacciona" class="link-menu">Reacciona</a>
-			
-		</li>
+
 
 	</ul>
 

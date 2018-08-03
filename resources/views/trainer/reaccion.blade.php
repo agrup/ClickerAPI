@@ -3,7 +3,7 @@
 <head>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 		<script type="text/javascript" src="{{asset("js/trainer/reaccion.js")}}"></script>
-	<link rel="stylesheet" type="text/css" href="{{ asset('css/trainer/trainer.css') }}">
+	<link rel="stylesheet" type="text/css" href="{{ asset('css/trainer/reaccion.css') }}">
 	<!--
 		<script type="text/javascript" src="{{asset("js/trainer/trainer.js")}}"></script>
 	<script type="text/javascript" src="reaccion.js"></script>
@@ -28,9 +28,16 @@
 		
 		<div class="click-Zone">
 			<h1>Mide tu Reaccion</h1>
+			<div class="container-flex">
+				
 				<div class="clickeable">
-					<img src="/img/broly.png" alt="">
+					<img src="/img/vegueta.png" alt="">
 				</div>
+				<div class="clickeable-hide">
+					<img src="/img/vegueta2.png" alt="">
+				</div>
+			</div>
+
 		</div>
 	</div>
 					<div id="dialog" title="Basic dialog">

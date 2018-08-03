@@ -25,7 +25,7 @@ body button
 }
 .clickeable img
 {
-	width: 300px;
+	width: 400px;
 
 
 }
@@ -106,7 +106,7 @@ body button
 .records
 {
   position: absolute;
-      left: 1107px;
+          right: -280%;
   top:22px;
 }
 @media only screen and (max-width: 1173px){
@@ -118,7 +118,7 @@ body button
 }
 .clickeable img
 {
-  width: 200px;
+  width: 100%;
 
 
 }

@@ -14,27 +14,27 @@
    
 }
 .loginbox{
-	margin: 50px;
-margin-left: 600px;
+	margin: 8% 41%;
+	display: flex;
+	font-size: 30px;
 }
 .loginboxreg{
-	margin-left: 600px;
-	font-size: 18px;
+	display:flex;
+margin-left: 600px;
+    font-size: 18px;
+    margin: 4% 41%;
 }
 .login {
-	
-	position: all;
-  
-  border: 1px solid #42464b;
-  border-radius: 6px;
-  height: 395px;
-  margin: 20px auto 0;
-  
-  background-color: orange;
+height: 100%;
+    border: 1px solid #42464b;
+    border-radius: 6px;
+    /* height: 395px; */
+    /* margin: 20px auto 0; */
+    background-color: orange;
 }
 .titulolog{
 	margin: 10px;
-	font-size: 18px;
+	font-size: 40px;
 }
 .bodylog{
 	margin-bottom: 20px;
@@ -42,4 +42,22 @@ margin-left: 600px;
 .label{
 	margin-bottom: 20px;
 
+}
+.form-control 
+{
+	    font-size: 23px;
+}
+
+.btn-login
+{
+	    font-size: 30px;
+	    width: 100%;
+}
+.btn-primary
+{
+	width: 100%;
+}
+.input-mail
+{
+	font-size: 23px;
 }

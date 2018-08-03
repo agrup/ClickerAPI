@@ -1,23 +1,31 @@
 body main
 {
-	font-family: 'Baloo+Chettan';
-    font-size: 20px;
-	position: fixed;
-	margin-top: 68px;
 
+    font-size: 20px;
+  position: fixed;
+  margin-top: 68px;
+
+}
+
+
+body button
+{
+    font-family: 'Hanalei Fill';
 }
 .click-Zone
 {
-	/*width: 100%;
-	margin: 0% 0% 0% 0%;
-	*/
-
+    flex-direction: column;
+    /* display: flex; */
+    padding: 0 50%;
+    display: flex;
+  width: 100%;
 }
 .container-Trainer
 {
-	width: 100%;
+	    width: 50%;
+
     margin-left: 100%;
-        text-align: center;
+    text-align: center;
 }
 
 body button
@@ -119,4 +127,14 @@ img
 {
 	width: 190px;
 	padding-left: 150px;
+}
+
+.clickeable-hide
+{
+ 
+  width: 150px;
+}
+.container-flex
+{
+  display:flex;
 }
