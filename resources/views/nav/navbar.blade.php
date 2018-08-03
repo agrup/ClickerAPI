@@ -61,7 +61,7 @@
 
                             </li>
                             <li style="margin-left: 2rem">
-                                <embed id="cancion" name="GoodEnough" src="{{asset('audio/goku.mp3')}}" loop="false" hidden="true" autostart="true"  >  <button onclick='mute()'><img id="volumen" src="{{asset("img/volume.png")}}" width="20px" height="20px" data-volumen="volumen"></button >
+                                <embed id="cancion" name="GoodEnough" src="{{asset('audio/goku.mp3')}}" loop="false" hidden="true" autostart="true"  >  <!--button onclick='mute()'><img id="volumen" src="" width="20px" height="20px" data-volumen="volumen"></button -->
                             </li>
                         @endguest
                     </ul>
