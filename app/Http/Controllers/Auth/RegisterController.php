@@ -87,6 +87,11 @@ class RegisterController extends Controller
                 'millas'=>1000,
             ]);
 
+ $markers=marker::all();
+  foreach ($markers as $k=>$marka) {
+              $player->markers()->attach($k+1,['player_id'=>$player->id,'completa'=>'incompleta']);
+            }
+
             return $user;
 
     }
