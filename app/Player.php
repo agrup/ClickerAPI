@@ -65,6 +65,26 @@ class Player extends Model
 
             
         }
+        
+        public function playerWin($oro,$experiencia,$millas)
+        {
+            if(isset($experiencia)){
+                $sumexp=$this->experiencia + $experiencia;
+                if($sumexp>=100){
+                    $this->experiencia=$sumexp-100;
+                    $this->nivel=$this->nivel+1;
+                }else{
+                    $this->experiencia = $this->experiencia + $experiencia;
+                }
+            }
+            if(isset($millas)){$this->millas = $this->millas + $millas;} 
+
+
+            if (isset($oro)){$this->oro = $this->oro + $oro;}
+            
+            $this->save();
+
+        }
     
 
 }

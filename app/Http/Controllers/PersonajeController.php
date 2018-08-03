@@ -48,6 +48,8 @@ class PersonajeController extends Controller
         */
                 $personajeModel = PersonajeModel::all();
 
+                return redirect()->route('game');
+
         $succes='Exito al cargar Personaje Nuevo';
         return view('personajes.personajes')->with(compact('succes'))
                                             //->withErrors('Ya cuenta con un personaje')

@@ -45,7 +45,7 @@ class Game extends Model
           $oro=$premio['oro'];
           $experiencia=$premio['experiencia'];
           $millas=$premio['millas'];
-            User::find($ganador)->userPlayer->updatePlayer($oro,$experiencia,$millas,0);
+            User::find($ganador)->userPlayer->playerWin($oro,$experiencia,$millas);
 
             $this->Estado = true;
             $this->save();

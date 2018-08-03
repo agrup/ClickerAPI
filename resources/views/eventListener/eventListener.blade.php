@@ -61,7 +61,7 @@
       <div class="lista" id="lista">
         
       @foreach($partidas as $game)
-        <a href="{{asset("/game/unirme/")}}/{{$game['id']}}">
+        <a href="{{asset("/game/unirme/")}}/{{$game['id']}}" target="_blank">
           
           <button class="tablinks" @click="openGame('{{$game['id']}}')">Partida:{{$game['id']}} {{$game['Personaje']}}->->{{$game['User']}}</button>
         </a>
@@ -132,7 +132,7 @@
                    .listen('eventTrigger', (e) => {
                      obj.play();
                     
-                    $('#lista').prepend("<a href=/game/unirme/"+e.id+" >  <button class='tablinks' id="+e.id+" )'>Partida:"+e.id+" "+e.personaje+"->->"+e.user+"</button> </a>");
+                    $('#lista').prepend("<a href=/game/unirme/"+e.id+" target='_blank'"+">  <button class='tablinks' id="+e.id+" )'>Partida:"+e.id+" "+e.personaje+"->->"+e.user+"</button> </a>");
  
 
                     $('#'+e.id).animate({

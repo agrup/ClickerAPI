@@ -152,31 +152,20 @@ class PartidaController extends Controller
 /*
 */
 
-
-
-
     $ganador = Game::where('url1',$request->ganador)->first();
      //$gandor->terminar();
+  
     if($ganador != null ){
+       //dd($ganador->host_id);
       //return $gandor->host_id;
       if($ganador->url2 == $request->perdedor){
 
         //DARLE LOS PUNTOS AL GANADOR
+        //$ganador->Terminar($ganador->host_id);
+        
         $ganador->Terminar($ganador->host_id);
         
-        
-        /*
 
-        
-
-        User::find($ganador->host_id)->userPlayer()->updatePlayer(
-
-          $oro=$premio->oro,
-          $experiencia=$premio->experiencia,
-          $millas=$premio->millas,
-
-          );
-        */
 
       return $ganador->host_id;
         }
@@ -189,21 +178,11 @@ class PartidaController extends Controller
       //return $gandor->host_id;
       if($ganador->url1 == $request->perdedor){
         //DARLE LOS PUNTOS AL GANADOR
-        $ganador->Terminar($ganador->oponent_id);
+        //$ganador->Terminar($ganador->oponent_id);
+        //dd($ganador->host_id);
+        $ganador->Terminar($ganador->opnente_id);
         
-/*
 
-
-        User::find($ganador->opnente_id)->userPlayer()
-
-        ->updatePlayer(
-
-          $oro=$premio->oro,
-          $experiencia=$premio->experiencia,
-          $millas=$premio->millas,
-
-          );
-*/
 
         return $ganador->opnente_id;
       }
