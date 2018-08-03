@@ -17,8 +17,9 @@
                         @guest
 
                             <li class="item-nav list-icons">
-                            <div class="titlebox">Login with</div>
-                            
+                            <li>
+                                <a href="{{ route('login') }}" class="nav-link">Login with</a>
+                            </li>
                             <ul >
                             <li>
                                 <a href="{{ route('register') }}" class="nav-link">Registrarme</a>
