@@ -131,6 +131,8 @@ logout-form{
     color: yellow;
     margin-left: 5px;
     margin-top:1rem;   
+    font-family: hanalei fill;
+    font-size: 2rem
 }
 .list-icons
 {

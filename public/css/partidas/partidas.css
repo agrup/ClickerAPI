@@ -8,7 +8,7 @@ a
     border: 9px gray inset;
     background-color: #f1f1f1;
     width: 50%;
-    height: 215px;
+    height: 15rem;
 
     flex-basis: 100%;
     padding: 0 1%;
@@ -51,20 +51,22 @@ overflow: scroll;
 }
 .games-container
 {
+    height: 16rem;
     display:flex;
     z-index: 1;
-    position: fixed;
-    left: 0;
-    bottom: 12%;
+   border: 9px gray inset;
+    
+    bottom: 0%;
     width: 100%;
     background-color: red;
-    color: white;
+    color: black;
     text-align: center;
 }
 }
 .tab    
 {
 position: relative;
+
 }
 .tab > h2
 {
@@ -83,14 +85,16 @@ position: relative;
 }
 .clase
 {
-    width: 19%;
-    margin: 0 3% 0 1%;
-    position: absolute;
-    bottom: 4px;
-    left: 0;
-    color: #3c1a05;
-    background-color: #fe6505;
-    border-color: #833400;
+   
+  
+     background-color: #ff4000; 
+    border: none;
+    color: white;
+    padding: 14px 40px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
 }
 
 #img-1{

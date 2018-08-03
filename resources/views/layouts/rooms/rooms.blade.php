@@ -8,31 +8,31 @@
 @guest
 
 @else
-<h1>Menu</h1>
+
 	<ul class="ul-menu">
 		<li>
 
 
-			<a href="/game/Crear+Personaje" clase="link-menu">Seleccionar Personaje</a>
+			<a href="/game/Crear+Personaje" class="link-menu">Seleccionar Personaje</a>
 
 			
 		</li>
 		<li>
-			<a href="/game/Mi+Personaje" clase="link-menu">Mi Personaje</a>
+			<a href="/game/Mi+Personaje" class="link-menu">Mi Personaje</a>
 			
 		
 		</li>
 		
 		<li>
-			<a href="/game/Trainer" clase="link-menu">Velocidad</a>
+			<a href="/game/Trainer" class="link-menu">Velocidad</a>
 			
 		</li>
 		<li>
-			<a href="/game/Perfil" clase="link-menu">Tabla de Posiciones</a>
+			<a href="/game/Perfil" class="link-menu">Tabla de Posiciones</a>
 			
 		</li>
 				<li>
-			<a href="/game/Reacciona" clase="link-menu">Reacciona</a>
+			<a href="/game/Reacciona" class="link-menu">Reacciona</a>
 			
 		</li>
 
