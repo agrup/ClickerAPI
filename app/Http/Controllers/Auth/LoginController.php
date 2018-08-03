@@ -53,6 +53,7 @@ class LoginController extends Controller
 
     public function handleProviderCallback($provider)
     {
+        $error_code=5;
         $providerUser = Socialite::driver($provider)->stateless()->user();
         
          $markers=marker::all();
@@ -71,7 +72,7 @@ class LoginController extends Controller
                 //'provider'=>strtoupper($provider),
                 'provider_id'=>$providerUser->id,
              ]);
-            $error_code=5;
+            
             //Creo el player
             $player=Player::create([
                 'nickname'=>$providerUser->getName(),
