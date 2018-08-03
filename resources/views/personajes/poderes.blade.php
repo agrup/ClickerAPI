@@ -1,6 +1,6 @@
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 	<link rel="stylesheet" type="text/css" href="{{ asset('css/player/poderes.css') }}">
-
+<link href='https://fonts.googleapis.com/css?family=Hanalei Fill' rel='stylesheet'>
 @section('meta')
 		
 @endsection

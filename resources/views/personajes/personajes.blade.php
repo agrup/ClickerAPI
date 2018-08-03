@@ -6,6 +6,7 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<script type="text/javascript" src="{{asset("js/personaje/personaje.js")}}"></script>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href='https://fonts.googleapis.com/css?family=Hanalei Fill' rel='stylesheet'>
 	<meta charset="UTF-8">
 	<title>Player</title>
 </head>

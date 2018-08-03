@@ -19,6 +19,12 @@ body main
     margin-left: 100%;
         text-align: center;
 }
+
+body button
+{
+    font-family: 'Hanalei Fill';
+}
+
 img
 {
     

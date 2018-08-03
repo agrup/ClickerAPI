@@ -10,12 +10,16 @@
 
 }
 
+button
+{
+	font-family: 'Hanalei Fill';
+}
 
 body
 {	
 	background-color: black;
 	height: 100%;
-	font-family: 'Baloo+Chettan';
+	font-family: 'Hanalei Fill';
 }
 
 .left {

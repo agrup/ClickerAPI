@@ -1,4 +1,13 @@
 /* Style the tab */
+body
+{
+    font-family: 'Hanalei Fill';
+}
+button
+{
+    font-family: 'Hanalei Fill';
+}
+
 a
 {
     text-decoration: none
@@ -17,6 +26,24 @@ a
 .lista{
 overflow: scroll;
     max-height: 180px;
+}
+.title-container
+{
+    display:flex;
+}
+
+.title-container > h2
+{
+
+
+
+}
+
+.title-container > p
+{
+        font-size: 20px;
+    color: red;
+    margin: 2% 7% 0 7%;
 }
 
 /* Style the buttons that are used to open the tab content */
@@ -118,6 +145,12 @@ html,body {
     width: 100%;
   /*background-color: black;*/
 
+    }
+    .title-container > p {
+    font-size: 14px;
+    color: red;
+    margin: 5% 7% 0 9%;
+    }
 }
 @media only screen and (max-width: 600px){
 

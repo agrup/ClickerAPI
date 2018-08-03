@@ -6,6 +6,12 @@ body main
 	margin-top: 68px;
 
 }
+
+
+body button
+{
+    font-family: 'Hanalei Fill';
+}
 .click-Zone
 {
 	width: 100%;

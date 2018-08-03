@@ -8,6 +8,14 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
 
+Use Auth;
+
+Use App\Player;
+Use App\Personaje;
+Use App\Game;
+Use App\marker;
+Use App\marker_player;
+
 class RegisterController extends Controller
 {
     /*
@@ -63,10 +71,24 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        return User::create([
-            'name' => $data['name'],
-            'email' => $data['email'],
-            'password' => Hash::make($data['password']),
-        ]);
+            $user = User::create([
+                'name'=>$data['name'],
+                'email'=>$data['email'],
+                'password'=>Hash::make($data['password']),
+                //'provider'=>strtoupper($provider),
+                'provider_id'=>0,
+             ]);
+            //Creo el player
+            //dd($data['name']);
+            $player=Player::create([
+                'nickname'=>$data['name'],
+                'especialidad'=>"",
+                'experiencia'=>0,
+                'millas'=>1000,
+            ]);
+
+            return $user;
+
     }
 }
+

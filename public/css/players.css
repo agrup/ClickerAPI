@@ -9,6 +9,11 @@
   
 }
 
+body button
+{
+    font-family: 'Hanalei Fill';
+}
+
 .sideplay a{
     padding: 6px 8px 6px 16px;
     text-decoration: none;

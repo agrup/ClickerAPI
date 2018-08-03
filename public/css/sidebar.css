@@ -1,3 +1,5 @@
+
+
 .sidenav {
     height: 28rem;
     width: 178px;
@@ -15,6 +17,11 @@
     color: #6a2a00;     
     display: block;
     
+}
+
+body button
+{
+    font-family: 'Hanalei Fill';
 }
 
 .sidenav a:hover {

@@ -19,6 +19,9 @@
                             <div class="titlebox">Login with</div>
                             
                             <ul >
+                            <li>
+                                <a href="{{ route('register') }}" class="nav-link">Registrarme</a>
+                            </li>
                                 <li>
                                     <a href="{{ url('auth/google') }}" class="nav-link">
                                     <img class="icon" src="{{ asset('img/gg-icon.png') }}" alt="">

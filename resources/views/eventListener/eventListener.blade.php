@@ -55,8 +55,8 @@
       <div class="tab">
       <div class="title-container">
         
-        <h2 class="loby">Lobby</h2>
-        <p>Juga y obtene Experiencia y Oro</p>
+        <h2 class="loby">Partidas</h2>
+        <p>Desafia a un amigo y obtene Experiencia y Oro</p>
       </div>
       <div class="lista" id="lista">
         

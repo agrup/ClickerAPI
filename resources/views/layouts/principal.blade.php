@@ -12,7 +12,7 @@
 
 <link rel="stylesheet" type="text/css" href="{{ asset('css/index.css') }}">
 
-
+<link rel="stylesheet" type="text/css" href="{{ asset('css/log.css') }}">
  <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="https://apis.google.com/js/platform.js" async defer></script>
@@ -20,7 +20,7 @@
 <script src={{asset("js/cambiarNombre.js")}} ></script>
 <script src={{asset("js/avatar.js")}} ></script>
 
-<link href='https://fonts.googleapis.com/css?family=Sofia' rel='stylesheet'>
+<link href='https://fonts.googleapis.com/css?family=Hanalei Fill' rel='stylesheet'>
 
 <link rel="stylesheet" type="text/css" href="{{ asset('css/nav.css') }}">
 <link rel="stylesheet" type="text/css" href="{{ asset('css/selectPersonaje.css') }}">
@@ -32,13 +32,13 @@
 
   <body >
 
-
 	<div class="container-vertical">
 		<div>
 			
 			@include('nav.navbar')
 		</div>
 
+@auth
 		<div class="bar-vertical">
 			
 		
@@ -48,15 +48,18 @@
 					@include('layouts.rooms.rooms')
 			
 				</section>
+@endauth
 				
 				<section class="principal">
 					@guest
-					<img src="img/presentacion.jpg" alt="">
+					@yield('content')
+						
 					@endif
 		    		@yield('jugador2')
 		    	
 
 				</section>
+@auth
 				
 				<section class="right">
 					
@@ -64,6 +67,7 @@
 				
 				</section>
 				
+@endauth
 		  			
 			</div>
 		</div>	

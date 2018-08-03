@@ -1,0 +1,16 @@
+.login > .container
+{
+	position: absolute;
+    top: 30%;
+    left: 35%;
+    color: white;
+    width: 35em;
+}
+
+.row.justify-content-center
+{
+	padding: 5%;
+    height: 192px;
+    width: 193px;
+    border: red 3px solid;
+}
