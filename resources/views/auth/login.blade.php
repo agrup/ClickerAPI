@@ -5,7 +5,7 @@
     <div class="loginbox">
         <div class="col-md-8">
             <div class="card">
-                <div class="titulolog">{{ __('Login') }}</div>
+                <div class="titulolog">{{ __('Log in') }}</div>
 
                 <div class="bodylog">
                     <form method="POST" action="{{ route('login') }}" aria-label="{{ __('Login') }}">

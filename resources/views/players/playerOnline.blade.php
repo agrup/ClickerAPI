@@ -16,7 +16,7 @@
         </div>
         <div >
         	<input type="button" id="up" class="subirFoto" value="Cambiar Foto"></button>
-            <input type="file" id="file" name="file"  accept="image/*" hidden />
+            <input type="file" id="file" name="file"  accept="image/*" hidden style="font-size: 10px; margin-left: 5px " />
             <input type="button" class="button" value="Subir" id="but_upload" hidden>
         </div>
     </form>

@@ -18,7 +18,7 @@
 
                             <li class="item-nav list-icons">
                             <li>
-                                <a href="{{ route('login') }}" class="nav-link">Login with</a>
+                                <a href="{{ route('login') }}" class="nav-link">Login In</a>
                             </li>
                             <ul >
                             <li>
