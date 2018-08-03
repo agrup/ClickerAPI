@@ -15,6 +15,7 @@
 */
 .navbar {
       /*   max-height: 58px;*/
+      height: 50px;
     position: fixed;
     display: -ms-flexbox;
     display: flex;
@@ -137,7 +138,7 @@ logout-form{
 }
 .list-icons
 {
-    border: solid black 2px;
+   
     margin-left: 
 }
 .titlebox{

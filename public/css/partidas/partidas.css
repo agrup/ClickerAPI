@@ -14,10 +14,10 @@ a
 }
 .tab {
     float: left;
-    border: 9px gray inset;
+    border: 2px gray inset;
     background-color: #f1f1f1;
     width: 50%;
-    height: 15rem;
+    height: 20rem;
 
     flex-basis: 100%;
     padding: 0 1%;
@@ -78,7 +78,7 @@ overflow: scroll;
 }
 .games-container
 {
-    height: 16rem;
+    height: 20rem;
     display:flex;
     z-index: 1;
    border: 9px gray inset;
@@ -106,7 +106,7 @@ position: relative;
 #app
 {
     background-color: #f1f1f1;
-    border: 4px solid red;
+    border: 2px solid red;
     width: 28%;
 
 }
@@ -140,10 +140,7 @@ h4
 {
     text-align: center;
 }
-html,body { 
-  overflow:hidden; 
 
-}
 @media only screen and (max-width: 1173px){
     #app{
         flex-basis: 80%;

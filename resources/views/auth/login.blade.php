@@ -1,20 +1,20 @@
 @extends('layouts.principal')
 
 @section('content')
-<div class="container">
-    <div class="row justify-content-center">
+<div class="login">
+    <div class="loginbox">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">{{ __('Login') }}</div>
+                <div class="titulolog">{{ __('Login') }}</div>
 
-                <div class="card-body">
+                <div class="bodylog">
                     <form method="POST" action="{{ route('login') }}" aria-label="{{ __('Login') }}">
                         @csrf
 
-                        <div class="form-group row">
+                        <div class="label">
                             <label for="email" class="col-sm-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
 
-                            <div class="col-md-6">
+                            <div class="label">
                                 <input id="email" type="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" value="{{ old('email') }}" required autofocus>
 
                                 @if ($errors->has('email'))
@@ -40,7 +40,7 @@
                         </div>
 
                         <div class="form-group row">
-                            <div class="col-md-6 offset-md-4">
+                            <div class="label">
                                 <div class="checkbox">
                                     <label>
                                         <input type="checkbox" name="remember" {{ old('remember') ? 'checked' : '' }}> {{ __('Remember Me') }}
@@ -48,19 +48,20 @@
                                 </div>
                             </div>
                         </div>
-
-                        <div class="form-group row mb-0">
-                            <div class="col-md-8 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
+                             <button type="submit" class="label">
                                     {{ __('Login') }}
                                 </button>
 
+                        <div class="form-group row mb-0">
+                           
+                               
                                 <a class="btn btn-link" href="{{ route('password.request') }}">
                                     {{ __('Forgot Your Password?') }}
-                                    <a href="{{ url('auth/google') }}" class="nav-link">Google Login</a>
-                                </a>
-                            </div>
+                                  
                         </div>
+                          <a href="{{ url('auth/google') }}" class="label" style="color:red;margin-bottom: 10px;">Google Login</a>
+                                </a>
+                            
                     </form>
                 </div>
             </div>

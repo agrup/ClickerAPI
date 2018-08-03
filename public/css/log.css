@@ -11,6 +11,32 @@
 {
 	padding: 5%;
     height: 192px;
-    width: 193px;
-    border: red 3px solid;
+   
+}
+.loginbox{
+	margin: 50px;
+margin-left: 600px;
+
+
+}
+.login {
+	
+	position: all;
+  
+  border: 1px solid #42464b;
+  border-radius: 6px;
+  height: 395px;
+  margin: 20px auto 0;
+  
+  background-color: orange;
+}
+.titulolog{
+	margin: 20px;
+}
+.bodylog{
+	margin-bottom: 20px;
+}
+.label{
+	margin-bottom: 20px;
+
 }

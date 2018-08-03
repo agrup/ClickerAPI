@@ -249,7 +249,7 @@ color: red;
 }
 .foo {
     position: fixed;
-   
+   	height: 40px;
     bottom: 0%;
     width: 100%;
     background-color: red;
@@ -257,8 +257,8 @@ color: red;
     text-align: center;
     border-style: solid;
     border-color: white;
-    opacity: 0.5;
-
+    
+	z-index: 1;
 }
 embed{
 	float: right;

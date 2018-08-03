@@ -4,7 +4,7 @@
 	 
     
  <div id="map" class="mapa" ></div>
-
+<div id="infobox" style="display: flex;font-size: 2px;">
  @foreach($markers as $marka)
  	<div data-marka="{{$marka->id}}" class="markerConteiner" hidden>
  		<p data-marka="{{$marka->distancia}}" hidden class="distancia{{$marka->id}}">distancia</p>
@@ -74,6 +74,7 @@
        </div>
        </div>
  @endforeach
+ </div>
  <div id="dialog">
      <p>Utiliza tus millas para viajar y recolectar las esferas del Dragon!</p>
  </div>
