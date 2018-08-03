@@ -31,9 +31,9 @@ body
 {
 
 	flex-basis: 80%;
-	height: 25rem;
-
-
+	height: 26rem;
+	border-style: solid;
+	border-color: white;
 }
 
 .principal > img{
@@ -54,7 +54,7 @@ body
 .bar-vertical
 {
 	flex-basis: 80%;
-	height: 28em;
+	height: 30em;
 	
 
 }
@@ -198,7 +198,7 @@ transition: opacity 400ms ease-in;
 .datosPlayer{
 color: red;
     margin: 1em 2em 3em 2em;
-    font-size: 10px;
+    font-size: 1em;
 }
 
 .subirFoto{
@@ -242,4 +242,13 @@ color: red;
 		padding: 0px;
 		margin: 0px;
 	}
+}
+.foo {
+    position: fixed;
+    left: 0;
+    bottom: 5%;
+    width: 100%;
+    background-color: red;
+    color: white;
+    text-align: center;
 }

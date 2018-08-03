@@ -53,6 +53,14 @@ overflow: scroll;
 {
     display:flex;
     z-index: 1;
+    position: fixed;
+    left: 0;
+    bottom: 12%;
+    width: 100%;
+    background-color: red;
+    color: white;
+    text-align: center;
+}
 }
 .tab    
 {

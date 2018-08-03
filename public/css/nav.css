@@ -24,13 +24,15 @@
     align-items: center;
     -ms-flex-pack: justify;
     justify-content: space-between;
-    padding: .5rem 1rem;
+    padding: .3rem 1rem;
     
     color: #fff;
     background-color:red;
     width: 100%;
     z-index: 1;
       box-sizing: border-box;
+    border-style: solid;
+    border-color: white;
 }
 
 
