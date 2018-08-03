@@ -1,8 +1,9 @@
 @section('jugador2')
 	
 
-	
- <div id="map" class="mapa"></div>
+	 
+    
+ <div id="map" class="mapa" ></div>
 
  @foreach($markers as $marka)
  	<div data-marka="{{$marka->id}}" class="markerConteiner" hidden>
@@ -88,7 +89,7 @@
   </div>
 </div>
  
-
+  
     <script type="text/javascript" src="{{asset("js/mapaPrincipalV2.js")}}"></script>
     <script async defer
     src="https://maps.googleapis.com/maps/api/js?key={{env("GOOGLE_MAP_KEY")}}&callback=Mapa.iniciar">

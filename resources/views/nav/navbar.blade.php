@@ -15,6 +15,7 @@
                     <ul class="nav-right">
                         <!-- Authentication Links -->
                         @guest
+
                             <li class="item-nav list-icons">
                             <div class="titlebox">Login with</div>
                             
@@ -23,7 +24,7 @@
                                     <a href="{{ url('auth/google') }}" class="nav-link">
                                     <img class="icon" src="{{ asset('img/gg-icon.png') }}" alt="">
                                     </a>
-
+                                    
 
                                 </li>
                                 <li>
@@ -56,8 +57,34 @@
                                     </form>
 
                             </li>
+                            <li style="margin-left: 2rem">
+                                <embed id="cancion" name="GoodEnough" src="{{asset('audio/goku.mp3')}}" loop="false" hidden="true" autostart="true"  >  <button onclick='mute()'><img id="volumen" src="{{asset("img/volume.png")}}" width="20px" height="20px" data-volumen="volumen"></button >
+                            </li>
                         @endguest
                     </ul>
                 </div>
             </div>
         </nav>
+        <script type="text/javascript" >    
+                 function mute(){
+                    var vol=document.getElementById("volumen");
+                    var a=document.getElementById("cancion");
+                    
+                    alert(a);
+                   if(vol.dataset.volumen=="volumen"){
+                        document.getElementById("volumen").src="img/mute.png";
+                        document.getElementById("volumen").dataset.volumen="mute";
+                       //document.getElementById("cancion").src="/aa";
+
+
+                    }else{
+                        document.getElementById("volumen").src="img/volume.png";
+                        document.getElementById("volumen").dataset.volumen="volumen";
+                        document.getElementById("cancion").muted;  
+                    }
+                    
+            }
+      
+            
+        </script>
+
